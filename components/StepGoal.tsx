@@ -68,6 +68,24 @@ const StepGoal: React.FC<Props> = ({ data, updateData, onNext }) => {
         >
           Continue
         </button>
+
+        {/* --- ADDED FOOTER SECTION --- */}
+        <div className="mt-8 text-center pb-2">
+          <p className="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">
+            Made by{' '}
+            <a 
+              href="https://www.instagram.com/iamadarsha/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:text-white transition-colors underline decoration-primary/50 underline-offset-4"
+            >
+              Adarsha
+            </a>
+          </p>
+          <p className="text-slate-400 dark:text-slate-600 text-[10px] font-medium italic opacity-70">
+            disclaimer - not a coder, not an engineer.
+          </p>
+        </div>
       </div>
     </div>
   );
