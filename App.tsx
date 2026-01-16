@@ -66,7 +66,7 @@ const App: React.FC = () => {
   // Render Logic
   if (loading) {
     return (
-      <div className="min-h-screen bg-background-dark flex flex-col items-center justify-center p-6 text-center">
+      <div className="min-h-screen bg-background-dark flex flex-col items-center justify-center p-6 text-center relative">
         <div className="relative w-24 h-24 mb-8">
           <div className="absolute inset-0 border-4 border-white/10 rounded-full"></div>
           <div className="absolute inset-0 border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
@@ -76,6 +76,13 @@ const App: React.FC = () => {
         </div>
         <h2 className="text-2xl font-bold text-white mb-2">Analyzing your profile...</h2>
         <p className="text-white/60">Scouring runner databases for your perfect match.</p>
+        
+        {/* Footer for Loading Screen */}
+        <div className="absolute bottom-8 w-full text-center">
+           <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold">
+             Made with Love by Adarsha
+           </p>
+        </div>
       </div>
     );
   }
@@ -135,45 +142,75 @@ const App: React.FC = () => {
       )}
 
       {/* Screen Content */}
-      <div className={`flex-1 h-full ${step < Step.RESULTS ? 'pt-20' : ''}`}>
-        {step === Step.GOAL && (
-          <StepGoal 
-            data={profile} 
-            updateData={updateData} 
-            onNext={nextStep} 
-            onBack={prevStep} 
-          />
-        )}
-        {step === Step.TERRAIN && (
-          <StepTerrain 
-            data={profile} 
-            updateData={updateData} 
-            onNext={nextStep} 
-            onBack={prevStep} 
-          />
-        )}
-        {step === Step.PROFILE && (
-          <StepProfile 
-            data={profile} 
-            updateData={updateData} 
-            onNext={nextStep} 
-            onBack={prevStep} 
-          />
-        )}
-        {step === Step.FEEL && (
-          <StepFeel 
-            data={profile} 
-            updateData={updateData} 
-            onNext={nextStep} 
-            onBack={prevStep} 
-          />
-        )}
-        {step === Step.RESULTS && (
-          <StepResults 
-            recommendations={recommendations} 
-            profile={profile}
-            onBack={() => setStep(Step.FEEL)}
-          />
+      <div className={`flex-1 flex flex-col h-full ${step < Step.RESULTS ? 'pt-20' : ''}`}>
+        <div className="flex-1">
+          {step === Step.GOAL && (
+            <StepGoal 
+              data={profile} 
+              updateData={updateData} 
+              onNext={nextStep} 
+              onBack={prevStep} 
+            />
+          )}
+          {step === Step.TERRAIN && (
+            <StepTerrain 
+              data={profile} 
+              updateData={updateData} 
+              onNext={nextStep} 
+              onBack={prevStep} 
+            />
+          )}
+          {step === Step.PROFILE && (
+            <StepProfile 
+              data={profile} 
+              updateData={updateData} 
+              onNext={nextStep} 
+              onBack={prevStep} 
+            />
+          )}
+          {step === Step.FEEL && (
+            <StepFeel 
+              data={profile} 
+              updateData={updateData} 
+              onNext={nextStep} 
+              onBack={prevStep} 
+            />
+          )}
+          {step === Step.RESULTS && (
+            <>
+              {/* --- Social Plug (Final Screen) --- */}
+              <div className="w-full bg-[#161e2e]/80 backdrop-blur-md border-b border-white/5 py-3 px-6 text-center z-10 relative">
+                <p className="text-slate-400 text-xs font-medium">
+                  Thanks for using the app! Made by <span className="text-primary font-bold">Adarsha</span>
+                </p>
+                <a 
+                  href="https://www.instagram.com/iamadarsha/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 mt-1 text-primary hover:text-white transition-colors text-xs font-bold uppercase tracking-wide"
+                >
+                  <span>Follow me on Instagram</span>
+                  <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                </a>
+              </div>
+              {/* ---------------------------------- */}
+              
+              <StepResults 
+                recommendations={recommendations} 
+                profile={profile}
+                onBack={() => setStep(Step.FEEL)}
+              />
+            </>
+          )}
+        </div>
+
+        {/* --- Global Footer for Intermediate Steps --- */}
+        {step !== Step.GOAL && step !== Step.RESULTS && (
+          <div className="w-full py-6 text-center bg-transparent z-10">
+            <p className="text-slate-500 dark:text-slate-500/50 text-[10px] font-bold uppercase tracking-widest">
+              Made with Love by Adarsha, a fellow non elite runner.
+            </p>
+          </div>
         )}
       </div>
     </div>
