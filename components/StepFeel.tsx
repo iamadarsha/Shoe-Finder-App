@@ -52,33 +52,49 @@ const StepFeel: React.FC<Props> = ({ data, updateData, onNext }) => {
 
       <div className="flex-1 overflow-y-auto px-6 pb-6 pt-4 space-y-4">
         {options.map((opt) => (
-          <div 
-            key={opt.id}
-            onClick={() => updateData('feel', opt.id)}
-            className={`cursor-pointer relative flex items-center justify-between p-5 rounded-[2rem] border-2 transition-all duration-200 ${
-              data.feel === opt.id 
-                ? 'border-primary bg-white/10 shadow-[0_0_15px_rgba(242,242,13,0.1)]' 
-                : 'border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:border-primary/50'
-            }`}
-          >
-            <div className="flex flex-col gap-1 z-10 relative pointer-events-none">
-              <span className={`text-lg font-bold transition-colors ${data.feel === opt.id ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>
-                {opt.title}
-              </span>
-              <span className="text-sm font-medium text-slate-500 dark:text-[#cbcb90] max-w-[160px]">
-                {opt.desc}
-              </span>
-            </div>
+          <label key={opt.id} className="group cursor-pointer block relative z-10">
+            {/* Hidden Input ensuring clickability */}
+            <input
+              type="radio"
+              name="feel"
+              className="peer sr-only"
+              value={opt.id}
+              checked={data.feel === opt.id}
+              onChange={() => updateData('feel', opt.id)}
+            />
+            
+            {/* The Visual Card */}
+            <div className={`relative flex items-center justify-between p-5 rounded-[2rem] border-2 transition-all duration-200 
+              border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 
+              hover:border-primary/50 
+              peer-checked:border-primary peer-checked:bg-white/10 peer-checked:shadow-[0_0_15px_rgba(242,242,13,0.1)]
+            `}>
+              
+              <div className="flex flex-col gap-1 z-10 relative">
+                <span className={`text-lg font-bold transition-colors text-slate-900 dark:text-white group-hover:text-primary peer-checked:text-primary`}>
+                  {opt.title}
+                </span>
+                <span className="text-sm font-medium text-slate-500 dark:text-[#cbcb90] max-w-[160px]">
+                  {opt.desc}
+                </span>
+              </div>
 
-            {/* Icon Visual */}
-            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border border-white/5 transition-all ${
-               data.feel === opt.id ? 'bg-primary text-black' : `${opt.bg} ${opt.color}`
-            }`}>
-              <span className="material-symbols-outlined text-3xl">
-                {opt.icon}
-              </span>
+              {/* Icon Visual */}
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border border-white/5 transition-all 
+                 ${opt.bg} ${opt.color} 
+                 peer-checked:bg-primary peer-checked:text-black
+              `}>
+                <span className="material-symbols-outlined text-3xl">
+                  {opt.icon}
+                </span>
+              </div>
+
+              {/* Checkmark Overlay */}
+              <div className="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+                <span className="material-symbols-outlined text-xl filled">check_circle</span>
+              </div>
             </div>
-          </div>
+          </label>
         ))}
       </div>
 
