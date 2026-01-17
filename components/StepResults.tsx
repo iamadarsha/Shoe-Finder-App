@@ -19,7 +19,7 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
         </div>
         <h2 className="text-2xl font-bold text-white mb-2">No Shoes Found</h2>
         <p className="text-slate-400 mb-8 max-w-[280px]">
-          We couldn't find any shoes that match your specific criteria, especially within the budget of 
+          We couldn't find any quality shoes that match your specific criteria within the budget of 
           <span className="text-primary font-bold"> ₹{profile.budget}</span>.
         </p>
         <button 
@@ -73,7 +73,7 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
                        <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">{shoe.brand}</p>
                     </div>
                     <div className="text-right">
-                       <span className="block text-lg font-bold text-primary">{shoe.price}</span>
+                       <span className="block text-lg font-bold text-primary">₹{shoe.price}</span>
                        <span className="text-[10px] font-bold text-slate-500 bg-white/5 px-2 py-1 rounded-full">{shoe.matchPercentage}% Match</span>
                     </div>
                  </div>
@@ -98,7 +98,7 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
                 </div>
 
                 {/* AI Explanation */}
-                <div className="bg-black/20 rounded-xl p-3 border border-white/5">
+                <div className="bg-black/20 rounded-xl p-3 border border-white/5 mb-4">
                    <div className="flex gap-2 items-start">
                      <span className="material-symbols-outlined text-primary text-sm mt-0.5 shrink-0">auto_awesome</span>
                      <p className="text-xs text-slate-300 leading-relaxed">
@@ -106,6 +106,24 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
                      </p>
                    </div>
                 </div>
+
+                {/* NEW CLICKABLE LINK BUTTON */}
+                {(shoe as any).purchase_link && (
+                  <a 
+                    href={(shoe as any).purchase_link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 text-white flex items-center justify-center gap-2 transition-all group"
+                    onClick={(e) => e.stopPropagation()} // Prevent clicking the card container
+                  >
+                    <span className="text-xs font-bold uppercase tracking-wider">
+                      Check Price on {(shoe as any).retailer_name || 'Store'}
+                    </span>
+                    <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+                      open_in_new
+                    </span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
