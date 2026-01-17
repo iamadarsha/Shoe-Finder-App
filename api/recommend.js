@@ -8,54 +8,63 @@ export default async function handler(req, res) {
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
+  // Using Flash-Lite for speed and higher rate limits
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
   try {
     const userProfile = req.body;
     
-    // Calculate strict upper limit (Budget + 40%)
+    // 1. FAILSAFE BUDGETING
+    // We set a hard ceiling. Budget + 40% buffer.
+    // Example: Budget ₹5000 -> Max ₹7000.
     const userBudget = userProfile.budget || 5000;
     const maxPrice = Math.round(userBudget * 1.4); 
+    const minPrice = 2000; // Floor to avoid cheap quality shoes
 
     const systemPrompt = `
-      You are an expert Running Shoe Consultant for India (2025 Context).
+      You are an expert Running Shoe Consultant for the Indian Market (Context: Late 2025 / 2026).
       
       USER BUDGET: ₹${userBudget}
-      STRICT PRICE CEILING: ₹${maxPrice} (Do NOT recommend shoes above this price).
+      STRICT PRICE CEILING: ₹${maxPrice}
       
       YOUR TASK:
-      Analyze the user profile and return a JSON array of 5 running shoes available in India.
+      Recommend exactly 5 running shoes available in India right now that match the user's profile and budget.
       
       CRITICAL RULES:
-      1. **Strict Pricing:** - Only suggest shoes between ₹2000 and ₹${maxPrice}.
-         - If the user needs a "Carbon Plated Racer" but budget is ₹3500, RETURN AN EMPTY ARRAY []. Do not suggest a cheap daily trainer as a racer.
-         - If no quality shoes exist in this specific price range for their specific goal, return [].
+      1. **Strict Budget Adherence:** - ABSOLUTELY NO SHOES over ₹${maxPrice}. 
+         - If the user asks for "Marathon Racing" (Carbon Plate) but budget is ₹3500, DO NOT invent a fake price. Return an empty array [].
+         - If no good shoes exist in this range, return [].
          
-      2. **Indian Availability & Links:** - Shoes must be available on Amazon.in, Flipkart, Myntra, Tata Cliq, or Official Brand India sites.
-         - Provide a "purchase_link" field. Use a search query format if a direct link is risky: "https://www.amazon.in/s?k=Nike+Pegasus+40" or "https://www.google.com/search?q=buy+Nike+Pegasus+40+India".
+      2. **Indian Availability & Links:** - Shoes must be listed on: Amazon.in, Flipkart, Myntra, Tata Cliq, VegNonVeg, Superkicks, Xtep India, or Official Brand Sites (Nike.in, Adidas.co.in).
+         - **Link Strategy:** Do not guess direct product pages (they break). Generate a high-quality SEARCH URL.
+           Example: "https://www.amazon.in/s?k=Nike+Pegasus+41+Men" or "https://www.flipkart.com/search?q=Puma+Velocity+Nitro+3"
       
-      3. **New Releases (2024-2025):**
-         - Prioritize: Nike Pegasus 41, Vomero 17/18, Asics Novablast 4/5, Puma Velocity Nitro 3, Adidas SL 2.
+      3. **Latest Releases (2025-2026):**
+         - Look for the newest models if the budget permits:
+         - Nike: Vomero 18, Pegasus 42/41, Rival Fly 4.
+         - Asics: Novablast 5, Nimbus 27/28, GT-2000 13.
+         - Puma: Deviate Nitro 3, Velocity Nitro 3/4.
+         - Adidas: Adizero SL 2, Supernova Rise/Stride.
+         - Xtep: 160X 6.0, 2000km.
+         - Brooks: Ghost 16, Glycerin 22.
          
       OUTPUT FORMAT:
-      Return a JSON array of objects. If no shoes fit, return [].
+      Return ONLY a JSON array. No markdown.
       
       JSON Structure:
       [
         {
           "rank": 1,
-          "name": "Full Shoe Name",
-          "price_current": Number (Raw Integer, e.g. 4500),
-          "match_percentage": Number,
+          "name": "Brand + Model + Version (e.g. Asics Novablast 4)",
+          "price": Number (Integer only, e.g. 11999),
+          "match_percentage": Number (0-100),
           "ratings": { "cushion": Number, "durability": Number, "energy_return": Number },
-          "why_it_fits": "Specific reason...",
+          "why_it_fits": "Specific reason linking features to Indian roads/user profile.",
           "brand": "Brand Name",
-          "purchase_link": "URL_STRING",
-          "retailer_name": "Amazon.in / Flipkart / Official Site"
+          "purchase_link": "Search URL string",
+          "retailer_name": "Amazon.in / Flipkart / Brand Site"
         }
       ]
-      
-      Do not use markdown. Just raw JSON.
     `;
 
     const userMessage = `User Profile: ${JSON.stringify(userProfile)}`;
@@ -64,13 +73,37 @@ export default async function handler(req, res) {
     const response = await result.response;
     let text = response.text();
     
+    // 2. CLEANER JSON PARSING
+    // Sometimes AI adds "```json ... ```". We clean it.
     text = text.replace(/```json/g, "").replace(/```/g, "").trim();
+    
+    // Find the start and end of the array to ignore preamble text
+    const start = text.indexOf('[');
+    const end = text.lastIndexOf(']');
+    
+    if (start === -1 || end === -1) {
+       // AI returned text saying "No shoes found" instead of JSON
+       return res.status(200).json([]);
+    }
 
-    const shoes = JSON.parse(text);
+    const jsonString = text.substring(start, end + 1);
+    let shoes = JSON.parse(jsonString);
+
+    // 3. THE FINAL FAILSAFE (Post-Processing)
+    // We explicitly filter out any hallucinated prices that violate the budget.
+    shoes = shoes.filter(shoe => {
+      // Ensure price is a number
+      const price = parseInt(shoe.price);
+      // Check if valid number and within range
+      return !isNaN(price) && price <= maxPrice && price >= 500;
+    });
+
     res.status(200).json(shoes);
 
   } catch (error) {
     console.error("Gemini API Error:", error);
-    res.status(500).json({ error: "Failed to generate recommendations", details: error.message });
+    // If JSON parsing fails or API fails, return empty array so frontend shows "No Results" screen
+    // instead of crashing.
+    res.status(200).json([]); 
   }
 }
