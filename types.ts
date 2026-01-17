@@ -9,23 +9,24 @@ export interface UserProfile {
 }
 
 export interface ShoeRecommendation {
-  id: string;
+  id?: string; // Optional
   name: string;
-  price: string;
+  price: number | string; // Allow both just in case
   matchPercentage: number;
   cushionRating: number;
   durabilityRating: number;
   energyReturnRating: number;
   reason: string;
   brand: string;
+  purchase_link?: string;
+  retailer_name?: string;
 }
 
-// UPDATE THIS ENUM
 export enum Step {
   GOAL = 1,
   TERRAIN = 2,
   PROFILE = 3,
   FEEL = 4,
-  BUDGET = 5, // <--- ADDED THIS
+  BUDGET = 5,
   RESULTS = 6
 }
