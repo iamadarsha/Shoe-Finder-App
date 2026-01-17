@@ -8,112 +8,130 @@ export default async function handler(req, res) {
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  // Using Flash-Lite for speed, but with a massive context window
+  // Using Flash-Lite for massive context handling + speed
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
   try {
     const userProfile = req.body;
     
-    // 1. INTELLIGENT BUDGETING
-    const userBudget = userProfile.budget || 5000;
+    // ============================================================
+    // 👟 MASTER SHOE DATABASE (Source of Truth)
+    // ============================================================
+    // I have pre-filled this with the specific models you requested.
+    // You can append more rows from your Excel file here.
+    const SHOE_DATABASE = [
+      // --- 1. SUPER SHOES & RACERS (₹18k+) ---
+      { name: "Nike Alphafly 3", brand: "Nike", price: 22795, type: "Race Day", features: "ZoomX, Air Zoom, Carbon Plate", retailer: "Nike.in / Dawntown / Kicksmachine" },
+      { name: "Asics Metaspeed Sky Paris", brand: "Asics", price: 21999, type: "Race Day", features: "FF Turbo+, Carbon Plate, High Cadence", retailer: "Asics.in / Tata Cliq / Hype Fly" },
+      { name: "Adidas Adios Pro 3", brand: "Adidas", price: 24999, type: "Race Day", features: "Lightstrike Pro, EnergyRods", retailer: "Adidas.in / VegNonVeg" },
+      { name: "Puma Deviate Nitro Elite 3", brand: "Puma", price: 19999, type: "Race Day", features: "Nitro Elite Foam, Carbon Plate", retailer: "Puma.com / Flipkart" },
+      { name: "Saucony Endorphin Pro 4", brand: "Saucony", price: 23990, type: "Race Day", features: "PWRRUN HG, Carbon Plate", retailer: "Tata Cliq / Amazon" },
+      { name: "Hoka Cielo X1", brand: "Hoka", price: 23999, type: "Race Day", features: "PEBA Foam, Winged Carbon Plate", retailer: "Tata Cliq / Triworld" },
+      { name: "New Balance SC Elite v4", brand: "New Balance", price: 22999, type: "Race Day", features: "FuelCell, Carbon Plate", retailer: "New Balance India / Culture Circle" },
+      { name: "Nike Vaporfly 3", brand: "Nike", price: 20695, type: "Race Day", features: "ZoomX, Flyplate", retailer: "Nike.in / Dawntown" },
+
+      // --- 2. SUPER TRAINERS (Max Cushion + Speed) ---
+      { name: "Asics Superblast 2", brand: "Asics", price: 21999, type: "Super Trainer", features: "FF Turbo+, No Plate, Massive Stack", retailer: "Asics.in / VegNonVeg" },
+      { name: "Adidas Prime X 2 Strung", brand: "Adidas", price: 24999, type: "Super Trainer", features: "Illegal Stack Height, 2 Carbon Plates", retailer: "Adidas.in" },
+      { name: "New Balance SC Trainer v3", brand: "New Balance", price: 17999, type: "Super Trainer", features: "FuelCell, Carbon Plate", retailer: "New Balance India" },
+      { name: "Puma MagMax Nitro", brand: "Puma", price: 17999, type: "Max Cushion", features: "46mm Stack, Nitro Foam", retailer: "Puma.com / Flipkart" },
+      { name: "Hoka Skyward X", brand: "Hoka", price: 18999, type: "Super Trainer", features: "PEBA Foam, Carbon Plate, Stable", retailer: "Tata Cliq" },
+
+      // --- 3. DAILY TRAINERS (The Workhorses) ---
+      { name: "Nike Pegasus 41", brand: "Nike", price: 11895, type: "Daily", features: "ReactX Foam, Air Zoom", retailer: "Nike.in / Myntra / Amazon" },
+      { name: "Asics Novablast 4", brand: "Asics", price: 13999, type: "Daily", features: "FF Blast+ Eco, Trampoline Effect", retailer: "Amazon / Flipkart / Asics" },
+      { name: "Puma Velocity Nitro 3", brand: "Puma", price: 10999, type: "Daily", features: "Nitro Foam, Pumagrip", retailer: "Flipkart / Amazon / Puma" },
+      { name: "Adidas Adizero SL 2", brand: "Adidas", price: 11999, type: "Daily Speed", features: "Lightstrike Pro Insert, Lightweight", retailer: "Adidas.in / Myntra" },
+      { name: "Brooks Ghost 16", brand: "Brooks", price: 15499, type: "Daily", features: "DNA Loft v3, Nitrogen Injected", retailer: "Amazon / Brooks India" },
+      { name: "Saucony Ride 17", brand: "Saucony", price: 11990, type: "Daily", features: "PWRRUN+, Resilient Cushion", retailer: "Tata Cliq / Amazon" },
+      { name: "Hoka Clifton 9", brand: "Hoka", price: 12999, type: "Daily", features: "Balanced Cushion, Meta-Rocker", retailer: "Tata Cliq / Triworld" },
+      { name: "New Balance 1080v13", brand: "New Balance", price: 15999, type: "Daily Soft", features: "Fresh Foam X, Ultra Soft", retailer: "New Balance India" },
+      { name: "Reebok Floatride Energy 5", brand: "Reebok", price: 7999, type: "Daily", features: "Floatride Energy Foam", retailer: "Myntra / Reebok.in" },
+
+      // --- 4. MAX CUSHION (Recovery & Comfort) ---
+      { name: "Asics Nimbus 26", brand: "Asics", price: 16999, type: "Max Cushion", features: "PureGEL, FF Blast+ Eco", retailer: "Amazon / Asics.in" },
+      { name: "Nike Vomero 17", brand: "Nike", price: 14495, type: "Max Cushion", features: "ZoomX + Cushlon", retailer: "Nike.in / Myntra" },
+      { name: "Saucony Triumph 22", brand: "Saucony", price: 16299, type: "Max Cushion", features: "PWRRUN PB (PeBa), Plush", retailer: "Tata Cliq" },
+      { name: "New Balance Fresh Foam More v5", brand: "New Balance", price: 14999, type: "Max Cushion", features: "Massive Fresh Foam X", retailer: "New Balance India" },
+      { name: "Puma Magnify Nitro 2", brand: "Puma", price: 12999, type: "Max Cushion", features: "Full Nitro Midsole", retailer: "Flipkart / Puma" },
+      { name: "Brooks Glycerin 21", brand: "Brooks", price: 15499, type: "Max Cushion", features: "DNA Loft v3, Premium", retailer: "Brooks India" },
+
+      // --- 5. SPEED & TEMPO (Plated but not 'Super') ---
+      { name: "Puma Deviate Nitro 3", brand: "Puma", price: 15999, type: "Speed", features: "Carbon Plate, Nitro Foam", retailer: "Puma / Flipkart" },
+      { name: "Adidas Boston 12", brand: "Adidas", price: 15999, type: "Speed", features: "EnergyRods, Lightstrike Pro", retailer: "Adidas / VegNonVeg" },
+      { name: "Asics Magic Speed 4", brand: "Asics", price: 15999, type: "Speed", features: "Carbon Plate, FF Turbo", retailer: "Asics.in" },
+      { name: "Saucony Endorphin Speed 4", brand: "Saucony", price: 16990, type: "Speed", features: "Nylon Plate, PWRRUN PB", retailer: "Tata Cliq" },
+      { name: "Hoka Mach 6", brand: "Hoka", price: 13999, type: "Speed", features: "Super Critical Foam, No Plate", retailer: "Tata Cliq" },
+
+      // --- 6. INDIAN VALUE KINGS (Xtep / Budget) ---
+      { name: "Xtep 160x 5.0 Pro", brand: "Xtep", price: 14999, type: "Race", features: "Carbon Plate, PISA Foam", retailer: "Xtep India" },
+      { name: "Xtep 2000km", brand: "Xtep", price: 7999, type: "Daily", features: "Endurance Rubber, Stable", retailer: "Xtep India" },
+      { name: "Xtep Reactive Coil", brand: "Xtep", price: 6999, type: "Daily", features: "Soft Cushion", retailer: "Amazon / Xtep" },
+      { name: "Saucony Axon 3", brand: "Saucony", price: 6990, type: "Budget Max", features: "High Stack, Rocker", retailer: "Tata Cliq" },
+      { name: "Nike Winflo 11", brand: "Nike", price: 8695, type: "Budget Daily", features: "Cushlon 3.0, Full Air Unit", retailer: "Myntra / Nike" },
+      { name: "Puma Electrify Nitro 3", brand: "Puma", price: 6999, type: "Budget Daily", features: "Nitro Heel, ProFoam", retailer: "Flipkart" },
+      { name: "Asics GT-1000 13", brand: "Asics", price: 8999, type: "Stability", features: "LiteTruss, Gel", retailer: "Amazon" },
+
+      // -------------------------------------------------------------
+      // 📝 PASTE YOUR EXTRA EXCEL ROWS BELOW THIS LINE
+      // format: { name: "...", brand: "...", price: 1234, type: "...", features: "...", retailer: "..." },
+      // -------------------------------------------------------------
+    ];
+
+    // ============================================================
+    // 🧠 AI SEARCH LOGIC
+    // ============================================================
     
-    // FAILSAFE: If budget is High (>= 15k), unlock "Super Shoes" by removing the ceiling.
-    // If budget is Low (< 15k), keep the 40% buffer to prevent unaffordable results.
+    // 1. Budget Calculation (Strict)
+    const userBudget = userProfile.budget || 5000;
     let maxPrice;
-    if (userBudget >= 15000) {
-      maxPrice = 60000; // Allow Alphaflys, Metaspeeds, etc.
+    
+    if (userBudget >= 18000) {
+      maxPrice = 100000; // Unlock everything for high rollers
     } else {
-      maxPrice = Math.round(userBudget * 1.4);
+      maxPrice = Math.round(userBudget * 1.35); // 35% Buffer
     }
 
-    // 2. ULTRA-SPECIFIC INDIAN INVENTORY (2025-2026 Context)
-    // This list forces the AI to pick these exact shoes.
-    const indianShoeContext = `
-      HIGH-END RACE DAY (Carbon Plated / Super Shoes):
-      - Nike: Alphafly 3, Vaporfly 3.
-      - Asics: Metaspeed Sky Paris, Metaspeed Edge Paris.
-      - Adidas: Adios Pro 4, Adios Pro 3.
-      - Puma: Deviate Nitro Elite 3.
-      - Saucony: Endorphin Pro 4.
-      - New Balance: SC Elite v4.
-      - Hoka: Cielo X1, Rocket X2.
+    const minPrice = 2000; // Filter out cheap non-running shoes
 
-      MAX CUSHION / DAILY TRAINING (Premium):
-      - Asics: Nimbus 27 (often searched as 28), Superblast 2.
-      - Puma: MagMax Nitro, Magnify Nitro 2.
-      - Nike: Vomero 18 (Premium Plus), Invincible 3.
-      - Adidas: Prime X 2 Strung (Illegal cushion).
-      - New Balance: Fresh Foam More v5, 1080v14.
-      - Brooks: Glycerin Max.
-
-      SPEED / TEMPO (Plated but Cheaper):
-      - Puma: Deviate Nitro 3.
-      - Adidas: Takumi Sen 10, Boston 12.
-      - Asics: Magic Speed 4.
-      - Xtep: 160x 5.0 Pro, 160x 6.0.
-
-      DAILY DRIVERS (Reliable):
-      - Nike: Pegasus 41/42.
-      - Asics: Novablast 5.
-      - Puma: Velocity Nitro 3.
-      - Adidas: Adizero SL 2.
-    `;
-
-    // 3. RETAILER STRATEGY
-    // We explicitly tell AI to look at these stores for specific shoe types.
-    const retailerPrompt = `
-      RETAILER PRIORITY LIST:
-      - For Hype/Race Shoes (Alphafly, Metaspeed): Check [Dawntown, Kicksmachine, Hype Fly, Culture Circle, Hype Elixir].
-      - For Daily Trainers (Pegasus, Nitro): Check [Amazon.in, Flipkart, Myntra, Tata Cliq, Official Brand Sites].
-      - For Niche Performance (Hoka, Brooks, Xtep): Check [Triworld, Xtep India Official, Brooks India].
-    `;
-
+    // 2. The Prompt
     const systemPrompt = `
-      You are an Elite Running Shoe Analyst (Sole Review / RunTesters Level).
+      You are an Expert Running Shoe Algo.
       
-      USER BUDGET: ₹${userBudget} (Strict Ceiling: ₹${maxPrice})
-      GOAL: ${userProfile.goal}
+      USER PROFILE:
+      - Budget: ₹${userBudget}
+      - Goal: ${userProfile.goal}
+      - Arch: ${userProfile.arch}
+      - Weight: ${userProfile.weight}kg
       
+      YOUR DATABASE (Source of Truth):
+      ${JSON.stringify(SHOE_DATABASE)}
+
       YOUR MANDATE:
-      Select exactly 5 DISTINCT shoes from the "Inventory Context" that perfectly match the user's goal.
+      1. **Filter:** Scan the database. Pick exactly 5 shoes that fit the User Profile.
+      2. **Strict Pricing:** Ignore any shoe with price > ₹${maxPrice}.
+      3. **Goal Matching:**
+         - "Race Day": Prioritize 'Race Day' & 'Speed' types (Carbon Plates).
+         - "Beginner/Recovery": Prioritize 'Max Cushion' & 'Daily' types.
+      4. **Retailer Awareness:** Note the specific retailer in the "why_it_fits" to help the user.
       
-      CRITICAL LOGIC RULES:
-      1. **Race Day Logic:** - If User Goal is "Race Day Speed" or "Marathon Training" AND Budget is > ₹18k:
-         - YOU MUST RECOMMEND: Alphafly 3, Metaspeed Sky, Adios Pro 3/4, or Deviate Elite. 
-         - Do not suggest daily trainers like Pegasus here.
-         
-      2. **Max Cushion Logic:**
-         - If User Goal is "Beginner" or "Daily Fitness" or Feel is "Plush":
-         - YOU MUST RECOMMEND: Nimbus 27/28, MagMax, Vomero 18, or Superblast.
-      
-      3. **Brand Variety:** - Do NOT output 3 Nike shoes. Mix it up: 1 Asics, 1 Adidas, 1 Puma, 1 Hoka/Xtep.
-         
-      4. **Price Check:** - If the user has a high budget (20k+), DO NOT show them cheap shoes (under 10k). Show them premium options.
-      
-      ${indianShoeContext}
-      ${retailerPrompt}
-         
-      OUTPUT FORMAT:
-      Return ONLY a JSON array.
-      
+      OUTPUT FORMAT (JSON Only):
       [
         {
           "rank": 1,
-          "name": "Exact Model Name",
-          "price": Number (Integer only),
-          "match_percentage": Number (90-99),
+          "name": "Exact Name",
+          "price": Number,
+          "match_percentage": Number,
           "ratings": { "cushion": 1-5, "durability": 1-5, "energy_return": 1-5 },
-          "why_it_fits": "Technical breakdown (foam type, plate, drop). Use reviewer language.",
-          "brand": "Brand Name",
+          "why_it_fits": "Brief expert review mentioning features and which retailer has it.",
+          "brand": "Brand",
           "purchase_link": "https://www.google.com/search?q=buy+SHOE_NAME+India",
-          "retailer_name": "Specific Store (e.g. Kicksmachine / Amazon)"
+          "retailer_name": "Retailer from Database"
         }
       ]
     `;
 
-    const userMessage = `User Profile: ${JSON.stringify(userProfile)}`;
-
-    const result = await model.generateContent([systemPrompt, userMessage]);
+    const result = await model.generateContent([systemPrompt]);
     const response = await result.response;
     let text = response.text();
     
@@ -125,19 +143,13 @@ export default async function handler(req, res) {
     if (start === -1 || end === -1) return res.status(200).json([]);
 
     const jsonString = text.substring(start, end + 1);
-    let shoes = JSON.parse(jsonString);
-
-    // 4. FINAL SAFETY FILTER
-    shoes = shoes.filter(shoe => {
-      const price = parseInt(shoe.price);
-      // Only filter out if price is absurdly high (above 60k) or clearly bad data
-      return !isNaN(price) && price <= maxPrice;
-    });
+    const shoes = JSON.parse(jsonString);
 
     res.status(200).json(shoes);
 
   } catch (error) {
     console.error("Gemini API Error:", error);
+    // Fail gracefully with an empty list so the UI handles it
     res.status(200).json([]); 
   }
 }
