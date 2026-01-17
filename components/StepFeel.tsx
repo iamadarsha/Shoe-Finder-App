@@ -15,21 +15,24 @@ const StepFeel: React.FC<Props> = ({ data, updateData, onNext }) => {
       title: 'Plush Cloud', 
       desc: 'Maximum softness for easy recovery.', 
       icon: 'cloud',
-      color: 'text-blue-300' 
+      color: 'text-blue-300',
+      bg: 'bg-blue-500/20'
     },
     { 
       id: 'balanced', 
       title: 'Balanced', 
       desc: 'Versatile mix of comfort & response.', 
       icon: 'balance',
-      color: 'text-primary' 
+      color: 'text-primary',
+      bg: 'bg-primary/20'
     },
     { 
       id: 'firm', 
       title: 'Firm & Snappy', 
       desc: 'Fast feel for speed work and racing.', 
       icon: 'bolt',
-      color: 'text-orange-400' 
+      color: 'text-orange-400',
+      bg: 'bg-orange-500/20'
     },
   ];
 
@@ -47,41 +50,35 @@ const StepFeel: React.FC<Props> = ({ data, updateData, onNext }) => {
         </p>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 pb-6 scroll-smooth space-y-4 pt-4">
+      <div className="flex-1 overflow-y-auto px-6 pb-6 pt-4 space-y-4">
         {options.map((opt) => (
-          <label key={opt.id} className="group cursor-pointer block">
-            <input
-              type="radio"
-              name="feel"
-              className="peer sr-only"
-              value={opt.id}
-              checked={data.feel === opt.id}
-              onChange={() => updateData('feel', opt.id)}
-            />
-            <div className="relative flex items-center justify-between p-5 rounded-[2rem] border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:border-primary/50 dark:hover:bg-white/10 transition-all duration-300 overflow-hidden">
-              
-              <div className="flex flex-col gap-1 z-10 relative">
-                <span className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
-                  {opt.title}
-                </span>
-                <span className="text-sm font-medium text-slate-500 dark:text-[#cbcb90] max-w-[160px]">
-                  {opt.desc}
-                </span>
-              </div>
-
-              {/* Icon Visual */}
-              <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-white/5 flex items-center justify-center border border-slate-200 dark:border-white/5 peer-checked:bg-primary/20 peer-checked:border-primary/50 transition-all">
-                <span className={`material-symbols-outlined text-4xl ${opt.color} peer-checked:text-primary`}>
-                  {opt.icon}
-                </span>
-              </div>
-
-              {/* Checkmark */}
-              <div className="absolute top-4 right-4 opacity-0 peer-checked:opacity-100 text-primary transition-opacity transform translate-x-2 peer-checked:translate-x-0">
-                 <span className="material-symbols-outlined text-xl filled">check_circle</span>
-              </div>
+          <div 
+            key={opt.id}
+            onClick={() => updateData('feel', opt.id)}
+            className={`cursor-pointer relative flex items-center justify-between p-5 rounded-[2rem] border-2 transition-all duration-200 ${
+              data.feel === opt.id 
+                ? 'border-primary bg-white/10 shadow-[0_0_15px_rgba(242,242,13,0.1)]' 
+                : 'border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 hover:border-primary/50'
+            }`}
+          >
+            <div className="flex flex-col gap-1 z-10 relative pointer-events-none">
+              <span className={`text-lg font-bold transition-colors ${data.feel === opt.id ? 'text-primary' : 'text-slate-900 dark:text-white'}`}>
+                {opt.title}
+              </span>
+              <span className="text-sm font-medium text-slate-500 dark:text-[#cbcb90] max-w-[160px]">
+                {opt.desc}
+              </span>
             </div>
-          </label>
+
+            {/* Icon Visual */}
+            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border border-white/5 transition-all ${
+               data.feel === opt.id ? 'bg-primary text-black' : `${opt.bg} ${opt.color}`
+            }`}>
+              <span className="material-symbols-outlined text-3xl">
+                {opt.icon}
+              </span>
+            </div>
+          </div>
         ))}
       </div>
 
