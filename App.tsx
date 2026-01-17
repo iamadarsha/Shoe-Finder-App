@@ -4,6 +4,7 @@ import StepGoal from './components/StepGoal';
 import StepTerrain from './components/StepTerrain';
 import StepProfile from './components/StepProfile';
 import StepFeel from './components/StepFeel';
+import StepBudget from './components/StepBudget'; // NEW IMPORT
 import StepResults from './components/StepResults';
 import { getShoeRecommendations } from './services/geminiService';
 
@@ -14,7 +15,7 @@ const initialProfile: UserProfile = {
   arch: 'neutral',
   injuries: [],
   feel: '',
-  budget: 12000
+  budget: 12000 // Default budget
 };
 
 const App: React.FC = () => {
@@ -29,7 +30,8 @@ const App: React.FC = () => {
   };
 
   const nextStep = () => {
-    if (step === Step.FEEL) {
+    // Flow: Goal -> Terrain -> Profile -> Feel -> Budget -> Results
+    if (step === Step.BUDGET) {
       fetchRecommendations();
     } else {
       setStep(prev => prev + 1);
@@ -77,7 +79,6 @@ const App: React.FC = () => {
         <h2 className="text-2xl font-bold text-white mb-2">Analyzing your profile...</h2>
         <p className="text-white/60">Scouring runner databases for your perfect match.</p>
         
-        {/* Footer for Loading Screen */}
         <div className="absolute bottom-8 w-full text-center">
            <p className="text-white/20 text-[10px] uppercase tracking-widest font-bold">
              Made with Love by Adarsha
@@ -104,7 +105,6 @@ const App: React.FC = () => {
               <span className="material-symbols-outlined">refresh</span>
               Try Again
             </button>
-            
             <button 
               onClick={restartOnboarding}
               className="w-full bg-white/5 text-white px-6 py-4 rounded-full font-bold hover:bg-white/10 transition-colors"
@@ -118,7 +118,7 @@ const App: React.FC = () => {
 
   return (
     <div className="relative flex flex-col min-h-screen w-full max-w-md mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden">
-      {/* Progress Header for Steps 1-4 */}
+      {/* Progress Header for Steps */}
       {step < Step.RESULTS && (
         <div className="absolute top-0 left-0 w-full p-6 z-20 pointer-events-none">
           <div className="flex items-center justify-between">
@@ -129,7 +129,8 @@ const App: React.FC = () => {
               <span className="material-symbols-outlined">arrow_back</span>
             </button>
             <div className="flex gap-2">
-              {[1, 2, 3, 4].map((s) => (
+              {/* Added 5th dot for Budget */}
+              {[1, 2, 3, 4, 5].map((s) => (
                 <div 
                   key={s} 
                   className={`h-1.5 w-8 rounded-full transition-all duration-300 ${s <= step ? 'bg-primary shadow-[0_0_8px_rgba(242,242,13,0.5)]' : 'bg-slate-200 dark:bg-white/10'}`}
@@ -176,9 +177,17 @@ const App: React.FC = () => {
               onBack={prevStep} 
             />
           )}
+          {/* INSERTED BUDGET STEP */}
+          {step === Step.BUDGET && (
+            <StepBudget 
+              data={profile} 
+              updateData={updateData} 
+              onNext={nextStep} 
+              onBack={prevStep} 
+            />
+          )}
           {step === Step.RESULTS && (
             <>
-              {/* --- Social Plug (Final Screen) --- */}
               <div className="w-full bg-[#161e2e]/80 backdrop-blur-md border-b border-white/5 py-3 px-6 text-center z-10 relative">
                 <p className="text-slate-400 text-xs font-medium">
                   Thanks for using the app! Made by <span className="text-primary font-bold">Adarsha</span>
@@ -193,18 +202,16 @@ const App: React.FC = () => {
                   <span className="material-symbols-outlined text-[14px]">open_in_new</span>
                 </a>
               </div>
-              {/* ---------------------------------- */}
               
               <StepResults 
                 recommendations={recommendations} 
                 profile={profile}
-                onBack={() => setStep(Step.FEEL)}
+                onBack={() => setStep(Step.BUDGET)} 
               />
             </>
           )}
         </div>
 
-        {/* --- Global Footer for Intermediate Steps --- */}
         {step !== Step.GOAL && step !== Step.RESULTS && (
           <div className="w-full py-6 text-center bg-transparent z-10">
             <p className="text-slate-500 dark:text-slate-500/50 text-[10px] font-bold uppercase tracking-widest">
