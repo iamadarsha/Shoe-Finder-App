@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { UserProfile } from '../types';
 
 interface Props {
@@ -8,152 +8,191 @@ interface Props {
   onBack: () => void;
 }
 
-const StepProfile: React.FC<Props> = ({ data, updateData, onNext }) => {
-  const toggleInjury = (id: string) => {
+const StepProfile: React.FC<Props> = ({ data, updateData, onNext, onBack }) => {
+  // State to handle which info modal is open
+  const [activeInfo, setActiveInfo] = useState<string | null>(null);
+
+  const injuries = [
+    'Shin Splints', 'Knee Pain', 'Achilles Issue', 'Plantar Fasciitis', 'Ankle Instability', 'Calf Strain'
+  ];
+
+  const arches = [
+    { 
+      id: 'flat', 
+      title: 'Low Arch (Flat Feet)', 
+      icon_scale: 'scale-x-125', // Wider footprint
+      description: 'Your feet roll inward (overpronation) when you run. You likely need "Stability" or "Motion Control" shoes to prevent injury.'
+    },
+    { 
+      id: 'neutral', 
+      title: 'Medium Arch (Normal)', 
+      icon_scale: 'scale-100', // Normal
+      description: 'Your feet roll inward slightly to absorb shock, which is healthy. You can wear most "Neutral" or "Daily Trainer" shoes.'
+    },
+    { 
+      id: 'high', 
+      title: 'High Arch', 
+      icon_scale: 'scale-x-75', // Narrower footprint
+      description: 'Your feet are rigid and don\'t roll inward much (supination). You need "Cushioned" shoes to absorb shock.'
+    },
+  ];
+
+  const toggleInjury = (injury: string) => {
     const current = data.injuries;
-    if (id === 'none') {
-      updateData('injuries', []);
-      return;
-    }
-    // If 'none' was selected, clear it when selecting specific injuries
-    let newInjuries = current.filter(i => i !== 'none');
-    
-    if (newInjuries.includes(id)) {
-      newInjuries = newInjuries.filter((i) => i !== id);
+    if (current.includes(injury)) {
+      updateData('injuries', current.filter(i => i !== injury));
     } else {
-      newInjuries = [...newInjuries, id];
+      updateData('injuries', [...current, injury]);
     }
-    updateData('injuries', newInjuries);
   };
 
-  const injuriesList = [
-    { id: 'shin', label: 'Shin Splints' },
-    { id: 'knee', label: 'Knee Pain' },
-    { id: 'achilles', label: 'Achilles Issue' },
-    { id: 'plantar', label: 'Plantar Fasciitis' },
-    { id: 'none', label: 'None' },
-  ];
+  const handleWeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateData('weight', parseInt(e.target.value) || '');
+  };
 
   return (
     <div className="flex flex-col h-full relative">
-      <div className="px-6 pt-4 pb-2">
-        <h1 className="text-3xl font-bold leading-tight mb-2 text-white">Tell us about your stride.</h1>
-        <p className="text-white/70 text-base leading-relaxed">This helps us find shoes with the right cushioning and support.</p>
+      <div className="px-6 pt-6 pb-2">
+        <h1 className="text-[32px] font-extrabold leading-[1.1] tracking-tight text-slate-900 dark:text-white mb-2">
+          Tell us about <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#ccff00]">
+            your stride.
+          </span>
+        </h1>
+        <p className="text-slate-500 dark:text-slate-400 text-sm">
+          This helps us find shoes with the right cushioning and support.
+        </p>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 pb-24 no-scrollbar space-y-8">
-        {/* Weight */}
-        <div>
-          <label className="block text-sm font-semibold text-white/90 mb-3 ml-1 uppercase tracking-wide">Current Weight</label>
+      <div className="flex-1 overflow-y-auto px-6 pb-6 scroll-smooth">
+        
+        {/* Weight Section */}
+        <div className="mb-8">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 ml-1">
+            Current Weight
+          </label>
           <div className="relative group">
             <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary flex items-center pointer-events-none">
-              <span className="material-symbols-outlined text-[28px]">monitor_weight</span>
+              <span className="material-symbols-outlined text-[24px]">monitor_weight</span>
             </div>
             <input
+              className="w-full bg-white dark:bg-white/5 border-2 border-slate-200 dark:border-white/10 focus:border-primary focus:ring-0 text-slate-900 dark:text-white text-2xl font-bold rounded-2xl py-4 pl-12 pr-16 outline-none transition-all placeholder:text-slate-300 dark:placeholder:text-white/20"
+              placeholder="0"
               type="number"
               value={data.weight || ''}
-              onChange={(e) => updateData('weight', parseFloat(e.target.value))}
-              className="w-full bg-surface-dark border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary text-white text-2xl font-semibold rounded-2xl py-5 pl-14 pr-16 outline-none transition-all placeholder:text-white/20"
-              placeholder="0"
+              onChange={handleWeightChange}
             />
-            <div className="absolute right-6 top-1/2 -translate-y-1/2 text-white/50 font-medium text-lg pointer-events-none">
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-lg pointer-events-none">
               kg
             </div>
           </div>
         </div>
 
-        {/* Budget */}
-        <div>
-          <label className="block text-sm font-semibold text-white/90 mb-3 ml-1 uppercase tracking-wide">Budget (INR)</label>
-          <div className="relative group">
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-primary flex items-center pointer-events-none">
-              <span className="material-symbols-outlined text-[28px]">currency_rupee</span>
-            </div>
-            <input
-              type="number"
-              value={data.budget || ''}
-              onChange={(e) => updateData('budget', parseFloat(e.target.value))}
-              className="w-full bg-surface-dark border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary text-white text-2xl font-semibold rounded-2xl py-5 pl-14 pr-4 outline-none transition-all placeholder:text-white/20"
-              placeholder="10000"
-            />
-          </div>
-        </div>
-
-        {/* Arch Type */}
-        <div>
-          <label className="block text-sm font-semibold text-white/90 mb-3 ml-1 uppercase tracking-wide">Arch Type</label>
+        {/* Arch Type Section */}
+        <div className="mb-8">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 ml-1">
+            Arch Type
+          </label>
           <div className="grid grid-cols-3 gap-3">
-            {['flat', 'neutral', 'high'].map((type) => (
-              <label key={type} className="cursor-pointer group relative">
-                <input
-                  type="radio"
-                  name="arch"
-                  className="peer sr-only"
-                  checked={data.arch === type}
-                  onChange={() => updateData('arch', type)}
-                />
-                <div className="flex flex-col items-center justify-center p-4 rounded-2xl border border-white/10 bg-surface-dark peer-checked:bg-primary/20 peer-checked:border-primary transition-all h-28">
-                  <span 
-                    className="material-symbols-outlined text-3xl mb-2 text-white/60 peer-checked:text-primary transition-colors"
-                    style={type === 'high' ? { transform: 'scaleY(0.8)' } : {}}
-                  >
-                    footprint
-                  </span>
-                  <span className="text-sm font-medium text-white/80 peer-checked:text-primary peer-checked:font-bold capitalize">
-                    {type}
-                  </span>
-                </div>
-                {data.arch === type && (
-                  <div className="absolute top-2 right-2 text-primary transition-opacity">
-                    <span className="material-symbols-outlined text-lg filled">check_circle</span>
+            {arches.map((arch) => (
+              <div key={arch.id} className="relative">
+                <label className="cursor-pointer group block h-full">
+                  <input
+                    type="radio"
+                    name="arch"
+                    className="peer sr-only"
+                    checked={data.arch === arch.id}
+                    onChange={() => updateData('arch', arch.id)}
+                  />
+                  <div className="flex flex-col items-center justify-center p-3 rounded-2xl border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 peer-checked:bg-primary/10 peer-checked:border-primary transition-all h-32 hover:border-primary/50 relative">
+                    
+                    {/* Footprint Icon with CSS Transform for Shape */}
+                    <span className={`material-symbols-outlined text-4xl mb-3 text-slate-300 dark:text-white/20 peer-checked:text-primary transition-all duration-300 ${arch.icon_scale}`} style={{ transformOrigin: 'center' }}>
+                      footprint
+                    </span>
+                    
+                    <span className="text-xs font-bold text-center text-slate-600 dark:text-white/80 peer-checked:text-slate-900 dark:peer-checked:text-white leading-tight">
+                      {arch.title}
+                    </span>
+
+                    {/* Checkmark */}
+                    <div className="absolute top-2 right-2 opacity-0 peer-checked:opacity-100 text-primary transition-opacity">
+                      <span className="material-symbols-outlined text-base filled">check_circle</span>
+                    </div>
+                  </div>
+                </label>
+
+                {/* Info Button */}
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveInfo(activeInfo === arch.id ? null : arch.id);
+                  }}
+                  className="absolute top-2 left-2 w-6 h-6 rounded-full bg-slate-100 dark:bg-white/10 hover:bg-primary hover:text-black flex items-center justify-center text-slate-400 transition-colors z-10"
+                >
+                  <span className="material-symbols-outlined text-[14px]">info</span>
+                </button>
+
+                {/* Info Popover */}
+                {activeInfo === arch.id && (
+                  <div className="absolute bottom-full left-0 w-[200%] z-20 mb-2 p-3 bg-slate-800 text-white text-xs rounded-xl shadow-xl border border-white/10 animate-fade-in pointer-events-none">
+                    {arch.description}
                   </div>
                 )}
-              </label>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Injuries */}
-        <div>
-          <label className="block text-sm font-semibold text-white/90 mb-3 ml-1 uppercase tracking-wide">Past Injuries</label>
-          <div className="flex flex-wrap gap-3">
-            {injuriesList.map((item) => {
-              const checked = item.id === 'none' ? data.injuries.length === 0 : data.injuries.includes(item.id);
-
-              return (
-                <label key={item.id} className="cursor-pointer">
-                  <input
-                    type="checkbox"
-                    className="peer sr-only"
-                    checked={checked}
-                    onChange={() => toggleInjury(item.id)}
-                  />
-                  <div className={`px-5 py-3 rounded-full border font-medium transition-all hover:border-primary/50 flex items-center gap-2
-                    ${checked 
-                      ? 'bg-primary text-black border-primary' 
-                      : 'bg-surface-dark text-white/80 border-white/10'
-                    }
-                  `}>
-                    <span>{item.label}</span>
-                    {checked && item.id !== 'none' && <span className="material-symbols-outlined text-lg">close</span>}
-                  </div>
-                </label>
-              );
-            })}
+        {/* Injuries Section */}
+        <div className="mb-4">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3 ml-1">
+            Past Injuries / Concerns
+          </label>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => updateData('injuries', [])}
+              className={`px-4 py-2 rounded-full border-2 text-sm font-bold transition-all ${
+                data.injuries.length === 0
+                  ? 'bg-primary border-primary text-black'
+                  : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 hover:border-primary/50'
+              }`}
+            >
+              None
+            </button>
+            {injuries.map((injury) => (
+              <button
+                key={injury}
+                onClick={() => toggleInjury(injury)}
+                className={`px-4 py-2 rounded-full border-2 text-sm font-bold transition-all ${
+                  data.injuries.includes(injury)
+                    ? 'bg-primary border-primary text-black'
+                    : 'bg-white dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 hover:border-primary/50'
+                }`}
+              >
+                {injury}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background-dark via-background-dark to-transparent">
+      <div className="flex-none px-6 py-6 pb-8 border-t border-slate-200 dark:border-white/5">
         <button
           onClick={onNext}
-          disabled={!data.weight || !data.budget}
-          className="w-full bg-primary hover:bg-yellow-400 disabled:opacity-50 text-black font-bold text-lg py-4 rounded-full shadow-lg shadow-yellow-900/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+          className="w-full h-14 rounded-full bg-primary hover:bg-[#d9d90d] active:scale-[0.98] text-background-dark text-base font-bold tracking-wide transition-all flex items-center justify-center shadow-[0_0_25px_rgba(242,242,13,0.2)]"
         >
           Continue
-          <span className="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
+      
+      {/* Click outside to close info logic overlay */}
+      {activeInfo && (
+        <div 
+          className="fixed inset-0 z-0 bg-transparent" 
+          onClick={() => setActiveInfo(null)}
+        />
+      )}
     </div>
   );
 };
