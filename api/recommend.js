@@ -8,45 +8,50 @@ export default async function handler(req, res) {
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  // Using the model you selected that supports higher limits
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
   try {
     const userProfile = req.body;
+    
+    // Calculate strict upper limit (Budget + 40%)
+    const userBudget = userProfile.budget || 5000;
+    const maxPrice = Math.round(userBudget * 1.4); 
 
     const systemPrompt = `
-      You are an expert Running Shoe Consultant for the Indian Market (2025-2026 Context).
+      You are an expert Running Shoe Consultant for India (2025 Context).
+      
+      USER BUDGET: ₹${userBudget}
+      STRICT PRICE CEILING: ₹${maxPrice} (Do NOT recommend shoes above this price).
       
       YOUR TASK:
-      Analyze the user profile and recommend the top 5 running shoes available in India.
+      Analyze the user profile and return a JSON array of 5 running shoes available in India.
       
       CRITICAL RULES:
-      1. **Strict Budgeting:** If the user's budget is very low (e.g., under ₹2500) and they ask for high-end features (like "Carbon Plate", "Marathon Racing", or "Super Shoe"), YOU MUST RETURN AN EMPTY ARRAY []. Do not recommend cheap casual shoes as "racing shoes".
-      2. **New Releases:** Prioritize 2025 and 2026 models. Look for:
-         - Nike Vomero 18, Pegasus 41/42
-         - Asics Nimbus 27/28, Novablast 5
-         - Adidas Adizero SL 2, Boston 13
-         - Puma Velocity Nitro 3, Deviate Nitro 3
-         - Xtep 160x series (popular in India)
-         - Brooks Ghost 16, Glycerin 21/22
-      3. **Indian Availability:** Only suggest shoes purchasable on: Amazon India, Flipkart, Myntra, Tata Cliq, VegNonVeg, Superkicks, or official Indian brand websites (.in).
-      4. **Accuracy:** Price must be the current estimated street price in INR.
+      1. **Strict Pricing:** - Only suggest shoes between ₹2000 and ₹${maxPrice}.
+         - If the user needs a "Carbon Plated Racer" but budget is ₹3500, RETURN AN EMPTY ARRAY []. Do not suggest a cheap daily trainer as a racer.
+         - If no quality shoes exist in this specific price range for their specific goal, return [].
+         
+      2. **Indian Availability & Links:** - Shoes must be available on Amazon.in, Flipkart, Myntra, Tata Cliq, or Official Brand India sites.
+         - Provide a "purchase_link" field. Use a search query format if a direct link is risky: "https://www.amazon.in/s?k=Nike+Pegasus+40" or "https://www.google.com/search?q=buy+Nike+Pegasus+40+India".
       
+      3. **New Releases (2024-2025):**
+         - Prioritize: Nike Pegasus 41, Vomero 17/18, Asics Novablast 4/5, Puma Velocity Nitro 3, Adidas SL 2.
+         
       OUTPUT FORMAT:
-      Return a JSON array of objects.
-      If no shoes fit the strict criteria (especially budget), return an empty array [].
+      Return a JSON array of objects. If no shoes fit, return [].
       
       JSON Structure:
       [
         {
           "rank": 1,
           "name": "Full Shoe Name",
-          "price_current": Number (INR),
-          "price_original": Number (INR),
+          "price_current": Number (Raw Integer, e.g. 4500),
           "match_percentage": Number,
           "ratings": { "cushion": Number, "durability": Number, "energy_return": Number },
-          "why_it_fits": "Specific reason citing Indian road conditions or humidity.",
-          "image_keyword": "Shoe Name side profile"
+          "why_it_fits": "Specific reason...",
+          "brand": "Brand Name",
+          "purchase_link": "URL_STRING",
+          "retailer_name": "Amazon.in / Flipkart / Official Site"
         }
       ]
       
