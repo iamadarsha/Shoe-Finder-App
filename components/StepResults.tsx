@@ -73,7 +73,8 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
                        <p className="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">{shoe.brand}</p>
                     </div>
                     <div className="text-right">
-                       <span className="block text-lg font-bold text-primary">₹{shoe.price}</span>
+                       {/* FIX: Removed the hardcoded ₹ symbol because the backend sends it now */}
+                       <span className="block text-lg font-bold text-primary">{shoe.price}</span>
                        <span className="text-[10px] font-bold text-slate-500 bg-white/5 px-2 py-1 rounded-full">{shoe.matchPercentage}% Match</span>
                     </div>
                  </div>
@@ -81,7 +82,6 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
 
               {/* Ratings & Content */}
               <div className="px-5 pb-5">
-                {/* Ratings Bars */}
                 <div className="space-y-3 mb-5 mt-2">
                   <div className="flex items-center gap-3">
                     <span className="text-[10px] font-bold text-slate-500 w-16 uppercase">Cushion</span>
@@ -97,7 +97,6 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
                   </div>
                 </div>
 
-                {/* AI Explanation */}
                 <div className="bg-black/20 rounded-xl p-3 border border-white/5 mb-4">
                    <div className="flex gap-2 items-start">
                      <span className="material-symbols-outlined text-primary text-sm mt-0.5 shrink-0">auto_awesome</span>
@@ -107,14 +106,14 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
                    </div>
                 </div>
 
-                {/* NEW CLICKABLE LINK BUTTON */}
+                {/* CLICKABLE LINK BUTTON */}
                 {(shoe as any).purchase_link && (
                   <a 
                     href={(shoe as any).purchase_link} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 text-white flex items-center justify-center gap-2 transition-all group"
-                    onClick={(e) => e.stopPropagation()} // Prevent clicking the card container
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <span className="text-xs font-bold uppercase tracking-wider">
                       Check Price on {(shoe as any).retailer_name || 'Store'}
@@ -129,7 +128,6 @@ const StepResults: React.FC<Props> = ({ recommendations, profile, onBack }) => {
           ))}
         </div>
 
-        {/* Disclaimer */}
         <div className="mt-8 mb-4 p-4 rounded-xl bg-white/5 border border-white/5">
           <div className="flex gap-2 items-start opacity-60">
             <span className="material-symbols-outlined text-sm mt-0.5">info</span>
