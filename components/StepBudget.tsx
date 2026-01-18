@@ -8,10 +8,9 @@ interface Props {
   onBack: () => void;
 }
 
-const StepBudget: React.FC<Props> = ({ data, updateData, onNext, onBack }) => {
+const StepBudget: React.FC<Props> = ({ data, updateData, onNext }) => {
   const budget = data.budget || 5000;
 
-  // Handle slider change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     updateData('budget', parseInt(e.target.value));
   };
@@ -43,7 +42,6 @@ const StepBudget: React.FC<Props> = ({ data, updateData, onNext, onBack }) => {
                 <span className="text-[10px] text-slate-400 uppercase tracking-widest mt-1">Target Price</span>
              </div>
           </div>
-          {/* Glow Effect */}
           <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full z-0 transform scale-110"></div>
         </div>
 
@@ -51,8 +49,8 @@ const StepBudget: React.FC<Props> = ({ data, updateData, onNext, onBack }) => {
         <div className="w-full max-w-xs space-y-6">
           <input
             type="range"
-            min="2000"
-            max="20000"
+            min="1500"      // Updated to 1.5k
+            max="45000"     // Updated to 45k
             step="500"
             value={budget}
             onChange={handleChange}
@@ -60,9 +58,9 @@ const StepBudget: React.FC<Props> = ({ data, updateData, onNext, onBack }) => {
           />
           
           <div className="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-wider">
-            <span>₹2k</span>
-            <span>₹10k</span>
-            <span>₹20k+</span>
+            <span>₹1.5k</span>
+            <span>₹20k</span>
+            <span>₹45k</span>
           </div>
         </div>
       </div>
