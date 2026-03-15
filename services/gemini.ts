@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 /**
  * Filters the shoe database based on user preferences, then asks Gemini
- * to pick the top 5 and write personalized explanations.
+ * to pick the top 5 with detailed reviews, scores, and personalized explanations.
  */
 export async function getShoeRecommendations(
   prefs: UserPreferences,
@@ -13,10 +13,9 @@ export async function getShoeRecommendations(
 ): Promise<ShoeRecommendation[]> {
   const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
-  // ── Step 1: Pre-filter shoes from the 233-shoe database ──
+  // ── Step 1: Pre-filter shoes from the 260-shoe database ──
   let filtered = shoeDatabase;
 
-  // Budget filter with 25% buffer
   const budgetMap: Record<string, number> = {
     budget: 8000,
     mid: 15000,
@@ -28,7 +27,6 @@ export async function getShoeRecommendations(
 
   filtered = filtered.filter((s) => s.priceMin <= maxPrice);
 
-  // Use case alignment
   const useCaseMap: Record<string, string[]> = {
     running: ['daily', 'cushion', 'speed', 'racing'],
     casual: ['casual', 'daily', 'budget'],
@@ -48,7 +46,6 @@ export async function getShoeRecommendations(
     }
   }
 
-  // Experience filter (soft — don't cut too aggressively)
   if (prefs.experience) {
     const expFiltered = filtered.filter((s) =>
       s.experienceLevel.includes(prefs.experience!)
@@ -58,12 +55,10 @@ export async function getShoeRecommendations(
     }
   }
 
-  // Cap at 40 shoes to keep prompt size manageable
   if (filtered.length > 40) {
     filtered = filtered.slice(0, 40);
   }
 
-  // Fallback: if filtering yields < 5 shoes, grab cheapest 15 from full DB
   let contextMessage = '';
   if (filtered.length < 5) {
     filtered = [...shoeDatabase]
@@ -73,7 +68,7 @@ export async function getShoeRecommendations(
       'NOTE: No shoes perfectly match this user\'s exact combination. Apologize briefly, then recommend the closest budget-friendly alternatives from the list below.';
   }
 
-  // ── Step 2: Build the prompt ──
+  // ── Step 2: Build the enhanced prompt ──
   const mileageLabel =
     prefs.mileage === 'low' ? '0–20 km/week' :
     prefs.mileage === 'medium' ? '20–50 km/week' : '50+ km/week';
@@ -102,7 +97,7 @@ export async function getShoeRecommendations(
     2
   );
 
-  const prompt = `You are SoleMate AI, an expert running shoe advisor combining the analytical depth of RunRepeat, the technical precision of Sole Review, and the real-world testing approach of RunTesters.
+  const prompt = `You are SoleMate AI, an expert running shoe advisor combining the analytical depth of RunRepeat (data-driven 0-100 scoring), the technical precision of Sole Review (foam density teardowns), and the real-world testing approach of RunTesters / The Run Testers.
 
 ${contextMessage}
 
@@ -113,36 +108,52 @@ USER PROFILE:
 - Weekly mileage: ${mileageLabel}
 - Budget: ${budgetLabel}
 
-AVAILABLE SHOES (pre-filtered from our 233-shoe India database):
+AVAILABLE SHOES (pre-filtered from our 260-shoe India database):
 ${shoeListJSON}
 
 YOUR TASK:
-Select the TOP 5 shoes from this list and return ONLY a raw JSON array. No markdown, no code fences, no explanation before or after.
+Select the TOP 5 shoes from this list. Return ONLY a raw JSON array — no markdown, no code fences, no text before or after.
 
-Each object must have:
+Each object MUST have ALL these fields:
 {
   "id": "the shoe id from the list",
-  "matchScore": 85-99 (realistic, best match gets highest),
-  "whyThisShoe": "2-3 sentences. Be specific about foam tech, stack height, drop. Mention how it matches their foot type and mileage. Reference the user's experience level. Sound like a knowledgeable running store expert, not a generic AI."
+  "matchScore": 85-99,
+  "whyThisShoe": "2-3 sentences. Be specific about foam tech, stack height, drop. Reference the user's foot type and mileage. Sound like a running store expert.",
+  "reviewSummary": "1-2 sentences summarizing what major review sites (RunRepeat, SoleReview, RunTesters) say about this shoe. Mention specific praise or criticism.",
+  "reviewScore": 78-95 (a realistic RunRepeat-style score out of 100 — NOT the same as matchScore. This is the shoe's objective quality rating regardless of user fit.),
+  "pros": ["3 specific pros — e.g. 'Lightstrike Pro foam returns 68% energy', 'Only 235g in US 10', 'Excellent heel-to-toe transition'"],
+  "cons": ["2 specific cons — e.g. 'Narrow toe box', 'Outsole wears fast on concrete', 'Not ideal for speeds below 5:00/km'"],
+  "bestFor": "One line — e.g. 'Long runs and marathon training at moderate pace'"
 }
 
 RULES:
 - ONLY select shoes from the provided list — never invent shoes
-- matchScore must be realistic (85-99 range), with clear differentiation between ranks
-- whyThisShoe must reference the specific user's profile, not be generic
-- If user has flat feet, prioritize stability shoes. If high arch, prioritize neutral cushion.
-- For beginners, avoid elite carbon racers. For advanced, skip entry-level shoes.
-- For trail use case, ONLY pick trail shoes.`;
+- matchScore = how well this shoe matches THIS USER (85-99, best match highest)
+- reviewScore = the shoe's objective quality rating from expert reviews (78-95, independent of user)
+- whyThisShoe must reference the specific user's profile — foot type, mileage, experience
+- pros must include at least one technical spec (foam name, weight, stack height, drop)
+- cons must be honest — every shoe has weaknesses
+- If user has flat feet, prioritize stability shoes
+- If high arch, prioritize neutral cushion
+- For beginners, avoid elite carbon racers
+- For trail use case, ONLY pick trail shoes`;
 
   const result = await model.generateContent(prompt);
   const text = result.response.text();
 
   try {
     const cleaned = text.replace(/```json|```/g, '').trim();
-    const aiPicks: Array<{ id: string; matchScore: number; whyThisShoe: string }> =
-      JSON.parse(cleaned);
+    const aiPicks: Array<{
+      id: string;
+      matchScore: number;
+      whyThisShoe: string;
+      reviewSummary: string;
+      reviewScore: number;
+      pros: string[];
+      cons: string[];
+      bestFor: string;
+    }> = JSON.parse(cleaned);
 
-    // Merge AI picks with full shoe data
     const recommendations: ShoeRecommendation[] = aiPicks
       .map((pick) => {
         const shoe = filtered.find((s) => s.id === pick.id);
@@ -159,6 +170,11 @@ RULES:
           plate: shoe.plate,
           tech: shoe.tech,
           whyThisShoe: pick.whyThisShoe,
+          reviewSummary: pick.reviewSummary || '',
+          reviewScore: pick.reviewScore || 80,
+          pros: pick.pros || [],
+          cons: pick.cons || [],
+          bestFor: pick.bestFor || '',
           buyLinks: shoe.buyLinks,
         };
       })

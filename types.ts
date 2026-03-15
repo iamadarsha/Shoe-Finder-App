@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════
 // SoleMate v2.0 — Master Type Definitions
-// 233 shoes · 15 brands · India market focus
+// 260 shoes · 16 brands · India market focus
 // ═══════════════════════════════════════════════════════
 
 // ── Quiz Types ──
@@ -38,6 +38,7 @@ export interface Shoe {
     amazon?: string;
     flipkart?: string;
     official?: string;
+    googleShopping?: string;
   };
 }
 
@@ -54,10 +55,16 @@ export interface ShoeRecommendation {
   plate: string;
   tech: string;
   whyThisShoe: string;
+  reviewSummary: string;
+  reviewScore: number;
+  pros: string[];
+  cons: string[];
+  bestFor: string;
   buyLinks: {
     amazon?: string;
     flipkart?: string;
     official?: string;
+    googleShopping?: string;
   };
 }
 
