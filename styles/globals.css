@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════
+   SoleMate v2.0 — Global Styles
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  --bg: #050507;
+  --bg-alt: #0A0A0F;
+  --surface: #111118;
+  --surface-hover: #181824;
+  --border: #1A1A2A;
+  --accent: #7C5CFC;
+  --accent-hover: #6B4EE8;
+  --green: #00C896;
+  --text: #E8E8ED;
+  --text-secondary: #8888A0;
+  --text-muted: #55556A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Figtree', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Remove default scrollbar on drawer */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, select {
+  transition: all 0.2s ease;
+}
+
+/* Prevent layout shift on font load */
+@font-face {
+  font-family: 'DM Sans';
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  font-display: swap;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(124, 92, 252, 0.3);
+  color: #E8E8ED;
+}
