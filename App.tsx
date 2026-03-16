@@ -72,6 +72,30 @@ export default function App() {
         />
       )}
 
+      <div className="fixed bottom-3 right-3 z-30 pointer-events-none">
+        <div
+          className="px-3 py-1.5 rounded-full border text-[11px] sm:text-xs pointer-events-auto"
+          style={{
+            background: 'rgba(12,12,18,0.72)',
+            borderColor: '#1A1A28',
+            color: '#7A7A90',
+            backdropFilter: 'blur(8px)',
+          }}
+        >
+          <span>Made by a fellow runner - Adarsha</span>
+          <span style={{ color: '#44445A' }}> · </span>
+          <a
+            href="https://www.instagram.com/iamadarsha/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-[#C4B5FD]"
+            style={{ color: '#A78BFA' }}
+          >
+            Follow me
+          </a>
+        </div>
+      </div>
+
       {chatOpen && (
         <ChatDrawer
           messages={chatMessages}
