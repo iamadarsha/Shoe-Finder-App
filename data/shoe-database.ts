@@ -1,8 +1,7 @@
 // ═══════════════════════════════════════════════════════
-// SoleMate Shoe Database — 260 shoes across 16 brands
-// Updated: 2026-03-16 (VERIFIED prices from Nike.in, Asics.co.in, Adidas.co.in)
-// Includes: 2025/2026 releases, clearance models, Google Shopping links
-// Sources: Nike.in, Asics.co.in, Adidas.co.in, Flipkart, SoleReview, RunTesters
+// SoleMate Shoe Database — 233 shoes across 15 brands
+// Auto-generated from Running Shoe Comparison Spreadsheet
+// Last updated: 2026-03-16
 // ═══════════════════════════════════════════════════════
 
 import { Shoe } from '../types';
@@ -30,8 +29,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Adios+Pro+4",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Adios+Pro+4",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Adios%20Pro%204",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Adios+Pro+4+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Adios%20Pro%204"
     }
   },
   {
@@ -56,8 +54,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Adios+Pro+3",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Adios+Pro+3",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Adios%20Pro%203",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Adios+Pro+3+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Adios%20Pro%203"
     }
   },
   {
@@ -82,8 +79,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Prime+X+2+Strung",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Prime+X+2+Strung",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Prime%20X%202%20Strung",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Prime+X+2+Strung+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Prime%20X%202%20Strung"
     }
   },
   {
@@ -108,8 +104,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Takumi+Sen+10",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Takumi+Sen+10",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Takumi%20Sen%2010",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Takumi+Sen+10+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Takumi%20Sen%2010"
     }
   },
   {
@@ -135,8 +130,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Boston+13",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Boston+13",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Boston%2013",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Boston+13+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Boston%2013"
     }
   },
   {
@@ -162,8 +156,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Boston+12",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Boston+12",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Boston%2012",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Boston+12+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Boston%2012"
     }
   },
   {
@@ -190,8 +183,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+Evo+SL",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+Evo+SL",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20Evo%20SL",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+Evo+SL+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20Evo%20SL"
     }
   },
   {
@@ -218,8 +210,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adizero+SL+2",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adizero+SL+2",
-      "official": "https://www.adidas.co.in/search?q=Adizero%20SL%202",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adizero+SL+2+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adizero%20SL%202"
     }
   },
   {
@@ -245,8 +236,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Ultraboost+5X",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Ultraboost+5X",
-      "official": "https://www.adidas.co.in/search?q=Ultraboost%205X",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Ultraboost+5X+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Ultraboost%205X"
     }
   },
   {
@@ -273,8 +263,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Ultraboost+Light",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Ultraboost+Light",
-      "official": "https://www.adidas.co.in/search?q=Ultraboost%20Light",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Ultraboost+Light+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Ultraboost%20Light"
     }
   },
   {
@@ -301,8 +290,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Ultraboost+1.0+/+22",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Ultraboost+1.0+/+22",
-      "official": "https://www.adidas.co.in/search?q=Ultraboost%201.0%20/%2022",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Ultraboost+1.0+%2F+22+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Ultraboost%201.0%20/%2022"
     }
   },
   {
@@ -328,8 +316,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Supernova+Prima",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Supernova+Prima",
-      "official": "https://www.adidas.co.in/search?q=Supernova%20Prima",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Supernova+Prima+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Supernova%20Prima"
     }
   },
   {
@@ -355,8 +342,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Supernova+Rise+2",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Supernova+Rise+2",
-      "official": "https://www.adidas.co.in/search?q=Supernova%20Rise%202",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Supernova+Rise+2+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Supernova%20Rise%202"
     }
   },
   {
@@ -382,8 +368,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Supernova+Rise",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Supernova+Rise",
-      "official": "https://www.adidas.co.in/search?q=Supernova%20Rise",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Supernova+Rise+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Supernova%20Rise"
     }
   },
   {
@@ -409,8 +394,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Supernova+Solution",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Supernova+Solution",
-      "official": "https://www.adidas.co.in/search?q=Supernova%20Solution",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Supernova+Solution+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Supernova%20Solution"
     }
   },
   {
@@ -436,8 +420,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adistar+3+/+CS",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adistar+3+/+CS",
-      "official": "https://www.adidas.co.in/search?q=Adistar%203%20/%20CS",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adistar+3+%2F+CS+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adistar%203%20/%20CS"
     }
   },
   {
@@ -463,8 +446,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Adistar+2.0",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Adistar+2.0",
-      "official": "https://www.adidas.co.in/search?q=Adistar%202.0",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Adistar+2.0+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Adistar%202.0"
     }
   },
   {
@@ -490,8 +472,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+4DFWD+4",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+4DFWD+4",
-      "official": "https://www.adidas.co.in/search?q=4DFWD%204",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+4DFWD+4+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=4DFWD%204"
     }
   },
   {
@@ -517,8 +498,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Switch+FWD+2",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Switch+FWD+2",
-      "official": "https://www.adidas.co.in/search?q=Switch%20FWD%202",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Switch+FWD+2+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Switch%20FWD%202"
     }
   },
   {
@@ -544,8 +524,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Terrex+Agravic+Speed+Ultra",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Terrex+Agravic+Speed+Ultra",
-      "official": "https://www.adidas.co.in/search?q=Terrex%20Agravic%20Speed%20Ultra",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Terrex+Agravic+Speed+Ultra+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Terrex%20Agravic%20Speed%20Ultra"
     }
   },
   {
@@ -572,8 +551,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Duramo+Speed",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Duramo+Speed",
-      "official": "https://www.adidas.co.in/search?q=Duramo%20Speed",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Duramo+Speed+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Duramo%20Speed"
     }
   },
   {
@@ -599,8 +577,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ADIDAS+Galaxy+6+/+7",
       "flipkart": "https://www.flipkart.com/search?q=ADIDAS+Galaxy+6+/+7",
-      "official": "https://www.adidas.co.in/search?q=Galaxy%206%20/%207",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Galaxy+6+%2F+7+running+shoes+India"
+      "official": "https://www.adidas.co.in/search?q=Galaxy%206%20/%207"
     }
   },
   {
@@ -625,8 +602,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Fast-R+NITRO+Elite+3",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Fast-R+NITRO+Elite+3",
-      "official": "https://in.puma.com/in/en/search?q=Fast-R+NITRO+Elite+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Fast-R+NITRO+Elite+3+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Fast-R+NITRO+Elite+3"
     }
   },
   {
@@ -651,8 +627,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Fast-R+NITRO+Elite+2",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Fast-R+NITRO+Elite+2",
-      "official": "https://in.puma.com/in/en/search?q=Fast-R+NITRO+Elite+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Fast-R+NITRO+Elite+2+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Fast-R+NITRO+Elite+2"
     }
   },
   {
@@ -677,8 +652,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Deviate+NITRO+Elite+3",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Deviate+NITRO+Elite+3",
-      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+Elite+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Deviate+NITRO+Elite+3+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+Elite+3"
     }
   },
   {
@@ -704,8 +678,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Deviate+NITRO+Elite+Trail",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Deviate+NITRO+Elite+Trail",
-      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+Elite+Trail",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Deviate+NITRO+Elite+Trail+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+Elite+Trail"
     }
   },
   {
@@ -731,8 +704,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Deviate+NITRO+3",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Deviate+NITRO+3",
-      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Deviate+NITRO+3+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+3"
     }
   },
   {
@@ -758,8 +730,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Deviate+NITRO+2",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Deviate+NITRO+2",
-      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Deviate+NITRO+2+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Deviate+NITRO+2"
     }
   },
   {
@@ -785,8 +756,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+MagMax+NITRO",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+MagMax+NITRO",
-      "official": "https://in.puma.com/in/en/search?q=MagMax+NITRO",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+MagMax+NITRO+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=MagMax+NITRO"
     }
   },
   {
@@ -812,8 +782,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+ForeverRun+NITRO",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+ForeverRun+NITRO",
-      "official": "https://in.puma.com/in/en/search?q=ForeverRun+NITRO",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+ForeverRun+NITRO+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=ForeverRun+NITRO"
     }
   },
   {
@@ -839,8 +808,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Velocity+NITRO+3",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Velocity+NITRO+3",
-      "official": "https://in.puma.com/in/en/search?q=Velocity+NITRO+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Velocity+NITRO+3+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Velocity+NITRO+3"
     }
   },
   {
@@ -866,8 +834,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Velocity+NITRO+2",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Velocity+NITRO+2",
-      "official": "https://in.puma.com/in/en/search?q=Velocity+NITRO+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Velocity+NITRO+2+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Velocity+NITRO+2"
     }
   },
   {
@@ -894,8 +861,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Magnify+NITRO+2",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Magnify+NITRO+2",
-      "official": "https://in.puma.com/in/en/search?q=Magnify+NITRO+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Magnify+NITRO+2+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Magnify+NITRO+2"
     }
   },
   {
@@ -921,8 +887,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Voyage+NITRO+3",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Voyage+NITRO+3",
-      "official": "https://in.puma.com/in/en/search?q=Voyage+NITRO+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Voyage+NITRO+3+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Voyage+NITRO+3"
     }
   },
   {
@@ -949,8 +914,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Liberate+NITRO+2",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Liberate+NITRO+2",
-      "official": "https://in.puma.com/in/en/search?q=Liberate+NITRO+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Liberate+NITRO+2+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Liberate+NITRO+2"
     }
   },
   {
@@ -976,8 +940,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Electrify+NITRO+3",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Electrify+NITRO+3",
-      "official": "https://in.puma.com/in/en/search?q=Electrify+NITRO+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Electrify+NITRO+3+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Electrify+NITRO+3"
     }
   },
   {
@@ -1002,8 +965,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Puma+x+Hyrox+Deviate",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Puma+x+Hyrox+Deviate",
-      "official": "https://in.puma.com/in/en/search?q=Puma+x+Hyrox+Deviate",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Puma+x+Hyrox+Deviate+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Puma+x+Hyrox+Deviate"
     }
   },
   {
@@ -1029,8 +991,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Puma+x+Ciele+ForeverRun",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Puma+x+Ciele+ForeverRun",
-      "official": "https://in.puma.com/in/en/search?q=Puma+x+Ciele+ForeverRun",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Puma+x+Ciele+ForeverRun+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Puma+x+Ciele+ForeverRun"
     }
   },
   {
@@ -1055,8 +1016,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Aviator",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Aviator",
-      "official": "https://in.puma.com/in/en/search?q=Aviator",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Aviator+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Aviator"
     }
   },
   {
@@ -1082,8 +1042,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=PUMA+Softride+Series",
       "flipkart": "https://www.flipkart.com/search?q=PUMA+Softride+Series",
-      "official": "https://in.puma.com/in/en/search?q=Softride+Series",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Softride+Series+running+shoes+India"
+      "official": "https://in.puma.com/in/en/search?q=Softride+Series"
     }
   },
   {
@@ -1109,8 +1068,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vomero+18",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vomero+18",
-      "official": "https://www.nike.com/in/w?q=Vomero%2018",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vomero+18+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vomero%2018"
     }
   },
   {
@@ -1118,9 +1076,9 @@ export const SHOE_DATABASE: Shoe[] = [
     "brand": "Nike",
     "model": "Vomero Plus",
     "category": "Max Cushion / Stability",
-    "priceMin": 15995,
-    "priceMax": 17995,
-    "priceDisplay": "₹15,995 - ₹17,995",
+    "priceMin": 15295,
+    "priceMax": 16500,
+    "priceDisplay": "₹15,295 - ₹16,500",
     "foam": "ZoomX + ReactX",
     "plate": "",
     "tech": "Wider base, supportive geometry",
@@ -1137,8 +1095,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vomero+Plus",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vomero+Plus",
-      "official": "https://www.nike.com/in/w?q=Vomero%20Plus",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vomero+Plus+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vomero%20Plus"
     }
   },
   {
@@ -1164,8 +1121,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vomero+17",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vomero+17",
-      "official": "https://www.nike.com/in/w?q=Vomero%2017",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vomero+17+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vomero%2017"
     }
   },
   {
@@ -1191,8 +1147,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vomero+16",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vomero+16",
-      "official": "https://www.nike.com/in/w?q=Vomero%2016",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vomero+16+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vomero%2016"
     }
   },
   {
@@ -1218,8 +1173,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vomero+5",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vomero+5",
-      "official": "https://www.nike.com/in/w?q=Vomero%205",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vomero+5+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vomero%205"
     }
   },
   {
@@ -1245,8 +1199,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vomero+Premium",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vomero+Premium",
-      "official": "https://www.nike.com/in/w?q=Vomero%20Premium",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vomero+Premium+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vomero%20Premium"
     }
   },
   {
@@ -1255,8 +1208,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Alphafly 3",
     "category": "Elite Marathon Racing",
     "priceMin": 22795,
-    "priceMax": 23795,
-    "priceDisplay": "₹22,795 - ₹23,795",
+    "priceMax": 35000,
+    "priceDisplay": "₹22,795 - ₹35,000",
     "foam": "Full ZoomX",
     "plate": "Flyplate (Carbon)",
     "tech": "Foam: Full ZoomX  Plate: Flyplate (Carbon)",
@@ -1271,8 +1224,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Alphafly+3",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Alphafly+3",
-      "official": "https://www.nike.com/in/w?q=Alphafly%203",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Alphafly+3+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Alphafly%203"
     }
   },
   {
@@ -1281,8 +1233,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Vaporfly 3",
     "category": "Elite Marathon Racing",
     "priceMin": 20695,
-    "priceMax": 22495,
-    "priceDisplay": "₹20,695 - ₹22,495",
+    "priceMax": 24000,
+    "priceDisplay": "₹20,695 - ₹24,000",
     "foam": "ZoomX",
     "plate": "Flyplate (Carbon)",
     "tech": "Foam: ZoomX  Plate: Flyplate (Carbon)",
@@ -1297,8 +1249,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Vaporfly+3",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Vaporfly+3",
-      "official": "https://www.nike.com/in/w?q=Vaporfly%203",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vaporfly+3+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Vaporfly%203"
     }
   },
   {
@@ -1324,8 +1275,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Pegasus+Premium",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Pegasus+Premium",
-      "official": "https://www.nike.com/in/w?q=Pegasus%20Premium",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+Premium+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Pegasus%20Premium"
     }
   },
   {
@@ -1333,9 +1283,9 @@ export const SHOE_DATABASE: Shoe[] = [
     "brand": "Nike",
     "model": "Structure Plus",
     "category": "Stability (Jan Release)",
-    "priceMin": 14295,
-    "priceMax": 14295,
-    "priceDisplay": "₹14,295",
+    "priceMin": 12000,
+    "priceMax": 14000,
+    "priceDisplay": "₹12,000 - ₹14,000",
     "foam": "ZoomX + Cushlon Support Frame",
     "plate": "",
     "tech": "Foam: ZoomX + Cushlon Support Frame",
@@ -1351,8 +1301,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Structure+Plus",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Structure+Plus",
-      "official": "https://www.nike.com/in/w?q=Structure%20Plus",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Structure+Plus+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Structure%20Plus"
     }
   },
   {
@@ -1378,8 +1327,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Invincible+3",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Invincible+3",
-      "official": "https://www.nike.com/in/w?q=Invincible%203",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Invincible+3+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Invincible%203"
     }
   },
   {
@@ -1388,8 +1336,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Pegasus 41",
     "category": "Daily Workhorse",
     "priceMin": 11895,
-    "priceMax": 12795,
-    "priceDisplay": "₹11,895 - ₹12,795",
+    "priceMax": 12995,
+    "priceDisplay": "₹11,895 - ₹12,995",
     "foam": "ReactX + Dual Air Zoom",
     "plate": "",
     "tech": "Foam: ReactX + Dual Air Zoom",
@@ -1405,8 +1353,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Pegasus+41",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Pegasus+41",
-      "official": "https://www.nike.com/in/w?q=Pegasus%2041",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+41+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Pegasus%2041"
     }
   },
   {
@@ -1415,8 +1362,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Pegasus 40",
     "category": "Daily Workhorse (Value)",
     "priceMin": 7000,
-    "priceMax": 9995,
-    "priceDisplay": "₹7,000 - ₹9,995",
+    "priceMax": 9500,
+    "priceDisplay": "₹7,000 - ₹9,500",
     "foam": "React + Dual Air Zoom",
     "plate": "",
     "tech": "Foam: React + Dual Air Zoom",
@@ -1432,8 +1379,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Pegasus+40",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Pegasus+40",
-      "official": "https://www.nike.com/in/w?q=Pegasus%2040",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+40+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Pegasus%2040"
     }
   },
   {
@@ -1460,8 +1406,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Pegasus+Plus",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Pegasus+Plus",
-      "official": "https://www.nike.com/in/w?q=Pegasus%20Plus",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+Plus+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Pegasus%20Plus"
     }
   },
   {
@@ -1470,8 +1415,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Zoom Fly 6",
     "category": "Tempo / Fast Training",
     "priceMin": 15995,
-    "priceMax": 16995,
-    "priceDisplay": "₹15,995 - ₹16,995",
+    "priceMax": 15995,
+    "priceDisplay": "₹15,995",
     "foam": "ZoomX + SR-02",
     "plate": "Flyplate (Carbon)",
     "tech": "Foam: ZoomX + SR-02  Plate: Flyplate (Carbon)",
@@ -1488,8 +1433,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Zoom+Fly+6",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Zoom+Fly+6",
-      "official": "https://www.nike.com/in/w?q=Zoom%20Fly%206",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Zoom+Fly+6+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Zoom%20Fly%206"
     }
   },
   {
@@ -1516,8 +1460,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Zoom+Fly+5",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Zoom+Fly+5",
-      "official": "https://www.nike.com/in/w?q=Zoom%20Fly%205",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Zoom+Fly+5+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Zoom%20Fly%205"
     }
   },
   {
@@ -1542,8 +1485,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Streakfly",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Streakfly",
-      "official": "https://www.nike.com/in/w?q=Streakfly",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Streakfly+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Streakfly"
     }
   },
   {
@@ -1569,8 +1511,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Ultrafly+Trail",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Ultrafly+Trail",
-      "official": "https://www.nike.com/in/w?q=Ultrafly%20Trail",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Ultrafly+Trail+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Ultrafly%20Trail"
     }
   },
   {
@@ -1596,8 +1537,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Zegama+2",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Zegama+2",
-      "official": "https://www.nike.com/in/w?q=Zegama%202",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Zegama+2+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Zegama%202"
     }
   },
   {
@@ -1623,8 +1563,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NIKE+Pegasus+Trail+5",
       "flipkart": "https://www.flipkart.com/search?q=NIKE+Pegasus+Trail+5",
-      "official": "https://www.nike.com/in/w?q=Pegasus%20Trail%205",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+Trail+5+running+shoes+India"
+      "official": "https://www.nike.com/in/w?q=Pegasus%20Trail%205"
     }
   },
   {
@@ -1649,8 +1588,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Winflo+11",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Winflo+11",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Winflo+11+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Winflo+11"
     }
   },
   {
@@ -1675,8 +1613,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+InfinityRN+4",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+InfinityRN+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+InfinityRN+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+InfinityRN+4"
     }
   },
   {
@@ -1700,8 +1637,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Downshifter+13",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Downshifter+13",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Downshifter+13+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Downshifter+13"
     }
   },
   {
@@ -1726,8 +1662,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Floatride+Energy+5",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Floatride+Energy+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Floatride+Energy+5+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Floatride+Energy+5"
     }
   },
   {
@@ -1752,8 +1687,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Floatride+Energy+4",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Floatride+Energy+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Floatride+Energy+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Floatride+Energy+4"
     }
   },
   {
@@ -1778,8 +1712,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Nano+X4",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Nano+X4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Nano+X4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Nano+X4"
     }
   },
   {
@@ -1804,8 +1737,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Symmetros+2",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Symmetros+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Symmetros+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Symmetros+2"
     }
   },
   {
@@ -1830,8 +1762,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Lavante+Trail+2",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Lavante+Trail+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Lavante+Trail+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Lavante+Trail+2"
     }
   },
   {
@@ -1856,8 +1787,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Zig+Dynamica+4",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Zig+Dynamica+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Zig+Dynamica+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Zig+Dynamica+4"
     }
   },
   {
@@ -1882,8 +1812,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Liquifect+180",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Liquifect+180",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Liquifect+180+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Liquifect+180"
     }
   },
   {
@@ -1908,8 +1837,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Energen+Tech+Plus",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Energen+Tech+Plus",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Energen+Tech+Plus+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Energen+Tech+Plus"
     }
   },
   {
@@ -1934,8 +1862,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Tread+Motion",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Tread+Motion",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Tread+Motion+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Tread+Motion"
     }
   },
   {
@@ -1960,8 +1887,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=REEBOK+Stridium",
-      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Stridium",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Reebok+Stridium+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=REEBOK+Stridium"
     }
   },
   {
@@ -1985,8 +1911,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+160X+3.0+PRO+/+5.0",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+160X+3.0+PRO+/+5.0",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+160X+3.0+PRO+%2F+5.0+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+160X+3.0+PRO+/+5.0"
     }
   },
   {
@@ -2011,8 +1936,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Xtep+2000KM+(2.0)",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Xtep+2000KM+(2.0)",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Xtep+2000KM+(2.0)+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Xtep+2000KM+(2.0)"
     }
   },
   {
@@ -2038,8 +1962,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Xtep+Ace",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Xtep+Ace",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Xtep+Ace+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Xtep+Ace"
     }
   },
   {
@@ -2064,8 +1987,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Energetex",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Energetex",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Energetex+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Energetex"
     }
   },
   {
@@ -2090,8 +2012,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Reactive+Coil",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Reactive+Coil",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Reactive+Coil+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Reactive+Coil"
     }
   },
   {
@@ -2116,8 +2037,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Feather+Foam",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Feather+Foam",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Feather+Foam+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Feather+Foam"
     }
   },
   {
@@ -2142,8 +2062,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Dynamic+Foam",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Dynamic+Foam",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Dynamic+Foam+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Dynamic+Foam"
     }
   },
   {
@@ -2169,8 +2088,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Softpad+Lite+2.0",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Softpad+Lite+2.0",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Softpad+Lite+2.0+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Softpad+Lite+2.0"
     }
   },
   {
@@ -2194,8 +2112,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=XTEP+Xtep+Wind",
-      "flipkart": "https://www.flipkart.com/search?q=XTEP+Xtep+Wind",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Xtep+Xtep+Wind+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=XTEP+Xtep+Wind"
     }
   },
   {
@@ -2219,8 +2136,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KD900X",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KD900X",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KD900X+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KD900X"
     }
   },
   {
@@ -2245,8 +2161,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KD900",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KD900",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KD900+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KD900"
     }
   },
   {
@@ -2272,8 +2187,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KS900+Light",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KS900+Light",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KS900+Light+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KS900+Light"
     }
   },
   {
@@ -2299,8 +2213,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KS900",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KS900",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KS900+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KS900"
     }
   },
   {
@@ -2326,8 +2239,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KS500",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KS500",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KS500+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KS500"
     }
   },
   {
@@ -2353,8 +2265,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KD500",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KD500",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KD500+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KD500"
     }
   },
   {
@@ -2379,8 +2290,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+KN500",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KN500",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+KN500+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+KN500"
     }
   },
   {
@@ -2405,8 +2315,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Jogflow+500.1",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Jogflow+500.1",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Jogflow+500.1+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Jogflow+500.1"
     }
   },
   {
@@ -2431,8 +2340,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Kiprun+JF+190",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+JF+190",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Kiprun+JF+190+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Kiprun+JF+190"
     }
   },
   {
@@ -2457,8 +2365,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Evadict+MT+Cushion+2",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Evadict+MT+Cushion+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Evadict+MT+Cushion+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Evadict+MT+Cushion+2"
     }
   },
   {
@@ -2483,8 +2390,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Evadict+Race+Light",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Evadict+Race+Light",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Evadict+Race+Light+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Evadict+Race+Light"
     }
   },
   {
@@ -2509,8 +2415,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=DECATHLON+Run+Active+/+100",
-      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Run+Active+/+100",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Decathlon+Run+Active+%2F+100+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=DECATHLON+Run+Active+/+100"
     }
   },
   {
@@ -2535,8 +2440,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Cielo+X1",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Cielo+X1",
-      "official": "https://www.hoka.com/en/in/search?q=Cielo+X1",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Cielo+X1+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Cielo+X1"
     }
   },
   {
@@ -2561,8 +2465,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Rocket+X+2",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Rocket+X+2",
-      "official": "https://www.hoka.com/en/in/search?q=Rocket+X+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Rocket+X+2+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Rocket+X+2"
     }
   },
   {
@@ -2588,8 +2491,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Rocket+X+(Gen+1)",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Rocket+X+(Gen+1)",
-      "official": "https://www.hoka.com/en/in/search?q=Rocket+X+(Gen+1)",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Rocket+X+(Gen+1)+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Rocket+X+(Gen+1)"
     }
   },
   {
@@ -2615,8 +2517,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Mach+X+/+X+2",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Mach+X+/+X+2",
-      "official": "https://www.hoka.com/en/in/search?q=Mach+X+/+X+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Mach+X+%2F+X+2+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Mach+X+/+X+2"
     }
   },
   {
@@ -2643,8 +2544,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Mach+6",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Mach+6",
-      "official": "https://www.hoka.com/en/in/search?q=Mach+6",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Mach+6+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Mach+6"
     }
   },
   {
@@ -2670,8 +2570,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Mach+5",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Mach+5",
-      "official": "https://www.hoka.com/en/in/search?q=Mach+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Mach+5+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Mach+5"
     }
   },
   {
@@ -2697,8 +2596,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Skyflow",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Skyflow",
-      "official": "https://www.hoka.com/en/in/search?q=Skyflow",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Skyflow+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Skyflow"
     }
   },
   {
@@ -2724,8 +2622,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Clifton+9",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Clifton+9",
-      "official": "https://www.hoka.com/en/in/search?q=Clifton+9",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Clifton+9+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Clifton+9"
     }
   },
   {
@@ -2751,8 +2648,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Clifton+8",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Clifton+8",
-      "official": "https://www.hoka.com/en/in/search?q=Clifton+8",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Clifton+8+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Clifton+8"
     }
   },
   {
@@ -2778,8 +2674,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Clifton+10",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Clifton+10",
-      "official": "https://www.hoka.com/en/in/search?q=Clifton+10",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Clifton+10+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Clifton+10"
     }
   },
   {
@@ -2805,8 +2700,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Bondi+8",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Bondi+8",
-      "official": "https://www.hoka.com/en/in/search?q=Bondi+8",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Bondi+8+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Bondi+8"
     }
   },
   {
@@ -2832,8 +2726,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Bondi+7",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Bondi+7",
-      "official": "https://www.hoka.com/en/in/search?q=Bondi+7",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Bondi+7+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Bondi+7"
     }
   },
   {
@@ -2859,8 +2752,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Arahi+7",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Arahi+7",
-      "official": "https://www.hoka.com/en/in/search?q=Arahi+7",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Arahi+7+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Arahi+7"
     }
   },
   {
@@ -2886,8 +2778,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Speedgoat+6",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Speedgoat+6",
-      "official": "https://www.hoka.com/en/in/search?q=Speedgoat+6",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Speedgoat+6+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Speedgoat+6"
     }
   },
   {
@@ -2913,8 +2804,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Torrent+3",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Torrent+3",
-      "official": "https://www.hoka.com/en/in/search?q=Torrent+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Torrent+3+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Torrent+3"
     }
   },
   {
@@ -2939,8 +2829,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Kawana+2",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Kawana+2",
-      "official": "https://www.hoka.com/en/in/search?q=Kawana+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Kawana+2+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Kawana+2"
     }
   },
   {
@@ -2966,8 +2855,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=HOKA+Transport",
       "flipkart": "https://www.flipkart.com/search?q=HOKA+Transport",
-      "official": "https://www.hoka.com/en/in/search?q=Transport",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Transport+running+shoes+India"
+      "official": "https://www.hoka.com/en/in/search?q=Transport"
     }
   },
   {
@@ -2992,8 +2880,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Endorphin+Elite",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Endorphin+Elite",
-      "official": "https://www.saucony.com/en/search?q=Endorphin+Elite",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Endorphin+Elite+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Endorphin+Elite"
     }
   },
   {
@@ -3018,8 +2905,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Endorphin+Pro+4",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Endorphin+Pro+4",
-      "official": "https://www.saucony.com/en/search?q=Endorphin+Pro+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Endorphin+Pro+4+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Endorphin+Pro+4"
     }
   },
   {
@@ -3044,8 +2930,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Endorphin+Pro+3",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Endorphin+Pro+3",
-      "official": "https://www.saucony.com/en/search?q=Endorphin+Pro+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Endorphin+Pro+3+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Endorphin+Pro+3"
     }
   },
   {
@@ -3071,8 +2956,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Endorphin+Speed+4",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Endorphin+Speed+4",
-      "official": "https://www.saucony.com/en/search?q=Endorphin+Speed+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Endorphin+Speed+4+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Endorphin+Speed+4"
     }
   },
   {
@@ -3098,8 +2982,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Endorphin+Speed+3",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Endorphin+Speed+3",
-      "official": "https://www.saucony.com/en/search?q=Endorphin+Speed+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Endorphin+Speed+3+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Endorphin+Speed+3"
     }
   },
   {
@@ -3126,8 +3009,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Triumph+22",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Triumph+22",
-      "official": "https://www.saucony.com/en/search?q=Triumph+22",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Triumph+22+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Triumph+22"
     }
   },
   {
@@ -3154,8 +3036,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Triumph+20+/+21",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Triumph+20+/+21",
-      "official": "https://www.saucony.com/en/search?q=Triumph+20+/+21",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Triumph+20+%2F+21+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Triumph+20+/+21"
     }
   },
   {
@@ -3182,8 +3063,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Tempus",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Tempus",
-      "official": "https://www.saucony.com/en/search?q=Tempus",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Tempus+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Tempus"
     }
   },
   {
@@ -3209,8 +3089,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Ride+17",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Ride+17",
-      "official": "https://www.saucony.com/en/search?q=Ride+17",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Ride+17+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Ride+17"
     }
   },
   {
@@ -3236,8 +3115,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Ride+15+/+16",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Ride+15+/+16",
-      "official": "https://www.saucony.com/en/search?q=Ride+15+/+16",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Ride+15+%2F+16+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Ride+15+/+16"
     }
   },
   {
@@ -3263,8 +3141,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Guide+17",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Guide+17",
-      "official": "https://www.saucony.com/en/search?q=Guide+17",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Guide+17+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Guide+17"
     }
   },
   {
@@ -3290,8 +3167,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Kinvara+15",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Kinvara+15",
-      "official": "https://www.saucony.com/en/search?q=Kinvara+15",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Kinvara+15+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Kinvara+15"
     }
   },
   {
@@ -3317,8 +3193,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Kinvara+14",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Kinvara+14",
-      "official": "https://www.saucony.com/en/search?q=Kinvara+14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Kinvara+14+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Kinvara+14"
     }
   },
   {
@@ -3344,8 +3219,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Peregrine+14",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Peregrine+14",
-      "official": "https://www.saucony.com/en/search?q=Peregrine+14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Peregrine+14+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Peregrine+14"
     }
   },
   {
@@ -3370,8 +3244,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Axon+3",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Axon+3",
-      "official": "https://www.saucony.com/en/search?q=Axon+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Axon+3+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Axon+3"
     }
   },
   {
@@ -3397,8 +3270,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Echelon+9",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Echelon+9",
-      "official": "https://www.saucony.com/en/search?q=Echelon+9",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Echelon+9+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Echelon+9"
     }
   },
   {
@@ -3423,8 +3295,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SAUCONY+Cohesion+16",
       "flipkart": "https://www.flipkart.com/search?q=SAUCONY+Cohesion+16",
-      "official": "https://www.saucony.com/en/search?q=Cohesion+16",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Cohesion+16+running+shoes+India"
+      "official": "https://www.saucony.com/en/search?q=Cohesion+16"
     }
   },
   {
@@ -3449,8 +3320,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Hyperion+Elite+4",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Hyperion+Elite+4",
-      "official": "https://brooksrunningindia.com/?s=Hyperion+Elite+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Hyperion+Elite+4+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Hyperion+Elite+4"
     }
   },
   {
@@ -3476,8 +3346,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Hyperion+Max",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Hyperion+Max",
-      "official": "https://brooksrunningindia.com/?s=Hyperion+Max",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Hyperion+Max+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Hyperion+Max"
     }
   },
   {
@@ -3503,8 +3372,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Hyperion+Tempo",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Hyperion+Tempo",
-      "official": "https://brooksrunningindia.com/?s=Hyperion+Tempo",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Hyperion+Tempo+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Hyperion+Tempo"
     }
   },
   {
@@ -3530,8 +3398,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Glycerin+21",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Glycerin+21",
-      "official": "https://brooksrunningindia.com/?s=Glycerin+21",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Glycerin+21+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Glycerin+21"
     }
   },
   {
@@ -3557,8 +3424,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Glycerin+20",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Glycerin+20",
-      "official": "https://brooksrunningindia.com/?s=Glycerin+20",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Glycerin+20+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Glycerin+20"
     }
   },
   {
@@ -3585,8 +3451,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Glycerin+GTS+21",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Glycerin+GTS+21",
-      "official": "https://brooksrunningindia.com/?s=Glycerin+GTS+21",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Glycerin+GTS+21+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Glycerin+GTS+21"
     }
   },
   {
@@ -3612,8 +3477,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Ghost+16",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Ghost+16",
-      "official": "https://brooksrunningindia.com/?s=Ghost+16",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Ghost+16+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Ghost+16"
     }
   },
   {
@@ -3639,8 +3503,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Ghost+15",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Ghost+15",
-      "official": "https://brooksrunningindia.com/?s=Ghost+15",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Ghost+15+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Ghost+15"
     }
   },
   {
@@ -3667,8 +3530,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Adrenaline+GTS+23",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Adrenaline+GTS+23",
-      "official": "https://brooksrunningindia.com/?s=Adrenaline+GTS+23",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Adrenaline+GTS+23+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Adrenaline+GTS+23"
     }
   },
   {
@@ -3694,8 +3556,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Adrenaline+GTS+22",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Adrenaline+GTS+22",
-      "official": "https://brooksrunningindia.com/?s=Adrenaline+GTS+22",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Adrenaline+GTS+22+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Adrenaline+GTS+22"
     }
   },
   {
@@ -3721,8 +3582,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Levitate+6",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Levitate+6",
-      "official": "https://brooksrunningindia.com/?s=Levitate+6",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Levitate+6+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Levitate+6"
     }
   },
   {
@@ -3749,8 +3609,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Launch+10",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Launch+10",
-      "official": "https://brooksrunningindia.com/?s=Launch+10",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Launch+10+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Launch+10"
     }
   },
   {
@@ -3775,8 +3634,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Trace+3",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Trace+3",
-      "official": "https://brooksrunningindia.com/?s=Trace+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Trace+3+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Trace+3"
     }
   },
   {
@@ -3802,8 +3660,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Cascadia+18",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Cascadia+18",
-      "official": "https://brooksrunningindia.com/?s=Cascadia+18",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Cascadia+18+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Cascadia+18"
     }
   },
   {
@@ -3830,8 +3687,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Catamount+3",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Catamount+3",
-      "official": "https://brooksrunningindia.com/?s=Catamount+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Catamount+3+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Catamount+3"
     }
   },
   {
@@ -3858,8 +3714,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=BROOKS+Caldera+7",
       "flipkart": "https://www.flipkart.com/search?q=BROOKS+Caldera+7",
-      "official": "https://brooksrunningindia.com/?s=Caldera+7",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Caldera+7+running+shoes+India"
+      "official": "https://brooksrunningindia.com/?s=Caldera+7"
     }
   },
   {
@@ -3883,8 +3738,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+C202+GT+Pro+(5.0+/+6.0)",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+C202+GT+Pro+(5.0+/+6.0)",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+C202+GT+Pro+(5.0+%2F+6.0)+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+C202+GT+Pro+(5.0+/+6.0)"
     }
   },
   {
@@ -3909,8 +3763,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+C202+GT+(Standard)",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+C202+GT+(Standard)",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+C202+GT+(Standard)+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+C202+GT+(Standard)"
     }
   },
   {
@@ -3935,8 +3788,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+Mach+4+/+Pro",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Mach+4+/+Pro",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+Mach+4+%2F+Pro+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Mach+4+/+Pro"
     }
   },
   {
@@ -3961,8 +3813,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+Challenge+100+GT",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Challenge+100+GT",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+Challenge+100+GT+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Challenge+100+GT"
     }
   },
   {
@@ -3986,8 +3837,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+A-Livezone",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+A-Livezone",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+A-Livezone+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+A-Livezone"
     }
   },
   {
@@ -4013,8 +3863,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+A-Jelly",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+A-Jelly",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+A-Jelly+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+A-Jelly"
     }
   },
   {
@@ -4040,8 +3889,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+Comfy+Way",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Comfy+Way",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+Comfy+Way+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Comfy+Way"
     }
   },
   {
@@ -4066,8 +3914,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+Walker",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Walker",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+Walker+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+Walker"
     }
   },
   {
@@ -4091,8 +3938,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ANTA+Anta+E-Run",
-      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+E-Run",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Anta+Anta+E-Run+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ANTA+Anta+E-Run"
     }
   },
   {
@@ -4117,8 +3963,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Metaspeed+Sky+/+Edge+Paris",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Metaspeed+Sky+/+Edge+Paris",
-      "official": "https://www.asics.com/in/en-in/search?q=Metaspeed+Sky+/+Edge+Paris",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Metaspeed+Sky+%2F+Edge+Paris+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Metaspeed+Sky+/+Edge+Paris"
     }
   },
   {
@@ -4144,8 +3989,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Megablast",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Megablast",
-      "official": "https://www.asics.com/in/en-in/search?q=Megablast",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Megablast+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Megablast"
     }
   },
   {
@@ -4171,8 +4015,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Sonicblast",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Sonicblast",
-      "official": "https://www.asics.com/in/en-in/search?q=Sonicblast",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Sonicblast+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Sonicblast"
     }
   },
   {
@@ -4198,8 +4041,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Superblast+2",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Superblast+2",
-      "official": "https://www.asics.com/in/en-in/search?q=Superblast+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Superblast+2+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Superblast+2"
     }
   },
   {
@@ -4225,8 +4067,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Superblast+1",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Superblast+1",
-      "official": "https://www.asics.com/in/en-in/search?q=Superblast+1",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Superblast+1+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Superblast+1"
     }
   },
   {
@@ -4252,8 +4093,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Magic+Speed+5",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Magic+Speed+5",
-      "official": "https://www.asics.com/in/en-in/search?q=Magic+Speed+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Magic+Speed+5+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Magic+Speed+5"
     }
   },
   {
@@ -4262,8 +4102,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Novablast 5",
     "category": "Daily Energy Return",
     "priceMin": 13999,
-    "priceMax": 13999,
-    "priceDisplay": "₹13,999",
+    "priceMax": 15500,
+    "priceDisplay": "₹13,999 - ₹15,500",
     "foam": "FF Blast Max (Newest Gen",
     "plate": "",
     "tech": "Foam: FF Blast Max (Newest Gen)",
@@ -4275,12 +4115,11 @@ export const SHOE_DATABASE: Shoe[] = [
       "beginner",
       "intermediate"
     ],
-    "budgetTier": "mid",
+    "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Novablast+5",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Novablast+5",
-      "official": "https://www.asics.com/in/en-in/search?q=Novablast+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Novablast+5+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Novablast+5"
     }
   },
   {
@@ -4288,9 +4127,9 @@ export const SHOE_DATABASE: Shoe[] = [
     "brand": "Asics",
     "model": "Novablast 4",
     "category": "Daily Energy (Value)",
-    "priceMin": 8000,
-    "priceMax": 10999,
-    "priceDisplay": "₹8,000 - ₹10,999",
+    "priceMin": 9000,
+    "priceMax": 11000,
+    "priceDisplay": "₹9,000 - ₹11,000",
     "foam": "FF Blast+ Eco",
     "plate": "",
     "tech": "Foam: FF Blast+ Eco",
@@ -4306,8 +4145,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Novablast+4",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Novablast+4",
-      "official": "https://www.asics.com/in/en-in/search?q=Novablast+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Novablast+4+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Novablast+4"
     }
   },
   {
@@ -4333,8 +4171,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Novablast+3",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Novablast+3",
-      "official": "https://www.asics.com/in/en-in/search?q=Novablast+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Novablast+3+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Novablast+3"
     }
   },
   {
@@ -4343,8 +4180,8 @@ export const SHOE_DATABASE: Shoe[] = [
     "model": "Gel-Kayano 32",
     "category": "Max Stability",
     "priceMin": 16999,
-    "priceMax": 16999,
-    "priceDisplay": "₹16,999",
+    "priceMax": 18999,
+    "priceDisplay": "₹16,999 - ₹18,999",
     "foam": "FF Blast+ Eco",
     "plate": "",
     "tech": "4D Guidance System",
@@ -4360,8 +4197,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Kayano+32",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Kayano+32",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+32",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Kayano+32+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+32"
     }
   },
   {
@@ -4387,8 +4223,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Kayano+31",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Kayano+31",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+31",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Kayano+31+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+31"
     }
   },
   {
@@ -4414,8 +4249,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Kayano+30",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Kayano+30",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+30",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Kayano+30+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+30"
     }
   },
   {
@@ -4441,8 +4275,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Kayano+29",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Kayano+29",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+29",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Kayano+29+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Kayano+29"
     }
   },
   {
@@ -4468,8 +4301,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Nimbus+27+/+28",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Nimbus+27+/+28",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+27+/+28",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Nimbus+27+%2F+28+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+27+/+28"
     }
   },
   {
@@ -4495,8 +4327,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Nimbus+26",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Nimbus+26",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+26",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Nimbus+26+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+26"
     }
   },
   {
@@ -4522,8 +4353,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Nimbus+25",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Nimbus+25",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+25",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Nimbus+25+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+25"
     }
   },
   {
@@ -4549,8 +4379,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Glideride+Max",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Glideride+Max",
-      "official": "https://www.asics.com/in/en-in/search?q=Glideride+Max",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Glideride+Max+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Glideride+Max"
     }
   },
   {
@@ -4558,9 +4387,9 @@ export const SHOE_DATABASE: Shoe[] = [
     "brand": "Asics",
     "model": "Gel-Cumulus 27",
     "category": "Daily Driver",
-    "priceMin": 10399,
+    "priceMin": 9099,
     "priceMax": 12999,
-    "priceDisplay": "₹10,399 - ₹12,999",
+    "priceDisplay": "₹9,099 - ₹12,999",
     "foam": "FF Blast+",
     "plate": "",
     "tech": "Foam: FF Blast+",
@@ -4576,8 +4405,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Cumulus+27",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Cumulus+27",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Cumulus+27",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Cumulus+27+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Cumulus+27"
     }
   },
   {
@@ -4604,8 +4432,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+GT-2000+14",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+GT-2000+14",
-      "official": "https://www.asics.com/in/en-in/search?q=GT-2000+14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+GT-2000+14+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=GT-2000+14"
     }
   },
   {
@@ -4631,8 +4458,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+GT-1000+13",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+GT-1000+13",
-      "official": "https://www.asics.com/in/en-in/search?q=GT-1000+13",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+GT-1000+13+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=GT-1000+13"
     }
   },
   {
@@ -4658,8 +4484,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Hyper+Speed+4+/+5",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Hyper+Speed+4+/+5",
-      "official": "https://www.asics.com/in/en-in/search?q=Hyper+Speed+4+/+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Hyper+Speed+4+%2F+5+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Hyper+Speed+4+/+5"
     }
   },
   {
@@ -4667,9 +4492,9 @@ export const SHOE_DATABASE: Shoe[] = [
     "brand": "Asics",
     "model": "Gel-Excite 11",
     "category": "Daily / Gym",
-    "priceMin": 7999,
-    "priceMax": 7999,
-    "priceDisplay": "₹7,999",
+    "priceMin": 6000,
+    "priceMax": 8000,
+    "priceDisplay": "₹6,000 - ₹8,000",
     "foam": "Amplifoam Plus",
     "plate": "",
     "tech": "Foam: Amplifoam Plus",
@@ -4685,8 +4510,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Gel-Excite+11",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Gel-Excite+11",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Excite+11",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Excite+11+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Gel-Excite+11"
     }
   },
   {
@@ -4711,8 +4535,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Jolt+5",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Jolt+5",
-      "official": "https://www.asics.com/in/en-in/search?q=Jolt+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Jolt+5+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Jolt+5"
     }
   },
   {
@@ -4737,8 +4560,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ASICS+Patriot+14",
       "flipkart": "https://www.flipkart.com/search?q=ASICS+Patriot+14",
-      "official": "https://www.asics.com/in/en-in/search?q=Patriot+14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Patriot+14+running+shoes+India"
+      "official": "https://www.asics.com/in/en-in/search?q=Patriot+14"
     }
   },
   {
@@ -4762,8 +4584,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Speed+Beast",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Speed+Beast",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Speed+Beast+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Speed+Beast"
     }
   },
   {
@@ -4788,8 +4609,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Razor+5",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Razor+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Razor+5+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Razor+5"
     }
   },
   {
@@ -4814,8 +4634,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Persistence+2",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Persistence+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Persistence+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Persistence+2"
     }
   },
   {
@@ -4840,8 +4659,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Ride+11",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Ride+11",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Ride+11+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Ride+11"
     }
   },
   {
@@ -4866,8 +4684,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Ride+10",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Ride+10",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Ride+10+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Ride+10"
     }
   },
   {
@@ -4893,8 +4710,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Razor+Excess+2",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Razor+Excess+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Razor+Excess+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Razor+Excess+2"
     }
   },
   {
@@ -4919,8 +4735,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Pure+3+/+4",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Pure+3+/+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Pure+3+%2F+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Pure+3+/+4"
     }
   },
   {
@@ -4945,8 +4760,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+Max+Cushioning+Premier+2.0",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+Max+Cushioning+Premier+2.0",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+Max+Cushioning+Premier+2.0+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+Max+Cushioning+Premier+2.0"
     }
   },
   {
@@ -4972,8 +4786,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+Max+Cushioning+Elite",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+Max+Cushioning+Elite",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+Max+Cushioning+Elite+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+Max+Cushioning+Elite"
     }
   },
   {
@@ -4998,8 +4811,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Consistent+2.0",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Consistent+2.0",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Consistent+2.0+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Consistent+2.0"
     }
   },
   {
@@ -5024,8 +4836,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Elevate",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Elevate",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Elevate+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Elevate"
     }
   },
   {
@@ -5050,8 +4861,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=SKECHERS+GoRun+Pulse",
-      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Pulse",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Skechers+GoRun+Pulse+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=SKECHERS+GoRun+Pulse"
     }
   },
   {
@@ -5078,8 +4888,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+FuelCell+Rebel+v5",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+FuelCell+Rebel+v5",
-      "official": "https://www.newbalance.co.in/search?q=FuelCell+Rebel+v5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+FuelCell+Rebel+v5+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=FuelCell+Rebel+v5"
     }
   },
   {
@@ -5105,8 +4914,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+FuelCell+Rebel+v3",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+FuelCell+Rebel+v3",
-      "official": "https://www.newbalance.co.in/search?q=FuelCell+Rebel+v3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+FuelCell+Rebel+v3+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=FuelCell+Rebel+v3"
     }
   },
   {
@@ -5132,8 +4940,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+X+1080+v14",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+X+1080+v14",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+1080+v14+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v14"
     }
   },
   {
@@ -5159,8 +4966,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+X+Balos",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+X+Balos",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+Balos",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+Balos+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+Balos"
     }
   },
   {
@@ -5185,8 +4991,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+FuelCell+SC+Elite+v4",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+FuelCell+SC+Elite+v4",
-      "official": "https://www.newbalance.co.in/search?q=FuelCell+SC+Elite+v4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+FuelCell+SC+Elite+v4+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=FuelCell+SC+Elite+v4"
     }
   },
   {
@@ -5212,8 +5017,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+FuelCell+SC+Trainer+v3",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+FuelCell+SC+Trainer+v3",
-      "official": "https://www.newbalance.co.in/search?q=FuelCell+SC+Trainer+v3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+FuelCell+SC+Trainer+v3+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=FuelCell+SC+Trainer+v3"
     }
   },
   {
@@ -5239,8 +5043,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+X+1080+v13",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+X+1080+v13",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v13",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+1080+v13+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v13"
     }
   },
   {
@@ -5266,8 +5069,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+X+1080+v12",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+X+1080+v12",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v12",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+1080+v12+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v12"
     }
   },
   {
@@ -5293,8 +5095,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+More+v5",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+More+v5",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+More+v5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+More+v5+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+More+v5"
     }
   },
   {
@@ -5320,8 +5121,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+X+880+v14",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+X+880+v14",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+880+v14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+880+v14+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+880+v14"
     }
   },
   {
@@ -5347,8 +5147,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+X+860+v14",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+X+860+v14",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+860+v14",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+860+v14+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+860+v14"
     }
   },
   {
@@ -5375,8 +5174,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+FuelCell+Propel+v5",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+FuelCell+Propel+v5",
-      "official": "https://www.newbalance.co.in/search?q=FuelCell+Propel+v5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+FuelCell+Propel+v5+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=FuelCell+Propel+v5"
     }
   },
   {
@@ -5403,8 +5201,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+FuelCell+Propel+v4",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+FuelCell+Propel+v4",
-      "official": "https://www.newbalance.co.in/search?q=FuelCell+Propel+v4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+FuelCell+Propel+v4+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=FuelCell+Propel+v4"
     }
   },
   {
@@ -5429,8 +5226,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+Evoz+v3",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+Evoz+v3",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+Evoz+v3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+Evoz+v3+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+Evoz+v3"
     }
   },
   {
@@ -5455,8 +5251,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+Arishi+v4",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+Arishi+v4",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+Arishi+v4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+Arishi+v4+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+Arishi+v4"
     }
   },
   {
@@ -5483,8 +5278,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Fresh+Foam+More+Trail+v3",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Fresh+Foam+More+Trail+v3",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+More+Trail+v3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+More+Trail+v3+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+More+Trail+v3"
     }
   },
   {
@@ -5510,8 +5304,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=NEW+BALANCE+Nitrel+v5",
       "flipkart": "https://www.flipkart.com/search?q=NEW+BALANCE+Nitrel+v5",
-      "official": "https://www.newbalance.co.in/search?q=Nitrel+v5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Nitrel+v5+running+shoes+India"
+      "official": "https://www.newbalance.co.in/search?q=Nitrel+v5"
     }
   },
   {
@@ -5535,8 +5328,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudboom+Strike",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudboom+Strike",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudboom+Strike+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudboom+Strike"
     }
   },
   {
@@ -5560,8 +5352,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudboom+Echo+3",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudboom+Echo+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudboom+Echo+3+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudboom+Echo+3"
     }
   },
   {
@@ -5586,8 +5377,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudmonster+Hyper",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudmonster+Hyper",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudmonster+Hyper+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudmonster+Hyper"
     }
   },
   {
@@ -5612,8 +5402,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudmonster+2",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudmonster+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudmonster+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudmonster+2"
     }
   },
   {
@@ -5638,8 +5427,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudsurfer+Next",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudsurfer+Next",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudsurfer+Next+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudsurfer+Next"
     }
   },
   {
@@ -5664,8 +5452,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudsurfer+7",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudsurfer+7",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudsurfer+7+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudsurfer+7"
     }
   },
   {
@@ -5690,8 +5477,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudeclipse",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudeclipse",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudeclipse+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudeclipse"
     }
   },
   {
@@ -5716,8 +5502,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudstratus+3",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudstratus+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudstratus+3+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudstratus+3"
     }
   },
   {
@@ -5742,8 +5527,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudrunner+2",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudrunner+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudrunner+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudrunner+2"
     }
   },
   {
@@ -5768,8 +5552,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudflow+4",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudflow+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudflow+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudflow+4"
     }
   },
   {
@@ -5793,8 +5576,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloud+X+4",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloud+X+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloud+X+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloud+X+4"
     }
   },
   {
@@ -5819,8 +5601,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloud+5",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloud+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloud+5+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloud+5"
     }
   },
   {
@@ -5845,8 +5626,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudvista+2",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudvista+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudvista+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudvista+2"
     }
   },
   {
@@ -5871,8 +5651,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=ON+RUNNING+Cloudultra+2",
-      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudultra+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudultra+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=ON+RUNNING+Cloudultra+2"
     }
   },
   {
@@ -5896,8 +5675,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Velociti+Elite+2",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Velociti+Elite+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Velociti+Elite+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Velociti+Elite+2"
     }
   },
   {
@@ -5922,8 +5700,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Infinite+Elite",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Infinite+Elite",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Infinite+Elite+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Infinite+Elite"
     }
   },
   {
@@ -5948,8 +5725,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Infinite+Pro+2",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Infinite+Pro+2",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Infinite+Pro+2+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Infinite+Pro+2"
     }
   },
   {
@@ -5973,8 +5749,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+SlipSpeed+Mega",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+SlipSpeed+Mega",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+SlipSpeed+Mega+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+SlipSpeed+Mega"
     }
   },
   {
@@ -5999,8 +5774,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Velociti+4",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Velociti+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Velociti+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Velociti+4"
     }
   },
   {
@@ -6025,8 +5799,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "premium",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Phantom+4",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Phantom+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Phantom+4+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Phantom+4"
     }
   },
   {
@@ -6051,8 +5824,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Apparition",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Apparition",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Apparition+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Apparition"
     }
   },
   {
@@ -6077,8 +5849,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Machina+3+Clone",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Machina+3+Clone",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Machina+3+Clone+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Machina+3+Clone"
     }
   },
   {
@@ -6103,8 +5874,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Machina+3",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Machina+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Machina+3+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Machina+3"
     }
   },
   {
@@ -6129,8 +5899,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Sonic+7",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Sonic+7",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Sonic+7+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Sonic+7"
     }
   },
   {
@@ -6154,8 +5923,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "mid",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Project+Rock+BSR+5",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Project+Rock+BSR+5",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Project+Rock+BSR+5+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Project+Rock+BSR+5"
     }
   },
   {
@@ -6180,8 +5948,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Charged+Assert+10",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Charged+Assert+10",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Charged+Assert+10+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Charged+Assert+10"
     }
   },
   {
@@ -6205,736 +5972,7 @@ export const SHOE_DATABASE: Shoe[] = [
     "budgetTier": "budget",
     "buyLinks": {
       "amazon": "https://www.amazon.in/s?k=UNDER+ARMOUR+UA+Surge+4",
-      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Surge+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Under+Armour+UA+Surge+4+running+shoes+India"
-    }
-  },
-  {
-    "id": "2e40fc1d",
-    "brand": "Nike",
-    "model": "Pegasus 42",
-    "category": "Daily Workhorse (2026)",
-    "priceMin": 12295,
-    "priceMax": 12295,
-    "priceDisplay": "₹12,295",
-    "foam": "ReactX + Full-length Air Zoom",
-    "plate": "",
-    "tech": "Curved full-length Air Zoom unit, 15% more energy return vs Peg 41",
-    "availability": "Nike.in (April 2026), Myntra, Flipkart",
-    "useCases": [
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Nike+Pegasus+42",
-      "flipkart": "https://www.flipkart.com/search?q=Nike+Pegasus+42",
-      "official": "https://www.nike.com/in/w?q=Pegasus%2042",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+42+running+shoes+India"
-    }
-  },
-  {
-    "id": "ef74086a",
-    "brand": "Nike",
-    "model": "Vaporfly 4",
-    "category": "Elite Marathon Racing",
-    "priceMin": 22495,
-    "priceMax": 22495,
-    "priceDisplay": "₹22,495",
-    "foam": "ZoomX",
-    "plate": "Flyplate (Carbon)",
-    "tech": "Updated ZoomX geometry, lighter than Vaporfly 3",
-    "availability": "Official, Myntra, Hype Fly",
-    "useCases": [
-      "racing"
-    ],
-    "experienceLevel": [
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Nike+Vaporfly+4",
-      "flipkart": "https://www.flipkart.com/search?q=Nike+Vaporfly+4",
-      "official": "https://www.nike.com/in/w?q=Vaporfly%204",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Vaporfly+4+running+shoes+India"
-    }
-  },
-  {
-    "id": "cb30213a",
-    "brand": "Nike",
-    "model": "Winflo 11",
-    "category": "Budget Daily Trainer",
-    "priceMin": 6995,
-    "priceMax": 8295,
-    "priceDisplay": "₹6,995 - ₹8,295",
-    "foam": "Cushlon 3.0",
-    "plate": "",
-    "tech": "Budget-friendly daily trainer, mesh upper",
-    "availability": "Nike.in, Amazon, Flipkart",
-    "useCases": [
-      "daily",
-      "budget"
-    ],
-    "experienceLevel": [
-      "beginner"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Nike+Winflo+11",
-      "flipkart": "https://www.flipkart.com/search?q=Nike+Winflo+11",
-      "official": "https://www.nike.com/in/w?q=Winflo%2011",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Winflo+11+running+shoes+India"
-    }
-  },
-  {
-    "id": "5e188362",
-    "brand": "Nike",
-    "model": "Pegasus 39",
-    "category": "Daily Workhorse (Clearance)",
-    "priceMin": 5000,
-    "priceMax": 7999,
-    "priceDisplay": "₹5,000 - ₹7,999",
-    "foam": "React + Zoom Air",
-    "plate": "",
-    "tech": "Previous gen clearance, still widely available",
-    "availability": "Amazon, Flipkart (Clearance)",
-    "useCases": [
-      "daily",
-      "budget"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "budget",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Nike+Pegasus+39",
-      "flipkart": "https://www.flipkart.com/search?q=Nike+Pegasus+39",
-      "official": "https://www.nike.com/in/w?q=Pegasus%2039",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Pegasus+39+running+shoes+India"
-    }
-  },
-  {
-    "id": "591d161f",
-    "brand": "Nike",
-    "model": "Invincible 2",
-    "category": "Max Cushion (Clearance)",
-    "priceMin": 8000,
-    "priceMax": 11999,
-    "priceDisplay": "₹8,000 - ₹11,999",
-    "foam": "Full ZoomX",
-    "plate": "",
-    "tech": "Previous gen clearance, max ZoomX cushion",
-    "availability": "Flipkart, Amazon (Clearance)",
-    "useCases": [
-      "cushion"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Nike+Invincible+2",
-      "flipkart": "https://www.flipkart.com/search?q=Nike+Invincible+2",
-      "official": "https://www.nike.com/in/w?q=Invincible%202",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Nike+Invincible+2+running+shoes+India"
-    }
-  },
-  {
-    "id": "89d1b129",
-    "brand": "Asics",
-    "model": "Superblast 3",
-    "category": "Super Trainer (2026)",
-    "priceMin": 19999,
-    "priceMax": 19999,
-    "priceDisplay": "₹19,999",
-    "foam": "FF Leap + FF Blast Plus",
-    "plate": "",
-    "tech": "46.5mm stack, 8mm drop, FF Leap race foam in a trainer, 239g",
-    "availability": "Asics.co.in, Myntra, Tata Cliq",
-    "useCases": [
-      "daily",
-      "speed",
-      "cushion"
-    ],
-    "experienceLevel": [
-      "intermediate",
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Asics+Superblast+3",
-      "flipkart": "https://www.flipkart.com/search?q=Asics+Superblast+3",
-      "official": "https://www.asics.com/in/en-in/search?q=Superblast+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Superblast+3+running+shoes+India"
-    }
-  },
-  {
-    "id": "f005c5a5",
-    "brand": "Asics",
-    "model": "Gel-Nimbus 27",
-    "category": "Max Cushion (Premium)",
-    "priceMin": 13599,
-    "priceMax": 16999,
-    "priceDisplay": "₹13,599 - ₹16,999",
-    "foam": "FF Blast+ Eco + PureGEL",
-    "plate": "",
-    "tech": "43mm heel stack, plush comfort, GEL heel insert",
-    "availability": "Asics.co.in, Myntra, Flipkart",
-    "useCases": [
-      "cushion",
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Asics+Gel-Nimbus+27",
-      "flipkart": "https://www.flipkart.com/search?q=Asics+Gel-Nimbus+27",
-      "official": "https://www.asics.com/in/en-in/search?q=Gel-Nimbus+27",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Gel-Nimbus+27+running+shoes+India"
-    }
-  },
-  {
-    "id": "4ee62a37",
-    "brand": "Asics",
-    "model": "Metaspeed Sky Tokyo",
-    "category": "Elite Racing (Carbon)",
-    "priceMin": 22999,
-    "priceMax": 26999,
-    "priceDisplay": "₹22,999 - ₹26,999",
-    "foam": "FF Leap + FF Turbo Plus",
-    "plate": "Carbon Plate",
-    "tech": "2025 Tokyo edition, FF Leap foam, stride-type racer",
-    "availability": "Asics.co.in, Dawntown",
-    "useCases": [
-      "racing"
-    ],
-    "experienceLevel": [
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Asics+Metaspeed+Sky+Tokyo",
-      "flipkart": "https://www.flipkart.com/search?q=Asics+Metaspeed+Sky+Tokyo",
-      "official": "https://www.asics.com/in/en-in/search?q=Metaspeed+Sky+Tokyo",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Metaspeed+Sky+Tokyo+running+shoes+India"
-    }
-  },
-  {
-    "id": "e901969c",
-    "brand": "Asics",
-    "model": "Metaspeed Edge Tokyo",
-    "category": "Elite Racing (Carbon)",
-    "priceMin": 22999,
-    "priceMax": 26999,
-    "priceDisplay": "₹22,999 - ₹26,999",
-    "foam": "FF Leap + FF Turbo Plus",
-    "plate": "Scooped Carbon Plate",
-    "tech": "2025 Tokyo edition, cadence-type racer",
-    "availability": "Asics.co.in, Dawntown",
-    "useCases": [
-      "racing"
-    ],
-    "experienceLevel": [
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Asics+Metaspeed+Edge+Tokyo",
-      "flipkart": "https://www.flipkart.com/search?q=Asics+Metaspeed+Edge+Tokyo",
-      "official": "https://www.asics.com/in/en-in/search?q=Metaspeed+Edge+Tokyo",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Metaspeed+Edge+Tokyo+running+shoes+India"
-    }
-  },
-  {
-    "id": "fe6be5e7",
-    "brand": "Adidas",
-    "model": "Hyperboost Edge",
-    "category": "Super Trainer (New)",
-    "priceMin": 18999,
-    "priceMax": 18999,
-    "priceDisplay": "₹18,999",
-    "foam": "Hyperboost Pro (No plate)",
-    "plate": "",
-    "tech": "Brand new Hyperboost Pro foam, LIGHTTRAXION outsole, PRIMEWEAVE upper, March 2026",
-    "availability": "Official, Select Retailers",
-    "useCases": [
-      "daily",
-      "speed",
-      "cushion"
-    ],
-    "experienceLevel": [
-      "intermediate",
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Adidas+Hyperboost+Edge",
-      "flipkart": "https://www.flipkart.com/search?q=Adidas+Hyperboost+Edge",
-      "official": "https://www.adidas.co.in/search?q=Hyperboost%20Edge",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Hyperboost+Edge+running+shoes+India"
-    }
-  },
-  {
-    "id": "bbe7a666",
-    "brand": "Adidas",
-    "model": "Supernova Rise 3",
-    "category": "Daily Driver (2026)",
-    "priceMin": 13999,
-    "priceMax": 14999,
-    "priceDisplay": "₹13,999 - ₹14,999",
-    "foam": "Dreamstrike+ (All supercritical)",
-    "plate": "",
-    "tech": "All supercritical foam daily trainer, Support Rods",
-    "availability": "Official, Myntra, Flipkart",
-    "useCases": [
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Adidas+Supernova+Rise+3",
-      "flipkart": "https://www.flipkart.com/search?q=Adidas+Supernova+Rise+3",
-      "official": "https://www.adidas.co.in/search?q=Supernova%20Rise%203",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Adidas+Supernova+Rise+3+running+shoes+India"
-    }
-  },
-  {
-    "id": "ac73791a",
-    "brand": "New Balance",
-    "model": "Fresh Foam X 1080 v15",
-    "category": "Daily Cushion (2026)",
-    "priceMin": 14999,
-    "priceMax": 16999,
-    "priceDisplay": "₹14,999 - ₹16,999",
-    "foam": "Infinion (Supercritical)",
-    "plate": "",
-    "tech": "New supercritical foam, sub-260g, 6mm drop",
-    "availability": "Newbalance.co.in, Myntra, Tata Cliq",
-    "useCases": [
-      "daily",
-      "cushion"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=New+Balance+Fresh+Foam+X+1080+v15",
-      "flipkart": "https://www.flipkart.com/search?q=New+Balance+Fresh+Foam+X+1080+v15",
-      "official": "https://www.newbalance.co.in/search?q=Fresh+Foam+X+1080+v15",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=New+Balance+Fresh+Foam+X+1080+v15+running+shoes+India"
-    }
-  },
-  {
-    "id": "e1dd5f7d",
-    "brand": "Brooks",
-    "model": "Adrenaline GTS 25",
-    "category": "Stability (2025)",
-    "priceMin": 12000,
-    "priceMax": 14999,
-    "priceDisplay": "₹12,000 - ₹14,999",
-    "foam": "DNA LOFT v3",
-    "plate": "",
-    "tech": "GuideRails stability, DNA LOFT v3 cushion",
-    "availability": "Brooksrunningindia.com, Myntra, Amazon",
-    "useCases": [
-      "stability",
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Brooks+Adrenaline+GTS+25",
-      "flipkart": "https://www.flipkart.com/search?q=Brooks+Adrenaline+GTS+25",
-      "official": "https://brooksrunningindia.com/?s=Adrenaline+GTS+25",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Brooks+Adrenaline+GTS+25+running+shoes+India"
-    }
-  },
-  {
-    "id": "71d7c970",
-    "brand": "Saucony",
-    "model": "Ride 19",
-    "category": "Daily Trainer (2025)",
-    "priceMin": 11999,
-    "priceMax": 13999,
-    "priceDisplay": "₹11,999 - ₹13,999",
-    "foam": "PWRRUN+ (Updated)",
-    "plate": "",
-    "tech": "Lighter and softer than Ride 18, daily versatile",
-    "availability": "Amazon, Myntra, Tata Cliq",
-    "useCases": [
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Saucony+Ride+19",
-      "flipkart": "https://www.flipkart.com/search?q=Saucony+Ride+19",
-      "official": "https://www.saucony.com/en/search?q=Ride+19",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Ride+19+running+shoes+India"
-    }
-  },
-  {
-    "id": "e43ad570",
-    "brand": "Saucony",
-    "model": "Guide 19",
-    "category": "Stability (2025)",
-    "priceMin": 11999,
-    "priceMax": 13999,
-    "priceDisplay": "₹11,999 - ₹13,999",
-    "foam": "PWRRUN+",
-    "plate": "",
-    "tech": "Medial guidance frame, stability daily trainer",
-    "availability": "Amazon, Myntra",
-    "useCases": [
-      "stability",
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Saucony+Guide+19",
-      "flipkart": "https://www.flipkart.com/search?q=Saucony+Guide+19",
-      "official": "https://www.saucony.com/en/search?q=Guide+19",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Saucony+Guide+19+running+shoes+India"
-    }
-  },
-  {
-    "id": "59e47daa",
-    "brand": "Hoka",
-    "model": "Mach 7",
-    "category": "Speed Daily (2026)",
-    "priceMin": 13999,
-    "priceMax": 16999,
-    "priceDisplay": "₹13,999 - ₹16,999",
-    "foam": "PEBA (Profly X)",
-    "plate": "",
-    "tech": "Updated upper and outsole from Mach 6, lightweight",
-    "availability": "Tata Cliq Luxury, Myntra",
-    "useCases": [
-      "speed",
-      "daily"
-    ],
-    "experienceLevel": [
-      "intermediate",
-      "advanced"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Hoka+Mach+7",
-      "flipkart": "https://www.flipkart.com/search?q=Hoka+Mach+7",
-      "official": "https://www.hoka.com/en/in/search?q=Mach+7",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Hoka+Mach+7+running+shoes+India"
-    }
-  },
-  {
-    "id": "7636ea90",
-    "brand": "Puma",
-    "model": "Fast-RB Nitro Elite",
-    "category": "Illegal Racing (58mm)",
-    "priceMin": 22999,
-    "priceMax": 25999,
-    "priceDisplay": "₹22,999 - ₹25,999",
-    "foam": "NITRO Elite (58mm stack)",
-    "plate": "3x Carbon Plates",
-    "tech": "Rule Breaker — 58mm stack, 3 carbon plates, for amateur marathoners",
-    "availability": "Dawntown, Hype Fly, Official",
-    "useCases": [
-      "racing"
-    ],
-    "experienceLevel": [
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Puma+Fast-RB+Nitro+Elite",
-      "flipkart": "https://www.flipkart.com/search?q=Puma+Fast-RB+Nitro+Elite",
-      "official": "https://in.puma.com/in/en/search?q=Fast-RB+Nitro+Elite",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Fast-RB+Nitro+Elite+running+shoes+India"
-    }
-  },
-  {
-    "id": "0595bfba",
-    "brand": "Puma",
-    "model": "Velocity NITRO 4",
-    "category": "Daily Driver (2026)",
-    "priceMin": 9999,
-    "priceMax": 13999,
-    "priceDisplay": "₹9,999 - ₹13,999",
-    "foam": "NITRO + EVA",
-    "plate": "",
-    "tech": "Updated Velocity line, PUMAGRIP outsole, lighter",
-    "availability": "Official, Flipkart, Myntra",
-    "useCases": [
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Puma+Velocity+NITRO+4",
-      "flipkart": "https://www.flipkart.com/search?q=Puma+Velocity+NITRO+4",
-      "official": "https://in.puma.com/in/en/search?q=Velocity+NITRO+4",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Puma+Velocity+NITRO+4+running+shoes+India"
-    }
-  },
-  {
-    "id": "ac21c002",
-    "brand": "Mizuno",
-    "model": "Wave Rider 28",
-    "category": "Daily Trainer (Flagship)",
-    "priceMin": 12999,
-    "priceMax": 14999,
-    "priceDisplay": "₹12,999 - ₹14,999",
-    "foam": "ENERZY NXT",
-    "plate": "Wave Plate (Plastic)",
-    "tech": "Mizuno Wave tech for stability + smooth transitions",
-    "availability": "Amazon, Flipkart, Myntra",
-    "useCases": [
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Mizuno+Wave+Rider+28",
-      "flipkart": "https://www.flipkart.com/search?q=Mizuno+Wave+Rider+28",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Mizuno+Wave+Rider+28+running+shoes+India"
-    }
-  },
-  {
-    "id": "b5129093",
-    "brand": "Mizuno",
-    "model": "Wave Rebellion Pro 3",
-    "category": "Elite Racing (Carbon)",
-    "priceMin": 20999,
-    "priceMax": 24999,
-    "priceDisplay": "₹20,999 - ₹24,999",
-    "foam": "ENERZY Lite+",
-    "plate": "Carbon Fiber Wave Plate",
-    "tech": "Aggressive rocker, carbon plate racer",
-    "availability": "Amazon, Tata Cliq Luxury",
-    "useCases": [
-      "racing"
-    ],
-    "experienceLevel": [
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Mizuno+Wave+Rebellion+Pro+3",
-      "flipkart": "https://www.flipkart.com/search?q=Mizuno+Wave+Rebellion+Pro+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Mizuno+Wave+Rebellion+Pro+3+running+shoes+India"
-    }
-  },
-  {
-    "id": "3b414e51",
-    "brand": "Mizuno",
-    "model": "Wave Rebellion Flash 3",
-    "category": "Speed / Tempo",
-    "priceMin": 13999,
-    "priceMax": 15999,
-    "priceDisplay": "₹13,999 - ₹15,999",
-    "foam": "ENERZY NXT",
-    "plate": "Nylon Wave Plate",
-    "tech": "Plated tempo trainer, lighter than Pro",
-    "availability": "Amazon, Flipkart",
-    "useCases": [
-      "speed"
-    ],
-    "experienceLevel": [
-      "intermediate",
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Mizuno+Wave+Rebellion+Flash+3",
-      "flipkart": "https://www.flipkart.com/search?q=Mizuno+Wave+Rebellion+Flash+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Mizuno+Wave+Rebellion+Flash+3+running+shoes+India"
-    }
-  },
-  {
-    "id": "9cc49e3b",
-    "brand": "Mizuno",
-    "model": "Wave Inspire 21",
-    "category": "Stability (Support)",
-    "priceMin": 11999,
-    "priceMax": 13999,
-    "priceDisplay": "₹11,999 - ₹13,999",
-    "foam": "ENERZY",
-    "plate": "Wave Plate (Support)",
-    "tech": "Fan Wave for medial support, smooth daily",
-    "availability": "Amazon, Flipkart, Myntra",
-    "useCases": [
-      "stability",
-      "daily"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Mizuno+Wave+Inspire+21",
-      "flipkart": "https://www.flipkart.com/search?q=Mizuno+Wave+Inspire+21",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Mizuno+Wave+Inspire+21+running+shoes+India"
-    }
-  },
-  {
-    "id": "ca1f4cb5",
-    "brand": "Mizuno",
-    "model": "Wave Sky 8",
-    "category": "Max Cushion",
-    "priceMin": 14999,
-    "priceMax": 16999,
-    "priceDisplay": "₹14,999 - ₹16,999",
-    "foam": "ENERZY Core",
-    "plate": "Wave Plate",
-    "tech": "Max cushion for long easy runs",
-    "availability": "Amazon, Tata Cliq",
-    "useCases": [
-      "cushion"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Mizuno+Wave+Sky+8",
-      "flipkart": "https://www.flipkart.com/search?q=Mizuno+Wave+Sky+8",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Mizuno+Wave+Sky+8+running+shoes+India"
-    }
-  },
-  {
-    "id": "b41a8f26",
-    "brand": "Mizuno",
-    "model": "Wave Equate 8",
-    "category": "Budget Stability",
-    "priceMin": 5999,
-    "priceMax": 7999,
-    "priceDisplay": "₹5,999 - ₹7,999",
-    "foam": "ENERZY",
-    "plate": "Wave Plate",
-    "tech": "Budget stability option",
-    "availability": "Amazon, Flipkart",
-    "useCases": [
-      "stability",
-      "budget"
-    ],
-    "experienceLevel": [
-      "beginner"
-    ],
-    "budgetTier": "budget",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Mizuno+Wave+Equate+8",
-      "flipkart": "https://www.flipkart.com/search?q=Mizuno+Wave+Equate+8",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Mizuno+Wave+Equate+8+running+shoes+India"
-    }
-  },
-  {
-    "id": "5e7c1efe",
-    "brand": "On Running",
-    "model": "Cloudmonster Hyper 3",
-    "category": "Super Max Cushion (2026)",
-    "priceMin": 19999,
-    "priceMax": 24999,
-    "priceDisplay": "₹19,999 - ₹24,999",
-    "foam": "Helion HF (Extreme Stack)",
-    "plate": "",
-    "tech": "Next-gen extreme stack, Helion HF foam",
-    "availability": "Hype Fly, Culture Circle, Dawntown",
-    "useCases": [
-      "cushion"
-    ],
-    "experienceLevel": [
-      "intermediate",
-      "advanced"
-    ],
-    "budgetTier": "premium",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=On+Running+Cloudmonster+Hyper+3",
-      "flipkart": "https://www.flipkart.com/search?q=On+Running+Cloudmonster+Hyper+3",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=On+Running+Cloudmonster+Hyper+3+running+shoes+India"
-    }
-  },
-  {
-    "id": "d92984c4",
-    "brand": "Asics",
-    "model": "Nimbus 25",
-    "category": "Max Cushion (Clearance)",
-    "priceMin": 8000,
-    "priceMax": 10999,
-    "priceDisplay": "₹8,000 - ₹10,999",
-    "foam": "FF Blast+ Eco + GEL",
-    "plate": "",
-    "tech": "Previous gen clearance, still excellent cushion",
-    "availability": "Amazon, Flipkart (Clearance)",
-    "useCases": [
-      "cushion"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Asics+Nimbus+25",
-      "flipkart": "https://www.flipkart.com/search?q=Asics+Nimbus+25",
-      "official": "https://www.asics.com/in/en-in/search?q=Nimbus+25",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Nimbus+25+running+shoes+India"
-    }
-  },
-  {
-    "id": "381c4995",
-    "brand": "Asics",
-    "model": "Kayano 30",
-    "category": "Stability (Clearance)",
-    "priceMin": 9000,
-    "priceMax": 11999,
-    "priceDisplay": "₹9,000 - ₹11,999",
-    "foam": "FF Blast Plus + GEL",
-    "plate": "",
-    "tech": "4D Guidance System, clearance pricing",
-    "availability": "Amazon, Flipkart, Myntra (Clearance)",
-    "useCases": [
-      "stability"
-    ],
-    "experienceLevel": [
-      "beginner",
-      "intermediate"
-    ],
-    "budgetTier": "mid",
-    "buyLinks": {
-      "amazon": "https://www.amazon.in/s?k=Asics+Kayano+30",
-      "flipkart": "https://www.flipkart.com/search?q=Asics+Kayano+30",
-      "official": "https://www.asics.com/in/en-in/search?q=Kayano+30",
-      "googleShopping": "https://www.google.com/search?tbm=shop&q=Asics+Kayano+30+running+shoes+India"
+      "flipkart": "https://www.flipkart.com/search?q=UNDER+ARMOUR+UA+Surge+4"
     }
   }
 ];

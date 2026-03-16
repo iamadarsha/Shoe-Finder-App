@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { UserPreferences, ShoeRecommendation, Shoe } from '../types';
+import { UserPreferences, UseCase, Experience, FootType, Mileage, Budget, ShoeRecommendation, Shoe } from '../types';
 import { getShoeRecommendations } from '../services/gemini';
 
 interface QuizFlowProps {
@@ -142,15 +142,24 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
   // ── Loading State ──
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 bg-[#050507]">
-        <div className="relative mb-8 flex items-center justify-center">
-          <div className="w-20 h-20 rounded-2xl animate-pulse bg-gradient-to-br from-[#7C5CFC] to-[#00C896]" />
-          <div className="absolute inset-0 w-20 h-20 rounded-2xl animate-ping opacity-20 bg-[#7C5CFC]" />
+      <div className="min-h-screen flex flex-col items-center justify-center px-6" style={{ background: '#050507' }}>
+        <div className="relative mb-8">
+          <div
+            className="w-20 h-20 rounded-2xl animate-pulse"
+            style={{ background: 'linear-gradient(135deg, #7C5CFC, #00C896)' }}
+          />
+          <div
+            className="absolute inset-0 w-20 h-20 rounded-2xl animate-ping opacity-20"
+            style={{ background: '#7C5CFC' }}
+          />
         </div>
-        <h2 className="text-xl font-semibold mb-3 text-[#E8E8ED] font-heading">
+        <h2
+          className="text-xl font-semibold mb-3"
+          style={{ color: '#E8E8ED', fontFamily: "'DM Sans', sans-serif" }}
+        >
           Analyzing 233 shoes...
         </h2>
-        <p className="text-sm text-[#8888A0] font-body">
+        <p className="text-sm" style={{ color: '#8888A0', fontFamily: "'Figtree', sans-serif" }}>
           SoleMate AI is matching your profile across 15 brands
         </p>
 
@@ -159,8 +168,12 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-24 h-32 rounded-xl animate-pulse bg-[#111118] border border-[#1A1A2A]"
-              style={{ animationDelay: `${i * 150}ms` }}
+              className="w-24 h-32 rounded-xl animate-pulse"
+              style={{
+                background: '#111118',
+                border: '1px solid #1A1A2A',
+                animationDelay: `${i * 150}ms`,
+              }}
             />
           ))}
         </div>
@@ -169,27 +182,34 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#050507]">
+    <div className="min-h-screen flex flex-col" style={{ background: '#050507' }}>
       {/* ── Header / Progress ── */}
       <div className="px-6 md:px-12 pt-6">
         {/* Back + step counter */}
         <div className="flex items-center justify-between mb-6">
           <button
             onClick={handleBack}
-            className="flex items-center gap-2 text-sm transition-colors duration-200 text-[#8888A0] hover:text-white font-body"
+            className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-white"
+            style={{ color: '#8888A0', fontFamily: "'Figtree', sans-serif" }}
           >
-            ← Back
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 13L5 8L10 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Back
           </button>
-          <span className="text-xs font-medium text-[#55556A] font-heading">
+          <span className="text-xs font-medium" style={{ color: '#55556A', fontFamily: "'DM Sans', sans-serif" }}>
             Step {step + 1} of 5
           </span>
         </div>
 
         {/* Progress bar */}
-        <div className="w-full h-1 rounded-full overflow-hidden bg-[#1A1A2A]">
+        <div className="w-full h-1 rounded-full overflow-hidden" style={{ background: '#1A1A2A' }}>
           <div
-            className="h-full rounded-full transition-all duration-500 ease-out bg-gradient-to-r from-[#7C5CFC] to-[#00C896]"
-            style={{ width: `${progress}%` }}
+            className="h-full rounded-full transition-all duration-500 ease-out"
+            style={{
+              width: `${progress}%`,
+              background: 'linear-gradient(90deg, #7C5CFC, #00C896)',
+            }}
           />
         </div>
       </div>
@@ -197,38 +217,54 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
       {/* ── Question Area ── */}
       <div
         className={`flex-1 flex flex-col items-center justify-center px-6 py-12 transition-all duration-200 ${
-          transitioning ? 'opacity-0 translate-y-1' : mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'
+          transitioning ? 'opacity-0 translate-y-4' : mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center text-[#E8E8ED] font-heading">
+        <h2
+          className="text-3xl md:text-4xl font-bold mb-2 text-center"
+          style={{ color: '#E8E8ED', fontFamily: "'DM Sans', sans-serif" }}
+        >
           {currentStep.title}
         </h2>
-        <p className="text-sm mb-10 text-center text-[#8888A0] font-body">
+        <p
+          className="text-sm mb-10 text-center"
+          style={{ color: '#8888A0', fontFamily: "'Figtree', sans-serif" }}
+        >
           {currentStep.subtitle}
         </p>
 
         {/* Option cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-2xl sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full max-w-2xl">
           {currentStep.options.map((opt) => {
             const isSelected = selected === opt.value;
             return (
               <button
                 key={opt.value}
                 onClick={() => handleSelect(opt.value)}
-                className={`group relative text-left p-5 rounded-xl transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-[#7C5CFC44] ${
-                  isSelected
-                    ? 'scale-[0.98] bg-[#7C5CFC15] border-[#7C5CFC] shadow-[0_0_30px_rgba(124,92,252,0.1)]'
-                    : 'hover:scale-[1.02] active:scale-[0.98] bg-[#111118] border-[#1A1A2A] hover:border-[#2A2A40]'
-                } border`}
+                className="group relative text-left p-5 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                style={{
+                  background: isSelected ? '#7C5CFC15' : '#111118',
+                  border: `1px solid ${isSelected ? '#7C5CFC' : '#1A1A2A'}`,
+                  boxShadow: isSelected ? '0 0 30px rgba(124, 92, 252, 0.1)' : 'none',
+                }}
               >
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl">{opt.icon}</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">{opt.icon}</span>
                   <div>
-                    <span className={`block text-base font-semibold font-heading ${isSelected ? 'text-[#A78BFA]' : 'text-[#E8E8ED]'}`}>
+                    <span
+                      className="block text-base font-semibold"
+                      style={{
+                        color: isSelected ? '#A78BFA' : '#E8E8ED',
+                        fontFamily: "'DM Sans', sans-serif",
+                      }}
+                    >
                       {opt.label}
                     </span>
                     {opt.desc && (
-                      <span className="block text-xs mt-1 text-[#55556A] font-body">
+                      <span
+                        className="block text-xs mt-1"
+                        style={{ color: '#55556A', fontFamily: "'Figtree', sans-serif" }}
+                      >
                         {opt.desc}
                       </span>
                     )}
@@ -236,9 +272,11 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
                 </div>
                 {/* Selection indicator */}
                 <div
-                  className={`absolute top-4 right-4 w-5 h-5 rounded-full border-[2px] flex items-center justify-center transition-all duration-200 ${
-                    isSelected ? 'border-[#7C5CFC] bg-[#7C5CFC]' : 'border-[#2A2A40] bg-transparent group-hover:border-[#7C5CFC44]'
-                  }`}
+                  className="absolute top-4 right-4 w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-200"
+                  style={{
+                    borderColor: isSelected ? '#7C5CFC' : '#2A2A40',
+                    background: isSelected ? '#7C5CFC' : 'transparent',
+                  }}
                 >
                   {isSelected && (
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -255,11 +293,14 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
         <button
           onClick={handleNext}
           disabled={!selected}
-          className={`mt-10 px-10 py-3.5 rounded-xl text-white font-semibold text-base transition-all duration-200 font-heading focus:outline-none ${
-            selected
-              ? 'hover:scale-[1.02] active:scale-[0.98] focus:ring-1 focus:ring-[#7C5CFC44] bg-gradient-to-br from-[#7C5CFC] to-[#6B4EE8] shadow-[0_4px_25px_rgba(124,92,252,0.35)]'
-              : 'opacity-30 cursor-not-allowed bg-[#1A1A2A]'
-          }`}
+          className="mt-10 px-10 py-3.5 rounded-xl text-white font-semibold text-base transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
+          style={{
+            background: selected
+              ? 'linear-gradient(135deg, #7C5CFC 0%, #6B4EE8 100%)'
+              : '#1A1A2A',
+            boxShadow: selected ? '0 4px 25px rgba(124, 92, 252, 0.3)' : 'none',
+            fontFamily: "'DM Sans', sans-serif",
+          }}
         >
           {step === 4 ? 'Get My Recommendations' : 'Continue'}
         </button>
