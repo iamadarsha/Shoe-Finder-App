@@ -1,6 +1,12 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { SHOE_DATABASE } = require('./shoe-data');
 
+const MODEL_CANDIDATES = [
+  'gemini-3.1-flash-lite',
+  'gemini-2.5-flash-lite',
+  'gemini-2.5-flash',
+];
+
 const ALLOWED = {
   useCase: new Set(['running', 'casual', 'training', 'walking', 'trail', 'racing']),
   experience: new Set(['beginner', 'intermediate', 'advanced']),
@@ -177,6 +183,31 @@ function toNumber(value, fallback, min, max) {
   return Math.max(min, Math.min(max, Math.round(numeric)));
 }
 
+function shouldTryNextModel(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return /404|not found|is not supported|unsupported|for API version/i.test(message);
+}
+
+async function generateWithModelFallback(genAI, prompt) {
+  let lastError = null;
+
+  for (const modelName of MODEL_CANDIDATES) {
+    try {
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      return { rawText: result.response.text(), modelName };
+    } catch (error) {
+      lastError = error;
+      console.warn(`[recommend] model ${modelName} failed:`, error);
+      if (!shouldTryNextModel(error)) {
+        break;
+      }
+    }
+  }
+
+  throw lastError || new Error('No compatible Gemini model available for recommendation');
+}
+
 module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.statusCode = 204;
@@ -213,9 +244,7 @@ module.exports = async function handler(req, res) {
     const prompt = buildPrompt(preferences, filteredShoes);
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
-    const result = await model.generateContent(prompt);
-    const rawText = result.response.text();
+    const { rawText, modelName } = await generateWithModelFallback(genAI, prompt);
     const picks = parseGeminiResponse(rawText);
 
     const recommendations = picks
@@ -247,6 +276,7 @@ module.exports = async function handler(req, res) {
       .filter(Boolean)
       .slice(0, 5);
 
+    console.log(`[recommend] generated ${recommendations.length} picks using ${modelName}`);
     sendJson(res, 200, { recommendations });
   } catch (error) {
     console.error('recommend api error:', error);

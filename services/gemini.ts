@@ -8,6 +8,11 @@ if (!API_KEY) {
 }
 
 const clientGenAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : null;
+const MODEL_CANDIDATES = [
+  'gemini-3.1-flash-lite',
+  'gemini-2.5-flash-lite',
+  'gemini-2.5-flash',
+] as const;
 
 const BUDGET_MAP: Record<'budget' | 'mid' | 'premium', number> = {
   budget: 8000,
@@ -148,6 +153,78 @@ function parsePicks(rawText: string): AiPick[] {
   return [];
 }
 
+function shouldTryNextModel(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+  return /404|not found|is not supported|unsupported|for API version/i.test(message);
+}
+
+async function generateContentWithModelFallback(prompt: string): Promise<string> {
+  if (!clientGenAI) {
+    throw new Error('Client Gemini is not initialized');
+  }
+
+  let lastError: unknown = null;
+
+  for (const modelName of MODEL_CANDIDATES) {
+    try {
+      const model = clientGenAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      return result.response.text();
+    } catch (error) {
+      lastError = error;
+      console.error(`[SoleMate] Client model ${modelName} failed:`, error);
+      if (!shouldTryNextModel(error)) {
+        break;
+      }
+    }
+  }
+
+  throw lastError instanceof Error
+    ? lastError
+    : new Error('No compatible Gemini model available for recommendation');
+}
+
+async function sendChatWithModelFallback(
+  messages: ChatMessage[],
+  userMessage: string
+): Promise<string> {
+  if (!clientGenAI) {
+    throw new Error('Client Gemini is not initialized');
+  }
+
+  const history = messages.map((message) => ({
+    role: message.role === 'assistant' ? 'model' : 'user',
+    parts: [{ text: message.content }],
+  }));
+
+  let lastError: unknown = null;
+  const systemInstruction =
+    'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
+    'Recommend practical shoe options with INR-aware context and concise biomechanical guidance.';
+
+  for (const modelName of MODEL_CANDIDATES) {
+    try {
+      const model = clientGenAI.getGenerativeModel({
+        model: modelName,
+        systemInstruction,
+      });
+      const chat = model.startChat({ history });
+      const result = await chat.sendMessage(userMessage);
+      return result.response.text().trim();
+    } catch (error) {
+      lastError = error;
+      console.error(`[SoleMate] Client chat model ${modelName} failed:`, error);
+      if (!shouldTryNextModel(error)) {
+        break;
+      }
+    }
+  }
+
+  throw lastError instanceof Error
+    ? lastError
+    : new Error('No compatible Gemini model available for chat');
+}
+
 function mergePicksWithShoes(picks: AiPick[], shoeDatabase: Shoe[]): ShoeRecommendation[] {
   return picks
     .map((pick) => {
@@ -232,9 +309,8 @@ export async function getShoeRecommendations(
   try {
     const filteredShoes = filterShoes(preferences, shoeDatabase);
     const prompt = buildRecommendationPrompt(preferences, filteredShoes);
-    const model = clientGenAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
-    const result = await model.generateContent(prompt);
-    const picks = parsePicks(result.response.text());
+    const responseText = await generateContentWithModelFallback(prompt);
+    const picks = parsePicks(responseText);
     const recommendations = mergePicksWithShoes(picks, shoeDatabase).slice(0, 5);
     return recommendations;
   } catch (clientError) {
@@ -259,21 +335,7 @@ export async function chatWithSoleMate(
   }
 
   try {
-    const model = clientGenAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
-    const history = messages.map((message) => ({
-      role: message.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: message.content }],
-    }));
-
-    const chat = model.startChat({
-      history,
-      systemInstruction:
-        'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
-        'Recommend practical shoe options with INR-aware context and concise biomechanical guidance.',
-    });
-
-    const result = await chat.sendMessage(userMessage);
-    return result.response.text().trim();
+    return await sendChatWithModelFallback(messages, userMessage);
   } catch (clientError) {
     console.error('[SoleMate] Client fallback chat failed:', clientError);
     return 'Sorry, I ran into an error. Please try again.';

@@ -1,5 +1,16 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
+const MODEL_CANDIDATES = [
+  'gemini-3.1-flash-lite',
+  'gemini-2.5-flash-lite',
+  'gemini-2.5-flash',
+];
+
+const SYSTEM_INSTRUCTION =
+  'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
+  'Recommend practical shoe options with INR-aware context, give concise biomechanical guidance, ' +
+  'and keep responses clear and friendly.';
+
 function sendJson(res, status, payload) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json');
@@ -66,6 +77,35 @@ function validateChatPayload(payload) {
   return null;
 }
 
+function shouldTryNextModel(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return /404|not found|is not supported|unsupported|for API version/i.test(message);
+}
+
+async function sendChatWithModelFallback(genAI, history, userMessage) {
+  let lastError = null;
+
+  for (const modelName of MODEL_CANDIDATES) {
+    try {
+      const model = genAI.getGenerativeModel({
+        model: modelName,
+        systemInstruction: SYSTEM_INSTRUCTION,
+      });
+      const chat = model.startChat({ history });
+      const result = await chat.sendMessage(userMessage);
+      return { reply: result.response.text().trim(), modelName };
+    } catch (error) {
+      lastError = error;
+      console.warn(`[chat] model ${modelName} failed:`, error);
+      if (!shouldTryNextModel(error)) {
+        break;
+      }
+    }
+  }
+
+  throw lastError || new Error('No compatible Gemini model available for chat');
+}
+
 module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.statusCode = 204;
@@ -103,18 +143,13 @@ module.exports = async function handler(req, res) {
     }));
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
-    const chat = model.startChat({
+    const { reply, modelName } = await sendChatWithModelFallback(
+      genAI,
       history,
-      systemInstruction:
-        'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
-        'Recommend practical shoe options with INR-aware context, give concise biomechanical guidance, ' +
-        'and keep responses clear and friendly.',
-    });
+      body.userMessage
+    );
 
-    const result = await chat.sendMessage(body.userMessage);
-    const reply = result.response.text().trim();
-
+    console.log(`[chat] replied using ${modelName}`);
     sendJson(res, 200, { reply });
   } catch (error) {
     console.error('chat api error:', error);
