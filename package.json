@@ -1,13 +1,14 @@
 {
   "name": "solemate-ai-shoe-finder",
   "version": "2.0.0",
-  "description": "AI-powered running shoe recommender for the Indian market — 233 shoes, 15 brands",
+  "description": "AI-powered running shoe recommender for the Indian market — 260 shoes, 16 brands",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
@@ -25,6 +26,7 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.6.3",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vitest": "^4.1.0"
   }
 }

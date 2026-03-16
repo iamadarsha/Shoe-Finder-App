@@ -1,13 +1,5 @@
-// ═══════════════════════════════════════════════════════
-// SoleMate Shoe Database — 260 shoes across 16 brands
-// Updated: 2026-03-16 (VERIFIED prices from Nike.in, Asics.co.in, Adidas.co.in)
-// Includes: 2025/2026 releases, clearance models, Google Shopping links
-// Sources: Nike.in, Asics.co.in, Adidas.co.in, Flipkart, SoleReview, RunTesters
-// ═══════════════════════════════════════════════════════
-
-import { Shoe } from '../types';
-
-export const SHOE_DATABASE: Shoe[] = [
+// Generated from data/shoe-database.ts for Vercel serverless API usage
+const SHOE_DATABASE = [
   {
     "id": "5620a26f",
     "brand": "Adidas",
@@ -6938,3 +6930,5 @@ export const SHOE_DATABASE: Shoe[] = [
     }
   }
 ];
+
+module.exports = { SHOE_DATABASE };

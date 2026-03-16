@@ -80,6 +80,8 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
   const [selected, setSelected] = useState<string | null>(null);
   const [transitioning, setTransitioning] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [quizError, setQuizError] = useState<string | null>(null);
+  const [lastSubmittedPrefs, setLastSubmittedPrefs] = useState<UserPreferences | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -98,6 +100,27 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
 
   const handleSelect = (value: string) => {
     setSelected(value);
+    setQuizError(null);
+  };
+
+  const fetchRecommendations = async (finalPrefs: UserPreferences) => {
+    setLoading(true);
+    setQuizError(null);
+    setLastSubmittedPrefs(finalPrefs);
+
+    try {
+      const recs = await getShoeRecommendations(finalPrefs, shoeDatabase);
+      if (!Array.isArray(recs) || recs.length === 0) {
+        setQuizError('Something went wrong. Please try again.');
+        setLoading(false);
+        return;
+      }
+      onComplete(finalPrefs, recs);
+    } catch (err) {
+      console.error('AI recommendation failed:', err);
+      setQuizError('Something went wrong. Please try again.');
+      setLoading(false);
+    }
   };
 
   const handleNext = async () => {
@@ -116,14 +139,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
       }, 200);
     } else {
       // Final step — call AI
-      setLoading(true);
-      try {
-        const recs = await getShoeRecommendations(newPrefs, shoeDatabase);
-        onComplete(newPrefs, recs);
-      } catch (err) {
-        console.error('AI recommendation failed:', err);
-        onComplete(newPrefs, []);
-      }
+      await fetchRecommendations(newPrefs);
     }
   };
 
@@ -157,10 +173,10 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
           className="text-xl font-semibold mb-3"
           style={{ color: '#E8E8ED', fontFamily: "'DM Sans', sans-serif" }}
         >
-          Analyzing 233 shoes...
+          Analyzing 260 shoes...
         </h2>
         <p className="text-sm" style={{ color: '#8888A0', fontFamily: "'Figtree', sans-serif" }}>
-          SoleMate AI is matching your profile across 15 brands
+          SoleMate AI is matching your profile across 16 brands
         </p>
 
         {/* Loading skeleton cards */}
@@ -288,6 +304,28 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
             );
           })}
         </div>
+
+        {quizError && step === 4 && (
+          <div
+            className="mt-6 w-full max-w-2xl rounded-xl p-4"
+            style={{ background: '#111118', border: '1px solid #3A1A1A' }}
+          >
+            <p className="text-sm mb-3" style={{ color: '#FF9FA8', fontFamily: "'Figtree', sans-serif" }}>
+              {quizError}
+            </p>
+            <button
+              onClick={() => lastSubmittedPrefs && fetchRecommendations(lastSubmittedPrefs)}
+              className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:opacity-90"
+              style={{
+                background: 'linear-gradient(135deg, #7C5CFC 0%, #6B4EE8 100%)',
+                color: '#FFFFFF',
+                fontFamily: "'DM Sans', sans-serif",
+              }}
+            >
+              Try Again
+            </button>
+          </div>
+        )}
 
         {/* Next button */}
         <button

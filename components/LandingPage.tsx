@@ -88,7 +88,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
               border: '1px solid #1A1A2A',
             }}
           >
-            Browse All 233 Shoes
+            Browse All 260 Shoes
           </button>
           <button
             onClick={onChat}
@@ -119,7 +119,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
           }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] animate-pulse" />
-          233 shoes · 15 brands · India market
+          260 shoes · 16 brands · India market
         </div>
 
         {/* Main heading */}
@@ -153,7 +153,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
           Answer 5 quick questions. Our AI matches you with the best running shoes
           from {' '}
           <span style={{ color: '#A78BFA' }}>Nike, Adidas, Asics, Hoka</span>
-          {' '} and 11 more brands — all available in India.
+          {' '} and 12 more brands — all available in India.
         </p>
 
         {/* CTA Buttons */}

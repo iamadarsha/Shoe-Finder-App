@@ -1,204 +1,281 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { UserPreferences, ShoeRecommendation, ChatMessage, Shoe } from '../types';
+import { SHOE_DATABASE } from '../data/shoe-database';
+import { ChatMessage, Shoe, ShoeRecommendation, UserPreferences } from '../types';
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+if (!API_KEY) {
+  console.warn('⚠️ VITE_GEMINI_API_KEY is not set. Using server API only.');
+}
 
-/**
- * Filters the shoe database based on user preferences, then asks Gemini
- * to pick the top 5 and write personalized explanations.
- */
-export async function getShoeRecommendations(
-  prefs: UserPreferences,
-  shoeDatabase: Shoe[]
-): Promise<ShoeRecommendation[]> {
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+const clientGenAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : null;
 
-  // ── Step 1: Pre-filter shoes from the 233-shoe database ──
-  let filtered = shoeDatabase;
+const BUDGET_MAP: Record<'budget' | 'mid' | 'premium', number> = {
+  budget: 8000,
+  mid: 15000,
+  premium: 100000,
+};
 
-  // Budget filter with 25% buffer
-  const budgetMap: Record<string, number> = {
-    budget: 8000,
-    mid: 15000,
-    premium: 100000,
+const USE_CASE_MAP: Record<string, string[]> = {
+  running: ['daily', 'cushion', 'speed', 'racing'],
+  casual: ['casual', 'daily', 'budget'],
+  training: ['training', 'daily'],
+  walking: ['casual', 'cushion', 'stability', 'budget'],
+  trail: ['trail'],
+  racing: ['racing', 'speed'],
+};
+
+type AiPick = {
+  id: string;
+  matchScore: number;
+  whyThisShoe: string;
+  reviewSummary: string;
+  reviewScore: number;
+  pros: string[];
+  cons: string[];
+  bestFor: string;
+};
+
+function toNumber(value: unknown, fallback: number, min: number, max: number): number {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) {
+    return fallback;
+  }
+  return Math.max(min, Math.min(max, Math.round(parsed)));
+}
+
+function normalizeBuyLinks(shoe: Shoe): ShoeRecommendation['buyLinks'] {
+  const query = encodeURIComponent(`${shoe.brand} ${shoe.model}`);
+  return {
+    amazon: shoe.buyLinks?.amazon || `https://www.amazon.in/s?k=${query}`,
+    flipkart: shoe.buyLinks?.flipkart || `https://www.flipkart.com/search?q=${query}`,
+    official: shoe.buyLinks?.official || '',
+    googleShopping:
+      shoe.buyLinks?.googleShopping ||
+      `https://www.google.com/search?tbm=shop&q=${query}`,
   };
-  const maxPrice = prefs.budget
-    ? Math.round(budgetMap[prefs.budget] * 1.25)
-    : 100000;
+}
 
-  filtered = filtered.filter((s) => s.priceMin <= maxPrice);
+function filterShoes(preferences: UserPreferences, shoes: Shoe[]): Shoe[] {
+  let filtered = [...shoes];
 
-  // Use case alignment
-  const useCaseMap: Record<string, string[]> = {
-    running: ['daily', 'cushion', 'speed', 'racing'],
-    casual: ['casual', 'daily', 'budget'],
-    training: ['training', 'daily'],
-    walking: ['casual', 'cushion', 'stability', 'budget'],
-    trail: ['trail'],
-    racing: ['racing', 'speed'],
-  };
+  if (preferences.budget) {
+    const maxPrice = Math.round(BUDGET_MAP[preferences.budget] * 1.25);
+    filtered = filtered.filter((shoe) => shoe.priceMin <= maxPrice);
+  }
 
-  if (prefs.useCase) {
-    const relevantCases = useCaseMap[prefs.useCase] || [];
-    const useCaseFiltered = filtered.filter((s) =>
-      s.useCases.some((uc) => relevantCases.includes(uc))
+  if (preferences.useCase) {
+    const relevantCases = USE_CASE_MAP[preferences.useCase] || [];
+    const byUseCase = filtered.filter((shoe) =>
+      shoe.useCases.some((useCase) => relevantCases.includes(useCase))
     );
-    if (useCaseFiltered.length >= 5) {
-      filtered = useCaseFiltered;
+    if (byUseCase.length >= 5) {
+      filtered = byUseCase;
     }
   }
 
-  // Experience filter (soft — don't cut too aggressively)
-  if (prefs.experience) {
-    const expFiltered = filtered.filter((s) =>
-      s.experienceLevel.includes(prefs.experience!)
+  if (preferences.experience) {
+    const byExperience = filtered.filter((shoe) =>
+      shoe.experienceLevel.includes(preferences.experience as string)
     );
-    if (expFiltered.length >= 5) {
-      filtered = expFiltered;
+    if (byExperience.length >= 5) {
+      filtered = byExperience;
     }
   }
 
-  // Cap at 40 shoes to keep prompt size manageable
   if (filtered.length > 40) {
     filtered = filtered.slice(0, 40);
   }
 
-  // Fallback: if filtering yields < 5 shoes, grab cheapest 15 from full DB
-  let contextMessage = '';
   if (filtered.length < 5) {
-    filtered = [...shoeDatabase]
-      .sort((a, b) => a.priceMin - b.priceMin)
-      .slice(0, 15);
-    contextMessage =
-      'NOTE: No shoes perfectly match this user\'s exact combination. Apologize briefly, then recommend the closest budget-friendly alternatives from the list below.';
+    return [...shoes].sort((a, b) => a.priceMin - b.priceMin).slice(0, 15);
   }
 
-  // ── Step 2: Build the prompt ──
-  const mileageLabel =
-    prefs.mileage === 'low' ? '0–20 km/week' :
-    prefs.mileage === 'medium' ? '20–50 km/week' : '50+ km/week';
-
-  const budgetLabel =
-    prefs.budget === 'budget' ? 'Under ₹8,000' :
-    prefs.budget === 'mid' ? '₹8,000–15,000' : '₹15,000+';
-
-  const footLabel =
-    prefs.footType === 'flat' ? 'Flat feet (overpronator)' :
-    prefs.footType === 'high_arch' ? 'High arch (underpronator)' :
-    'Neutral';
-
-  const shoeListJSON = JSON.stringify(
-    filtered.map((s) => ({
-      id: s.id,
-      brand: s.brand,
-      model: s.model,
-      category: s.category,
-      price: s.priceDisplay,
-      foam: s.foam,
-      plate: s.plate,
-      tech: s.tech,
-    })),
-    null,
-    2
-  );
-
-  const prompt = `You are SoleMate AI, an expert running shoe advisor combining the analytical depth of RunRepeat, the technical precision of Sole Review, and the real-world testing approach of RunTesters.
-
-${contextMessage}
-
-USER PROFILE:
-- Use case: ${prefs.useCase}
-- Experience: ${prefs.experience}
-- Foot type: ${footLabel}
-- Weekly mileage: ${mileageLabel}
-- Budget: ${budgetLabel}
-
-AVAILABLE SHOES (pre-filtered from our 233-shoe India database):
-${shoeListJSON}
-
-YOUR TASK:
-Select the TOP 5 shoes from this list and return ONLY a raw JSON array. No markdown, no code fences, no explanation before or after.
-
-Each object must have:
-{
-  "id": "the shoe id from the list",
-  "matchScore": 85-99 (realistic, best match gets highest),
-  "whyThisShoe": "2-3 sentences. Be specific about foam tech, stack height, drop. Mention how it matches their foot type and mileage. Reference the user's experience level. Sound like a knowledgeable running store expert, not a generic AI."
+  return filtered;
 }
 
-RULES:
-- ONLY select shoes from the provided list — never invent shoes
-- matchScore must be realistic (85-99 range), with clear differentiation between ranks
-- whyThisShoe must reference the specific user's profile, not be generic
-- If user has flat feet, prioritize stability shoes. If high arch, prioritize neutral cushion.
-- For beginners, avoid elite carbon racers. For advanced, skip entry-level shoes.
-- For trail use case, ONLY pick trail shoes.`;
+function buildRecommendationPrompt(preferences: UserPreferences, filteredShoes: Shoe[]): string {
+  const payload = filteredShoes.map((shoe) => ({
+    id: shoe.id,
+    brand: shoe.brand,
+    model: shoe.model,
+    category: shoe.category,
+    price: shoe.priceDisplay,
+    foam: shoe.foam,
+    plate: shoe.plate,
+    tech: shoe.tech,
+    useCases: shoe.useCases,
+    experienceLevel: shoe.experienceLevel,
+  }));
 
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
+  return `You are SoleMate AI, an expert shoe advisor combining RunRepeat scoring, SoleReview foam analysis, and RunTesters real-world testing.
+
+USER PROFILE:
+- useCase: ${preferences.useCase}
+- experience: ${preferences.experience}
+- footType: ${preferences.footType}
+- mileage: ${preferences.mileage}
+- budget: ${preferences.budget}
+
+FILTERED SHOES:
+${JSON.stringify(payload, null, 2)}
+
+Select TOP 5. Return ONLY raw JSON array.
+Each object must have:
+- id
+- matchScore (85-99)
+- whyThisShoe (2-3 personal sentences)
+- reviewSummary (1-2 sentences from expert perspective)
+- reviewScore (78-95, RunRepeat-style objective score)
+- pros (3 technical specifics)
+- cons (2 honest weaknesses)
+- bestFor (one line)`;
+}
+
+function parsePicks(rawText: string): AiPick[] {
+  const cleaned = rawText.replace(/```json|```/g, '').trim();
+  const parsed = JSON.parse(cleaned) as unknown;
+
+  if (Array.isArray(parsed)) {
+    return parsed as AiPick[];
+  }
+  if (
+    parsed &&
+    typeof parsed === 'object' &&
+    Array.isArray((parsed as { recommendations?: unknown[] }).recommendations)
+  ) {
+    return (parsed as { recommendations: AiPick[] }).recommendations;
+  }
+  return [];
+}
+
+function mergePicksWithShoes(picks: AiPick[], shoeDatabase: Shoe[]): ShoeRecommendation[] {
+  return picks
+    .map((pick) => {
+      const shoe = shoeDatabase.find((item) => item.id === pick.id);
+      if (!shoe) {
+        return null;
+      }
+
+      return {
+        id: shoe.id,
+        name: `${shoe.brand} ${shoe.model}`,
+        brand: shoe.brand,
+        model: shoe.model,
+        matchScore: toNumber(pick.matchScore, 88, 85, 99),
+        price: shoe.priceDisplay,
+        category: shoe.category,
+        foam: shoe.foam,
+        plate: shoe.plate,
+        tech: shoe.tech,
+        whyThisShoe: String(pick.whyThisShoe || '').trim(),
+        reviewSummary: String(pick.reviewSummary || '').trim(),
+        reviewScore: toNumber(pick.reviewScore, 82, 78, 95),
+        pros: Array.isArray(pick.pros) ? pick.pros.slice(0, 3).map(String) : [],
+        cons: Array.isArray(pick.cons) ? pick.cons.slice(0, 2).map(String) : [],
+        bestFor: String(pick.bestFor || '').trim(),
+        buyLinks: normalizeBuyLinks(shoe),
+      } satisfies ShoeRecommendation;
+    })
+    .filter(Boolean) as ShoeRecommendation[];
+}
+
+async function fetchRecommendationsFromServer(preferences: UserPreferences): Promise<ShoeRecommendation[]> {
+  const response = await fetch('/api/recommend', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ preferences }),
+  });
+
+  const payload = await response.json().catch(() => null);
+  if (!response.ok) {
+    throw new Error(payload?.error || `Server recommend API failed (${response.status})`);
+  }
+  if (!payload || !Array.isArray(payload.recommendations)) {
+    throw new Error('Server recommend API returned invalid payload');
+  }
+
+  return payload.recommendations as ShoeRecommendation[];
+}
+
+async function fetchChatFromServer(messages: ChatMessage[], userMessage: string): Promise<string> {
+  const response = await fetch('/api/chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ messages, userMessage }),
+  });
+
+  const payload = await response.json().catch(() => null);
+  if (!response.ok) {
+    throw new Error(payload?.error || `Server chat API failed (${response.status})`);
+  }
+  if (!payload || typeof payload.reply !== 'string') {
+    throw new Error('Server chat API returned invalid payload');
+  }
+  return payload.reply;
+}
+
+export async function getShoeRecommendations(
+  preferences: UserPreferences,
+  shoeDatabase: Shoe[] = SHOE_DATABASE
+): Promise<ShoeRecommendation[]> {
+  try {
+    return await fetchRecommendationsFromServer(preferences);
+  } catch (serverError) {
+    console.error('[SoleMate] /api/recommend failed. Falling back to client Gemini:', serverError);
+  }
+
+  if (!clientGenAI) {
+    console.error('[SoleMate] Client fallback unavailable: VITE_GEMINI_API_KEY is missing.');
+    return [];
+  }
 
   try {
-    const cleaned = text.replace(/```json|```/g, '').trim();
-    const aiPicks: Array<{ id: string; matchScore: number; whyThisShoe: string }> =
-      JSON.parse(cleaned);
-
-    // Merge AI picks with full shoe data
-    const recommendations: ShoeRecommendation[] = aiPicks
-      .map((pick) => {
-        const shoe = filtered.find((s) => s.id === pick.id);
-        if (!shoe) return null;
-        return {
-          id: shoe.id,
-          name: `${shoe.brand} ${shoe.model}`,
-          brand: shoe.brand,
-          model: shoe.model,
-          matchScore: pick.matchScore,
-          price: shoe.priceDisplay,
-          category: shoe.category,
-          foam: shoe.foam,
-          plate: shoe.plate,
-          tech: shoe.tech,
-          whyThisShoe: pick.whyThisShoe,
-          buyLinks: shoe.buyLinks,
-        };
-      })
-      .filter(Boolean) as ShoeRecommendation[];
-
-    return recommendations.slice(0, 5);
-  } catch (err) {
-    console.error('Failed to parse Gemini response:', text, err);
+    const filteredShoes = filterShoes(preferences, shoeDatabase);
+    const prompt = buildRecommendationPrompt(preferences, filteredShoes);
+    const model = clientGenAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
+    const result = await model.generateContent(prompt);
+    const picks = parsePicks(result.response.text());
+    const recommendations = mergePicksWithShoes(picks, shoeDatabase).slice(0, 5);
+    return recommendations;
+  } catch (clientError) {
+    console.error('[SoleMate] Client fallback recommendation failed:', clientError);
     return [];
   }
 }
 
-/**
- * Free-form chat with SoleMate AI
- */
 export async function chatWithSoleMate(
   messages: ChatMessage[],
   userMessage: string
 ): Promise<string> {
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  try {
+    return await fetchChatFromServer(messages, userMessage);
+  } catch (serverError) {
+    console.error('[SoleMate] /api/chat failed. Falling back to client Gemini:', serverError);
+  }
 
-  const history = messages.map((m) => ({
-    role: m.role === 'assistant' ? 'model' : 'user',
-    parts: [{ text: m.content }],
-  }));
+  if (!clientGenAI) {
+    console.error('[SoleMate] Client fallback chat unavailable: VITE_GEMINI_API_KEY is missing.');
+    return 'Sorry, chat is temporarily unavailable. Please try again in a bit.';
+  }
 
-  const chat = model.startChat({
-    history,
-    systemInstruction:
-      'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
-      'You combine the analytical depth of RunRepeat (data-driven scores), Sole Review (foam density analysis), ' +
-      'and RunTesters (real-world comparative testing). ' +
-      'Keep replies concise, warm, and conversational. ' +
-      'Always recommend specific shoe models with INR pricing. ' +
-      'You deeply understand running biomechanics, gait types, pronation, shoe stack heights, drop angles, ' +
-      'foam technologies (ZoomX, NITRO, FlyteFoam, PEBA, TPU, EVA), and carbon plate mechanics. ' +
-      'Reference Indian retailers (Amazon.in, Flipkart, Myntra, Tata Cliq) for purchase links. ' +
-      'If unsure, say so honestly rather than guessing.',
-  });
+  try {
+    const model = clientGenAI.getGenerativeModel({ model: 'gemini-3.1-flash-lite' });
+    const history = messages.map((message) => ({
+      role: message.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: message.content }],
+    }));
 
-  const result = await chat.sendMessage(userMessage);
-  return result.response.text();
+    const chat = model.startChat({
+      history,
+      systemInstruction:
+        'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
+        'Recommend practical shoe options with INR-aware context and concise biomechanical guidance.',
+    });
+
+    const result = await chat.sendMessage(userMessage);
+    return result.response.text().trim();
+  } catch (clientError) {
+    console.error('[SoleMate] Client fallback chat failed:', clientError);
+    return 'Sorry, I ran into an error. Please try again.';
+  }
 }
