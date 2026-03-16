@@ -8,6 +8,49 @@ interface ChatDrawerProps {
   onClose: () => void;
 }
 
+function normalizeAssistantContent(content: string): string {
+  return String(content || '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/^#{1,6}\s*/gm, '')
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/__(.*?)__/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function renderMessageContent(msg: ChatMessage) {
+  if (msg.role === 'user') {
+    return <span className="whitespace-pre-wrap">{msg.content}</span>;
+  }
+
+  const content = normalizeAssistantContent(msg.content);
+  const lines = content.split('\n').map((line) => line.trim()).filter(Boolean);
+  const hasList = lines.some((line) => /^([-•]|\d+[.)])\s+/.test(line));
+
+  if (!hasList) {
+    return <span className="whitespace-pre-wrap">{content}</span>;
+  }
+
+  return (
+    <div className="space-y-2">
+      {lines.map((line, index) => {
+        const match = line.match(/^([-•]|\d+[.)])\s+(.*)$/);
+        if (match) {
+          return (
+            <div key={index} className="flex gap-2">
+              <span style={{ color: '#A78BFA' }}>•</span>
+              <span>{match[2]}</span>
+            </div>
+          );
+        }
+        return <div key={index}>{line}</div>;
+      })}
+    </div>
+  );
+}
+
 export default function ChatDrawer({ messages, setMessages, onClose }: ChatDrawerProps) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -110,13 +153,13 @@ export default function ChatDrawer({ messages, setMessages, onClose }: ChatDrawe
                 Ask me anything about running shoes
               </p>
               <p className="text-xs" style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}>
-                I know foam tech, gait types, Indian pricing & availability
+                Short, practical answers. I ask one follow-up at a time.
               </p>
               <div className="flex flex-wrap gap-2 justify-center mt-6">
                 {[
-                  'Best shoes for flat feet under ₹10K?',
-                  'Nike Vomero 18 vs Asics Gel-Nimbus 26?',
-                  'Which Hoka for marathon training?',
+                  'Daily trainer under ₹7,000',
+                  'Nike Vomero 18 vs Asics Gel-Nimbus 26',
+                  'My knees hurt while running. What should I look for?',
                 ].map((q) => (
                   <button
                     key={q}
@@ -153,7 +196,7 @@ export default function ChatDrawer({ messages, setMessages, onClose }: ChatDrawe
                   fontFamily: "'Figtree', sans-serif",
                 }}
               >
-                {msg.content}
+                {renderMessageContent(msg)}
               </div>
             </div>
           ))}

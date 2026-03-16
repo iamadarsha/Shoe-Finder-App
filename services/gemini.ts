@@ -13,6 +13,13 @@ const MODEL_CANDIDATES = [
   'gemini-2.5-flash-lite',
   'gemini-2.5-flash',
 ] as const;
+const CHAT_SYSTEM_INSTRUCTION =
+  'You are SoleMate, a human-friendly shoe advisor for the Indian running market. ' +
+  'Your tone should be warm, practical, and concise. ' +
+  'Rules: keep replies short and easy to scan; avoid markdown symbols like **, #, or ```; ' +
+  'ask at most ONE clarifying question per reply; do not ask long questionnaires; ' +
+  'when recommending, share up to 3 options with price range in INR and one-line reason each; ' +
+  'prefer plain text with brief sections and line breaks; avoid repeating greetings every turn.';
 
 const BUDGET_MAP: Record<'budget' | 'mid' | 'premium', number> = {
   budget: 8000,
@@ -153,6 +160,19 @@ function parsePicks(rawText: string): AiPick[] {
   return [];
 }
 
+function cleanReplyText(reply: string): string {
+  return String(reply || '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/^#{1,6}\s*/gm, '')
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/__(.*?)__/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\r\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+}
+
 function shouldTryNextModel(error: unknown): boolean {
   const message = error instanceof Error ? error.message : String(error);
   return /404|not found|is not supported|unsupported|for API version/i.test(message);
@@ -198,19 +218,16 @@ async function sendChatWithModelFallback(
   }));
 
   let lastError: unknown = null;
-  const systemInstruction =
-    'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
-    'Recommend practical shoe options with INR-aware context and concise biomechanical guidance.';
 
   for (const modelName of MODEL_CANDIDATES) {
     try {
       const model = clientGenAI.getGenerativeModel({
         model: modelName,
-        systemInstruction,
+        systemInstruction: CHAT_SYSTEM_INSTRUCTION,
       });
       const chat = model.startChat({ history });
       const result = await chat.sendMessage(userMessage);
-      return result.response.text().trim();
+      return cleanReplyText(result.response.text());
     } catch (error) {
       lastError = error;
       console.error(`[SoleMate] Client chat model ${modelName} failed:`, error);
@@ -288,7 +305,7 @@ async function fetchChatFromServer(messages: ChatMessage[], userMessage: string)
   if (!payload || typeof payload.reply !== 'string') {
     throw new Error('Server chat API returned invalid payload');
   }
-  return payload.reply;
+  return cleanReplyText(payload.reply);
 }
 
 export async function getShoeRecommendations(

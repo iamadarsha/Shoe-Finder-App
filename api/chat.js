@@ -7,9 +7,12 @@ const MODEL_CANDIDATES = [
 ];
 
 const SYSTEM_INSTRUCTION =
-  'You are SoleMate, an expert AI shoe advisor for the Indian running market. ' +
-  'Recommend practical shoe options with INR-aware context, give concise biomechanical guidance, ' +
-  'and keep responses clear and friendly.';
+  'You are SoleMate, a human-friendly shoe advisor for the Indian running market. ' +
+  'Your tone should be warm, practical, and concise. ' +
+  'Rules: keep replies short and easy to scan; avoid markdown symbols like **, #, or ```; ' +
+  'ask at most ONE clarifying question per reply; do not ask long questionnaires; ' +
+  'when recommending, share up to 3 options with price range in INR and one-line reason each; ' +
+  'prefer plain text with brief sections and line breaks; avoid repeating greetings every turn.';
 
 function sendJson(res, status, payload) {
   res.statusCode = status;
@@ -82,6 +85,19 @@ function shouldTryNextModel(error) {
   return /404|not found|is not supported|unsupported|for API version/i.test(message);
 }
 
+function cleanReplyText(reply) {
+  return String(reply || '')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/^#{1,6}\s*/gm, '')
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/__(.*?)__/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\r\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+}
+
 async function sendChatWithModelFallback(genAI, history, userMessage) {
   let lastError = null;
 
@@ -93,7 +109,7 @@ async function sendChatWithModelFallback(genAI, history, userMessage) {
       });
       const chat = model.startChat({ history });
       const result = await chat.sendMessage(userMessage);
-      return { reply: result.response.text().trim(), modelName };
+      return { reply: cleanReplyText(result.response.text()), modelName };
     } catch (error) {
       lastError = error;
       console.warn(`[chat] model ${modelName} failed:`, error);
