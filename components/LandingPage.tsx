@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ShaderBackground from './ui/ShaderBackground';
 
 interface LandingPageProps {
   onStart: () => void;
@@ -16,10 +17,12 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
 
   return (
     <div className="relative min-h-screen overflow-hidden flex flex-col" style={{ background: '#050507' }}>
+      <ShaderBackground />
+
       {/* ── Animated gradient orbs ── */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute w-[600px] h-[600px] rounded-full opacity-[0.07] blur-[120px]"
+          className="absolute w-[600px] h-[600px] rounded-full opacity-[0.06] blur-[120px]"
           style={{
             background: 'radial-gradient(circle, #7C5CFC 0%, transparent 70%)',
             top: '-10%',
@@ -28,16 +31,16 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
           }}
         />
         <div
-          className="absolute w-[500px] h-[500px] rounded-full opacity-[0.05] blur-[100px]"
+          className="absolute w-[500px] h-[500px] rounded-full opacity-[0.04] blur-[100px]"
           style={{
-            background: 'radial-gradient(circle, #00C896 0%, transparent 70%)',
+            background: 'radial-gradient(circle, #00E59B 0%, transparent 70%)',
             bottom: '-5%',
             left: '-5%',
             animation: 'float-orb 25s ease-in-out infinite reverse',
           }}
         />
         <div
-          className="absolute w-[300px] h-[300px] rounded-full opacity-[0.04] blur-[80px]"
+          className="absolute w-[300px] h-[300px] rounded-full opacity-[0.03] blur-[80px]"
           style={{
             background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
             top: '40%',
@@ -47,13 +50,13 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
         />
         {/* Grid lines (kernel.sh style) */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(124, 92, 252, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(124, 92, 252, 0.3) 1px, transparent 1px)
+              linear-gradient(rgba(124, 92, 252, 0.04) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(124, 92, 252, 0.04) 1px, transparent 1px)
             `,
-            backgroundSize: '60px 60px',
+            backgroundSize: '48px 48px',
           }}
         />
       </div>
@@ -67,7 +70,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
         <div className="flex items-center gap-2">
           <div
             className="w-8 h-8 rounded-lg flex items-center justify-center text-sm"
-            style={{ background: 'linear-gradient(135deg, #7C5CFC, #00C896)' }}
+            style={{ background: 'linear-gradient(135deg, #7C5CFC, #00E59B)' }}
           >
             👟
           </div>
@@ -118,7 +121,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
             fontFamily: "'Figtree', sans-serif",
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00E59B] animate-pulse" />
           260 shoes · 16 brands · India market
         </div>
 
@@ -133,7 +136,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
           <br />
           <span
             style={{
-              background: 'linear-gradient(135deg, #7C5CFC 0%, #00C896 50%, #3B82F6 100%)',
+              background: 'linear-gradient(135deg, #7C5CFC 0%, #00E59B 50%, #3B82F6 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -202,7 +205,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
             <span
               key={brand}
               className="text-xs font-medium tracking-widest uppercase"
-              style={{ color: '#33334A', fontFamily: "'DM Sans', sans-serif" }}
+              style={{ color: '#44445A', fontFamily: "'DM Sans', sans-serif" }}
             >
               {brand}
             </span>
@@ -218,7 +221,7 @@ export default function LandingPage({ onStart, onChat, onBrowse }: LandingPagePr
       >
         <p
           className="text-xs"
-          style={{ color: '#33334A', fontFamily: "'Figtree', sans-serif" }}
+          style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}
         >
           Trusted by runners across India 🇮🇳 · Powered by AI
         </p>

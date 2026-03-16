@@ -162,7 +162,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
         <div className="relative mb-8">
           <div
             className="w-20 h-20 rounded-2xl animate-pulse"
-            style={{ background: 'linear-gradient(135deg, #7C5CFC, #00C896)' }}
+            style={{ background: 'linear-gradient(135deg, #7C5CFC, #00E59B)' }}
           />
           <div
             className="absolute inset-0 w-20 h-20 rounded-2xl animate-ping opacity-20"
@@ -186,7 +186,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
               key={i}
               className="w-24 h-32 rounded-xl animate-pulse"
               style={{
-                background: '#111118',
+                background: '#0C0C12',
                 border: '1px solid #1A1A2A',
                 animationDelay: `${i * 150}ms`,
               }}
@@ -213,7 +213,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
             </svg>
             Back
           </button>
-          <span className="text-xs font-medium" style={{ color: '#55556A', fontFamily: "'DM Sans', sans-serif" }}>
+          <span className="text-xs font-medium" style={{ color: '#44445A', fontFamily: "'DM Sans', sans-serif" }}>
             Step {step + 1} of 5
           </span>
         </div>
@@ -224,7 +224,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
             className="h-full rounded-full transition-all duration-500 ease-out"
             style={{
               width: `${progress}%`,
-              background: 'linear-gradient(90deg, #7C5CFC, #00C896)',
+              background: 'linear-gradient(90deg, #7C5CFC, #00E59B)',
             }}
           />
         </div>
@@ -259,7 +259,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
                 onClick={() => handleSelect(opt.value)}
                 className="group relative text-left p-5 rounded-xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                 style={{
-                  background: isSelected ? '#7C5CFC15' : '#111118',
+                  background: isSelected ? '#7C5CFC15' : '#0C0C12',
                   border: `1px solid ${isSelected ? '#7C5CFC' : '#1A1A2A'}`,
                   boxShadow: isSelected ? '0 0 30px rgba(124, 92, 252, 0.1)' : 'none',
                 }}
@@ -279,7 +279,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
                     {opt.desc && (
                       <span
                         className="block text-xs mt-1"
-                        style={{ color: '#55556A', fontFamily: "'Figtree', sans-serif" }}
+                        style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}
                       >
                         {opt.desc}
                       </span>
@@ -308,7 +308,7 @@ export default function QuizFlow({ onComplete, onBack, shoeDatabase }: QuizFlowP
         {quizError && step === 4 && (
           <div
             className="mt-6 w-full max-w-2xl rounded-xl p-4"
-            style={{ background: '#111118', border: '1px solid #3A1A1A' }}
+            style={{ background: '#0C0C12', border: '1px solid #3A1A1A' }}
           >
             <p className="text-sm mb-3" style={{ color: '#FF9FA8', fontFamily: "'Figtree', sans-serif" }}>
               {quizError}

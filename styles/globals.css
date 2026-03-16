@@ -9,15 +9,15 @@
 :root {
   --bg: #050507;
   --bg-alt: #0A0A0F;
-  --surface: #111118;
+  --surface: #0C0C12;
   --surface-hover: #181824;
   --border: #1A1A2A;
   --accent: #7C5CFC;
   --accent-hover: #6B4EE8;
-  --green: #00C896;
+  --green: #00E59B;
   --text: #E8E8ED;
   --text-secondary: #8888A0;
-  --text-muted: #55556A;
+  --text-muted: #44445A;
 }
 
 * {

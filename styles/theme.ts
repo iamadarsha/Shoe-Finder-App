@@ -7,7 +7,7 @@ export const colors = {
   // Backgrounds
   bg: '#050507',           // Near-black (kernel.sh style)
   bgAlt: '#0A0A0F',       // Slightly lighter
-  surface: '#111118',      // Card backgrounds
+  surface: '#0C0C12',      // Card backgrounds
   surfaceHover: '#181824', // Card hover
   surfaceActive: '#1E1E2E',
 
@@ -23,8 +23,8 @@ export const colors = {
   accentGlow: 'rgba(124, 92, 252, 0.15)',
 
   // Semantic
-  green: '#00C896',
-  greenMuted: '#00C89622',
+  green: '#00E59B',
+  greenMuted: '#00E59B22',
   red: '#FF4757',
   orange: '#FF9F43',
   blue: '#3B82F6',
@@ -32,13 +32,13 @@ export const colors = {
   // Text
   text: '#E8E8ED',
   textSecondary: '#8888A0',
-  textMuted: '#55556A',
+  textMuted: '#44445A',
   textAccent: '#A78BFA',
 
   // Gradients
   gradientPurple: 'linear-gradient(135deg, #7C5CFC 0%, #A78BFA 100%)',
-  gradientGreen: 'linear-gradient(135deg, #00C896 0%, #34D399 100%)',
-  gradientHero: 'linear-gradient(135deg, #7C5CFC 0%, #00C896 50%, #3B82F6 100%)',
+  gradientGreen: 'linear-gradient(135deg, #00E59B 0%, #34D399 100%)',
+  gradientHero: 'linear-gradient(135deg, #7C5CFC 0%, #00E59B 50%, #3B82F6 100%)',
 } as const;
 
 export const fonts = {

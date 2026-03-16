@@ -9,7 +9,7 @@ interface BrowsePageProps {
 
 const BRANDS = [
   'Adidas', 'Anta', 'Asics', 'Brooks', 'Decathlon', 'Hoka',
-  'New Balance', 'Nike', 'On Running', 'Puma', 'Reebok',
+  'Mizuno', 'New Balance', 'Nike', 'On Running', 'Puma', 'Reebok',
   'Saucony', 'Skechers', 'Under Armour', 'Xtep',
 ];
 
@@ -131,7 +131,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
               style={{ color: '#E8E8ED', fontFamily: "'DM Sans', sans-serif" }}
             >
               All Running Shoes
-              <span className="ml-2 text-sm font-normal" style={{ color: '#55556A' }}>
+              <span className="ml-2 text-sm font-normal" style={{ color: '#44445A' }}>
                 {filteredShoes.length} of {shoeDatabase.length}
               </span>
             </h1>
@@ -153,8 +153,8 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
         {/* Search */}
         <div className="relative mb-4">
           <svg className="absolute left-3 top-1/2 -translate-y-1/2" width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <circle cx="7" cy="7" r="5" stroke="#55556A" strokeWidth="1.5" />
-            <path d="M11 11L14 14" stroke="#55556A" strokeWidth="1.5" strokeLinecap="round" />
+            <circle cx="7" cy="7" r="5" stroke="#44445A" strokeWidth="1.5" />
+            <path d="M11 11L14 14" stroke="#44445A" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           <input
             type="text"
@@ -163,7 +163,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
             placeholder="Search shoes, brands, foam tech..."
             className="w-full pl-10 pr-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 focus:ring-1 focus:ring-[#7C5CFC44]"
             style={{
-              background: '#111118',
+              background: '#0C0C12',
               border: '1px solid #1A1A2A',
               color: '#E8E8ED',
               fontFamily: "'Figtree', sans-serif",
@@ -179,7 +179,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
             onChange={(e) => setSort(e.target.value as SortOption)}
             className="px-3 py-1.5 rounded-lg text-xs outline-none cursor-pointer"
             style={{
-              background: '#111118',
+              background: '#0C0C12',
               border: '1px solid #1A1A2A',
               color: '#8888A0',
               fontFamily: "'Figtree', sans-serif",
@@ -198,7 +198,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
               onClick={() => toggleFilter(selectedBudget, setSelectedBudget, tier.value)}
               className="px-3 py-1.5 rounded-lg text-xs transition-all duration-150"
               style={{
-                background: selectedBudget.includes(tier.value) ? '#7C5CFC22' : '#111118',
+                background: selectedBudget.includes(tier.value) ? '#7C5CFC22' : '#0C0C12',
                 border: `1px solid ${selectedBudget.includes(tier.value) ? '#7C5CFC' : '#1A1A2A'}`,
                 color: selectedBudget.includes(tier.value) ? '#A78BFA' : '#8888A0',
                 fontFamily: "'Figtree', sans-serif",
@@ -215,9 +215,9 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
               onClick={() => toggleFilter(selectedUseCases, setSelectedUseCases, uc.value)}
               className="px-3 py-1.5 rounded-lg text-xs transition-all duration-150"
               style={{
-                background: selectedUseCases.includes(uc.value) ? '#00C89622' : '#111118',
-                border: `1px solid ${selectedUseCases.includes(uc.value) ? '#00C896' : '#1A1A2A'}`,
-                color: selectedUseCases.includes(uc.value) ? '#00C896' : '#8888A0',
+                background: selectedUseCases.includes(uc.value) ? '#00E59B22' : '#0C0C12',
+                border: `1px solid ${selectedUseCases.includes(uc.value) ? '#00E59B' : '#1A1A2A'}`,
+                color: selectedUseCases.includes(uc.value) ? '#00E59B' : '#8888A0',
                 fontFamily: "'Figtree', sans-serif",
               }}
             >
@@ -246,7 +246,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
               style={{
                 background: selectedBrands.includes(brand) ? '#7C5CFC' : 'transparent',
                 border: `1px solid ${selectedBrands.includes(brand) ? '#7C5CFC' : '#1A1A2A'}`,
-                color: selectedBrands.includes(brand) ? 'white' : '#55556A',
+                color: selectedBrands.includes(brand) ? 'white' : '#44445A',
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
@@ -266,21 +266,21 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
                 mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{
-                background: '#111118',
+                background: '#0C0C12',
                 border: '1px solid #1A1A2A',
                 transitionDelay: `${Math.min(i * 20, 300)}ms`,
               }}
             >
               {/* Brand + Category */}
               <div className="flex items-center justify-between mb-2">
-                <span className="text-[10px] font-bold tracking-[0.15em] uppercase" style={{ color: '#55556A' }}>
+                <span className="text-[10px] font-bold tracking-[0.15em] uppercase" style={{ color: '#44445A' }}>
                   {shoe.brand}
                 </span>
                 <span
                   className="text-[10px] px-2 py-0.5 rounded"
                   style={{
-                    background: shoe.budgetTier === 'premium' ? '#7C5CFC15' : shoe.budgetTier === 'mid' ? '#00C89615' : '#FF9F4315',
-                    color: shoe.budgetTier === 'premium' ? '#A78BFA' : shoe.budgetTier === 'mid' ? '#00C896' : '#FF9F43',
+                    background: shoe.budgetTier === 'premium' ? '#7C5CFC15' : shoe.budgetTier === 'mid' ? '#00E59B15' : '#FF9F4315',
+                    color: shoe.budgetTier === 'premium' ? '#A78BFA' : shoe.budgetTier === 'mid' ? '#00E59B' : '#FF9F43',
                   }}
                 >
                   {shoe.budgetTier === 'budget' ? '₹' : shoe.budgetTier === 'mid' ? '₹₹' : '₹₹₹'}
@@ -293,7 +293,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
               </h3>
 
               {/* Category */}
-              <p className="text-xs mb-3" style={{ color: '#55556A', fontFamily: "'Figtree', sans-serif" }}>
+              <p className="text-xs mb-3" style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}>
                 {shoe.category}
               </p>
 
@@ -345,7 +345,7 @@ export default function BrowsePage({ shoeDatabase, onBack, onChat }: BrowsePageP
 
         {filteredShoes.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-lg mb-2" style={{ color: '#55556A', fontFamily: "'DM Sans', sans-serif" }}>
+            <p className="text-lg mb-2" style={{ color: '#44445A', fontFamily: "'DM Sans', sans-serif" }}>
               No shoes match your filters
             </p>
             <button

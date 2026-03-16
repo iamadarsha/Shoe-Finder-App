@@ -9,7 +9,7 @@ interface ResultsPageProps {
 }
 
 function ReviewScoreBadge({ score }: { score: number }) {
-  const color = score >= 90 ? '#00C896' : score >= 80 ? '#7C5CFC' : '#FF9F43';
+  const color = score >= 90 ? '#00E59B' : score >= 80 ? '#7C5CFC' : '#FF9F43';
   const label = score >= 90 ? 'Excellent' : score >= 80 ? 'Very Good' : 'Good';
   return (
     <div className="flex items-center gap-2">
@@ -21,13 +21,13 @@ function ReviewScoreBadge({ score }: { score: number }) {
       >
         <div
           className="absolute inset-[3px] rounded-full flex items-center justify-center text-xs font-bold"
-          style={{ background: '#111118', color }}
+          style={{ background: '#0C0C12', color }}
         >
           {score}
         </div>
       </div>
       <div>
-        <span className="block text-[10px] font-bold tracking-wider uppercase" style={{ color: '#55556A' }}>
+        <span className="block text-[10px] font-bold tracking-wider uppercase" style={{ color: '#44445A' }}>
           REVIEW
         </span>
         <span className="block text-xs font-medium" style={{ color }}>
@@ -55,7 +55,7 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
         mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{
-        background: '#111118',
+        background: '#0C0C12',
         border: `1px solid ${isTopPick ? '#7C5CFC44' : '#1A1A2A'}`,
         boxShadow: isTopPick
           ? '0 0 40px rgba(124, 92, 252, 0.1), 0 4px 20px rgba(0,0,0,0.3)'
@@ -82,7 +82,7 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
         <div className="flex-1">
           <span
             className="text-[10px] font-bold tracking-[0.15em] uppercase block mb-1"
-            style={{ color: '#55556A', fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: '#44445A', fontFamily: "'DM Sans', sans-serif" }}
           >
             {shoe.brand}
           </span>
@@ -104,7 +104,7 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
           {/* Match score */}
           <div
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold"
-            style={{ background: '#00C89618', color: '#00C896', fontFamily: "'DM Sans', sans-serif" }}
+            style={{ background: '#00E59B18', color: '#00E59B', fontFamily: "'DM Sans', sans-serif" }}
           >
             {shoe.matchScore}% match
           </div>
@@ -119,7 +119,7 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
           className="flex items-center gap-2 mb-4 px-3 py-2 rounded-lg"
           style={{ background: '#0A0A0F', border: '1px solid #1A1A2A' }}
         >
-          <span className="text-xs" style={{ color: '#55556A' }}>Best for:</span>
+          <span className="text-xs" style={{ color: '#44445A' }}>Best for:</span>
           <span className="text-xs font-medium" style={{ color: '#A78BFA', fontFamily: "'Figtree', sans-serif" }}>
             {shoe.bestFor}
           </span>
@@ -130,13 +130,13 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
       <div className="space-y-1.5 mb-4">
         {shoe.foam && (
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold tracking-wider uppercase w-12" style={{ color: '#55556A' }}>FOAM</span>
+            <span className="text-[10px] font-bold tracking-wider uppercase w-12" style={{ color: '#44445A' }}>FOAM</span>
             <span className="text-xs" style={{ color: '#A78BFA', fontFamily: "'Figtree', sans-serif" }}>{shoe.foam}</span>
           </div>
         )}
         {shoe.plate && (
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold tracking-wider uppercase w-12" style={{ color: '#55556A' }}>PLATE</span>
+            <span className="text-[10px] font-bold tracking-wider uppercase w-12" style={{ color: '#44445A' }}>PLATE</span>
             <span className="text-xs" style={{ color: '#FF9F43', fontFamily: "'Figtree', sans-serif" }}>{shoe.plate}</span>
           </div>
         )}
@@ -169,7 +169,7 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
           {/* Review Summary */}
           {shoe.reviewSummary && (
             <div className="p-3 rounded-lg" style={{ background: '#0A0A0F', border: '1px solid #1A1A2A' }}>
-              <span className="text-[10px] font-bold tracking-wider uppercase block mb-1" style={{ color: '#55556A' }}>
+              <span className="text-[10px] font-bold tracking-wider uppercase block mb-1" style={{ color: '#44445A' }}>
                 EXPERT REVIEWS
               </span>
               <p className="text-xs leading-relaxed" style={{ color: '#8888A0', fontFamily: "'Figtree', sans-serif" }}>
@@ -181,13 +181,13 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
           {/* Pros */}
           {shoe.pros && shoe.pros.length > 0 && (
             <div>
-              <span className="text-[10px] font-bold tracking-wider uppercase block mb-1.5" style={{ color: '#00C896' }}>
+              <span className="text-[10px] font-bold tracking-wider uppercase block mb-1.5" style={{ color: '#00E59B' }}>
                 PROS
               </span>
               <div className="space-y-1">
                 {shoe.pros.map((pro, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <span className="text-xs mt-0.5" style={{ color: '#00C896' }}>+</span>
+                    <span className="text-xs mt-0.5" style={{ color: '#00E59B' }}>+</span>
                     <span className="text-xs" style={{ color: '#8888A0', fontFamily: "'Figtree', sans-serif" }}>{pro}</span>
                   </div>
                 ))}
@@ -292,7 +292,7 @@ function ShoeCard({ shoe, rank }: { shoe: ShoeRecommendation; rank: number }) {
 
 function SkeletonCard() {
   return (
-    <div className="rounded-2xl p-6 animate-pulse" style={{ background: '#111118', border: '1px solid #1A1A2A' }}>
+    <div className="rounded-2xl p-6 animate-pulse" style={{ background: '#0C0C12', border: '1px solid #1A1A2A' }}>
       <div className="flex justify-between mb-4">
         <div>
           <div className="h-3 w-16 rounded mb-2" style={{ background: '#1A1A2A' }} />
@@ -330,7 +330,7 @@ export default function ResultsPage({ recommendations, onRetake, onChat, onBrows
           >
             Your Perfect Matches
           </h1>
-          <p className="text-sm mt-1" style={{ color: '#55556A', fontFamily: "'Figtree', sans-serif" }}>
+          <p className="text-sm mt-1" style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}>
             AI-curated from 260 shoes across 16 brands · Review scores from RunRepeat, SoleReview & RunTesters
           </p>
         </div>
@@ -348,7 +348,7 @@ export default function ResultsPage({ recommendations, onRetake, onChat, onBrows
         {isEmpty ? (
           <div
             className="max-w-xl mx-auto rounded-2xl p-6 md:p-8 text-center"
-            style={{ background: '#111118', border: '1px solid #1A1A2A' }}
+            style={{ background: '#0C0C12', border: '1px solid #1A1A2A' }}
           >
             <h2
               className="text-xl font-bold mb-3"
@@ -357,6 +357,13 @@ export default function ResultsPage({ recommendations, onRetake, onChat, onBrows
               Couldn't load recommendations. This might be a temporary issue.
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-5">
+              <button
+                onClick={onRetake}
+                className="px-5 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-white/5"
+                style={{ border: '1px solid #1A1A2A', color: '#7A7AA0', fontFamily: "'DM Sans', sans-serif" }}
+              >
+                Try Again
+              </button>
               <button
                 onClick={onRetake}
                 className="px-5 py-3 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-[1.02]"
@@ -387,7 +394,7 @@ export default function ResultsPage({ recommendations, onRetake, onChat, onBrows
 
             {/* Footer CTA */}
             <div className="text-center mt-12 space-y-4">
-              <p className="text-sm" style={{ color: '#55556A', fontFamily: "'Figtree', sans-serif" }}>
+              <p className="text-sm" style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}>
                 Not satisfied? Get more specific advice.
               </p>
               <div className="flex items-center justify-center gap-3">

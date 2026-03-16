@@ -83,14 +83,14 @@ export default function ChatDrawer({ messages, setMessages, onClose }: ChatDrawe
           <div className="flex items-center gap-2">
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center text-xs"
-              style={{ background: 'linear-gradient(135deg, #7C5CFC, #00C896)' }}
+              style={{ background: 'linear-gradient(135deg, #7C5CFC, #00E59B)' }}
             >
               🤖
             </div>
             <span className="text-base font-semibold" style={{ color: '#E8E8ED', fontFamily: "'DM Sans', sans-serif" }}>
               SoleMate AI
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00E59B] animate-pulse" />
           </div>
           <button
             onClick={handleClose}
@@ -109,7 +109,7 @@ export default function ChatDrawer({ messages, setMessages, onClose }: ChatDrawe
               <p className="text-sm mb-2" style={{ color: '#E8E8ED', fontFamily: "'DM Sans', sans-serif" }}>
                 Ask me anything about running shoes
               </p>
-              <p className="text-xs" style={{ color: '#55556A', fontFamily: "'Figtree', sans-serif" }}>
+              <p className="text-xs" style={{ color: '#44445A', fontFamily: "'Figtree', sans-serif" }}>
                 I know foam tech, gait types, Indian pricing & availability
               </p>
               <div className="flex flex-wrap gap-2 justify-center mt-6">
@@ -185,7 +185,7 @@ export default function ChatDrawer({ messages, setMessages, onClose }: ChatDrawe
               disabled={loading}
               className="flex-1 px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 focus:ring-1 focus:ring-[#7C5CFC44] disabled:opacity-50"
               style={{
-                background: '#111118',
+                background: '#0C0C12',
                 border: '1px solid #1A1A2A',
                 color: '#E8E8ED',
                 fontFamily: "'Figtree', sans-serif",
